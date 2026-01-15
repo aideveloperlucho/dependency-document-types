@@ -1,0 +1,491 @@
+{
+  "documentTypes": [
+    "Informe Tecnico",
+    "Acta de entrega",
+    "Atencion medica",
+    "Autorización de Entrega (Acreedor)",
+    "Boleta de Transporte",
+    "Carta de saldo insoluto y compromiso alzamiento",
+    "Cedula de Identidad(Otros)",
+    "Certificado Perdida Total",
+    "Certificado de Anotaciones Vigentes",
+    "Certificado de pago multas",
+    "Certificado de viajes",
+    "Comprobante Grúa",
+    "Comprobante de Ingreso",
+    "Comprobante de testigos",
+    "Comprobante llaves/GPS",
+    "Constancia / Parte Policial",
+    "Cuestionario Completo",
+    "Declaración Jurada Simple",
+    "Denuncia Policial",
+    "Documentos Consultas Reclamos",
+    "Documentos Genérico",
+    "Documentos Ingreso Reingreso",
+    "Documentos Inspección Taller",
+    "Documentos Seguimiento Reparación",
+    "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)",
+    "Documentos que proporcionen evidencia del recupero",
+    "Finiquito",
+    "Fotografías Adicionales del Siniestro",
+    "FotosInspeccion",
+    "Fotos Seguimiento Reparacion",
+    "Fotos y documentos de Impugnaciones",
+    "Fotos y Videos Localización",
+    "Fotos y Videos de los daños",
+    "Fotos y Videos otros",
+    "Frontal",
+    "Guía de Despacho",
+    "Guía de traslado",
+    "Informe de Liquidación",
+    "Inspección Liquidador",
+    "Interior",
+    "Kilometraje",
+    "Lateral derecho (copiloto)",
+    "Lateral izquierdo (conductor)",
+    "Liquidación Oficial",
+    "Ocurrencia del siniestro",
+    "Otros",
+    "Otros Daños",
+    "PDF Valorización",
+    "Pagaré",
+    "Parte de Hallazgo del Vehículo",
+    "Peritaje",
+    "Permiso de circulacion",
+    "Presupuesto",
+    "Presupuesto Salvataje",
+    "Recibo de Conformidad",
+    "Respaldo Factura",
+    "Respaldo Impugnación",
+    "Respaldo Propuesta Impugna",
+    "Respaldo Publicación",
+    "Respaldo Valorización Manual",
+    "Resumen Liquidador",
+    "Revision tecnica homologacion",
+    "Trasera",
+    "Valor Comercial",
+    "Voucher alcotest",
+    "Cedula de Identidad",
+    "Cedula de Identidad Reverso",
+    "Certificado deuda de alimentos",
+    "Cuestionario Cliente",
+    "Cédula de quien recibe.",
+    "Cédula de quien retira el VH",
+    "Licencia de Conducir",
+    "Licencia de Conducir Reverso",
+    "Pasaporte",
+    "Factura de compraventa",
+    "Informe Autofact",
+    "Inscripción Registro Civil.",
+    "Número Vin",
+    "Otro",
+    "Padrón del Vehículo",
+    "Patente",
+    "Permiso de circulación",
+    "Revisión técnica homologación",
+    "Genérico",
+    "Ingreso – Reingreso",
+    "ILI",
+    "Inspección Taller",
+    "Consultas y Reclamos",
+    "Recibo de conformidad",
+    "Cedula de identidad",
+    "NO TIENE",
+    "Finiquito legalizado",
+    "Inspección del lugar",
+    "Entrevista personal asegurado",
+    "Pasadas del tag",
+    "Informe Autopista",
+    "Verificar cámaras de seguridad",
+    "Solicitud de participación de accidente",
+    "Parte Policial (Denuncio)",
+    "Parte Policial (Hallazgo)"
+  ],
+  "platforms": [
+    "Web Oficiales",
+    "Egresos",
+    "CGS",
+    "Web Proveedores",
+    "Web oficiales",
+    "Recupero",
+    "Liquidación Perdida Total",
+    "Proceso genera el informe de liquidación",
+    "Denuncios",
+    "MDR",
+    "Web Liquidacion",
+    "Control de gastos(CDG)",
+    "Fraude",
+    "DJS(Declaracion Jurada Simple)"
+  ],
+  "documentTypeToPlatforms": {
+    "Informe Tecnico": [
+      "Fraude"
+    ],
+    "Acta de entrega": [
+      "Liquidación Perdida Total"
+    ],
+    "Atencion medica": [
+      "Liquidación Perdida Total"
+    ],
+    "Autorización de Entrega (Acreedor)": [
+      "Liquidación Perdida Total"
+    ],
+    "Boleta de Transporte": [
+      "Recupero",
+      "Liquidación Perdida Total"
+    ],
+    "Carta de saldo insoluto y compromiso alzamiento": [
+      "Liquidación Perdida Total"
+    ],
+    "Cedula de Identidad(Otros)": [
+      "Egresos"
+    ],
+    "Certificado Perdida Total": [
+      "Web Liquidacion"
+    ],
+    "Certificado de Anotaciones Vigentes": [
+      "Liquidación Perdida Total"
+    ],
+    "Certificado de pago multas": [
+      "Liquidación Perdida Total"
+    ],
+    "Certificado de viajes": [
+      "Liquidación Perdida Total"
+    ],
+    "Comprobante Grúa": [
+      "Recupero",
+      "Web Liquidacion",
+      "Liquidación Perdida Total"
+    ],
+    "Comprobante de Ingreso": [
+      "Web Liquidacion"
+    ],
+    "Comprobante de testigos": [
+      "Liquidación Perdida Total"
+    ],
+    "Comprobante llaves/GPS": [
+      "Liquidación Perdida Total"
+    ],
+    "Constancia / Parte Policial": [
+      "Web Liquidacion",
+      "Liquidación Perdida Total"
+    ],
+    "Cuestionario Completo": [
+      "Web Liquidacion",
+      "Liquidación Perdida Total"
+    ],
+    "Declaración Jurada Simple": [
+      "Denuncios",
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
+      "DJS(Declaracion Jurada Simple)"
+    ],
+    "Denuncia Policial": [
+      "Denuncios",
+      "Liquidación Perdida Total",
+      "DJS(Declaracion Jurada Simple)"
+    ],
+    "Documentos Consultas Reclamos": [
+      "Web Proveedores"
+    ],
+    "Documentos Genérico": [
+      "Web Proveedores",
+      "Web oficiales"
+    ],
+    "Documentos Ingreso Reingreso": [
+      "Web Proveedores"
+    ],
+    "Documentos Inspección Taller": [
+      "Web Proveedores",
+      "Web Liquidacion"
+    ],
+    "Documentos Seguimiento Reparación": [
+      "Web Liquidacion"
+    ],
+    "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)": [
+      "Web Liquidacion"
+    ],
+    "Documentos que proporcionen evidencia del recupero": [
+      "Liquidación Perdida Total"
+    ],
+    "Finiquito": [
+      "Web Liquidacion",
+      "Liquidación Perdida Total"
+    ],
+    "Fotografías Adicionales del Siniestro": [
+      "Liquidación Perdida Total"
+    ],
+    "FotosInspeccion": [
+      "Web Liquidacion"
+    ],
+    "Fotos Seguimiento Reparacion": [
+      "Web Liquidacion"
+    ],
+    "Fotos y documentos de Impugnaciones": [
+      "Web Liquidacion"
+    ],
+    "Fotos y Videos Localización": [
+      "Denuncios",
+      "Liquidación Perdida Total"
+    ],
+    "Fotos y Videos de los daños": [
+      "Denuncios",
+      "Liquidación Perdida Total",
+      "DJS(Declaracion Jurada Simple)"
+    ],
+    "Fotos y Videos otros": [
+      "Denuncios",
+      "CGS",
+      "Liquidación Perdida Total"
+    ],
+    "Frontal": [
+      "Liquidación Perdida Total"
+    ],
+    "Guía de Despacho": [
+      "MDR",
+      "Liquidación Perdida Total"
+    ],
+    "Guía de traslado": [
+      "Liquidación Perdida Total"
+    ],
+    "Informe de Liquidación": [
+      "Liquidación Perdida Total"
+    ],
+    "Inspección Liquidador": [
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
+      "Control de gastos(CDG)"
+    ],
+    "Interior": [
+      "Liquidación Perdida Total"
+    ],
+    "Kilometraje": [
+      "Liquidación Perdida Total"
+    ],
+    "Lateral derecho (copiloto)": [
+      "Liquidación Perdida Total"
+    ],
+    "Lateral izquierdo (conductor)": [
+      "Liquidación Perdida Total"
+    ],
+    "Liquidación Oficial": [
+      "Liquidación Perdida Total"
+    ],
+    "Ocurrencia del siniestro": [
+      "Liquidación Perdida Total"
+    ],
+    "Otros": [
+      "Web Proveedores",
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
+      "Fraude"
+    ],
+    "Otros Daños": [
+      "Liquidación Perdida Total"
+    ],
+    "PDF Valorización": [
+      "Liquidación Perdida Total"
+    ],
+    "Pagaré": [
+      "Web Liquidacion",
+      "Liquidación Perdida Total"
+    ],
+    "Parte de Hallazgo del Vehículo": [
+      "Web Liquidacion",
+      "Liquidación Perdida Total"
+    ],
+    "Peritaje": [
+      "Web Liquidacion"
+    ],
+    "Permiso de circulacion": [
+      "Liquidación Perdida Total"
+    ],
+    "Presupuesto": [
+      "Web Proveedores",
+      "Web Liquidacion",
+      "Egresos"
+    ],
+    "Presupuesto Salvataje": [
+      "Web Liquidacion"
+    ],
+    "Recibo de Conformidad": [
+      "Web Proveedores",
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
+      "Egresos"
+    ],
+    "Respaldo Factura": [
+      "Liquidación Perdida Total"
+    ],
+    "Respaldo Impugnación": [
+      "Web Liquidacion",
+      "Liquidación Perdida Total"
+    ],
+    "Respaldo Propuesta Impugna": [
+      "Liquidación Perdida Total"
+    ],
+    "Respaldo Publicación": [
+      "Liquidación Perdida Total"
+    ],
+    "Respaldo Valorización Manual": [
+      "Liquidación Perdida Total"
+    ],
+    "Resumen Liquidador": [
+      "Denuncios"
+    ],
+    "Revision tecnica homologacion": [
+      "Liquidación Perdida Total"
+    ],
+    "Trasera": [
+      "Liquidación Perdida Total"
+    ],
+    "Valor Comercial": [
+      "Web Liquidacion"
+    ],
+    "Voucher alcotest": [
+      "Web Liquidacion",
+      "Liquidación Perdida Total"
+    ],
+    "Cedula de Identidad": [
+      "Fraude",
+      "Liquidación Perdida Total",
+      "Denuncios",
+      "Web Liquidacion",
+      "DJS(Declaracion Jurada Simple)"
+    ],
+    "Cedula de Identidad Reverso": [
+      "Denuncios"
+    ],
+    "Certificado deuda de alimentos": [
+      "Liquidación Perdida Total"
+    ],
+    "Cuestionario Cliente": [
+      "Liquidación Perdida Total"
+    ],
+    "Cédula de quien recibe.": [
+      "Liquidación Perdida Total"
+    ],
+    "Cédula de quien retira el VH": [
+      "Liquidación Perdida Total"
+    ],
+    "Licencia de Conducir": [
+      "Denuncios",
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
+      "DJS(Declaracion Jurada Simple)"
+    ],
+    "Licencia de Conducir Reverso": [
+      "Denuncios"
+    ],
+    "Pasaporte": [
+      "Liquidación Perdida Total"
+    ],
+    "Factura de compraventa": [
+      "Liquidación Perdida Total"
+    ],
+    "Informe Autofact": [
+      "Liquidación Perdida Total"
+    ],
+    "Inscripción Registro Civil.": [
+      "Liquidación Perdida Total"
+    ],
+    "Número Vin": [
+      "Liquidación Perdida Total"
+    ],
+    "Otro": [
+      "Liquidación Perdida Total"
+    ],
+    "Padrón del Vehículo": [
+      "Web Liquidacion"
+    ],
+    "Patente": [
+      "Liquidación Perdida Total"
+    ],
+    "Permiso de circulación": [
+      "Liquidación Perdida Total"
+    ],
+    "Revisión técnica homologación": [
+      "Liquidación Perdida Total"
+    ],
+    "Genérico": [
+      "Web Proveedores",
+      "Web Oficiales"
+    ],
+    "Ingreso – Reingreso": [
+      "Web Proveedores"
+    ],
+    "ILI": [
+      "Control de gastos(CDG)"
+    ],
+    "Inspección Taller": [
+      "Web Proveedores"
+    ],
+    "Consultas y Reclamos": [
+      "Web Proveedores"
+    ],
+    "Recibo de conformidad": [
+      "Egresos"
+    ],
+    "Cedula de identidad": [
+      "Egresos"
+    ],
+    "NO TIENE": [
+      "Web oficiales",
+      "Liquidación Perdida Total",
+      "Proceso genera el informe de liquidación",
+      "Web Liquidacion",
+      "Control de gastos(CDG)",
+      "CGS"
+    ],
+    "Finiquito legalizado": [
+      "Liquidación Perdida Total"
+    ],
+    "Inspección del lugar": [
+      "Fraude"
+    ],
+    "Entrevista personal asegurado": [
+      "Fraude"
+    ],
+    "Pasadas del tag": [
+      "Fraude"
+    ],
+    "Informe Autopista": [
+      "Fraude"
+    ],
+    "Verificar cámaras de seguridad": [
+      "Fraude"
+    ],
+    "Solicitud de participación de accidente": [
+      "Fraude"
+    ],
+    "Parte Policial (Denuncio)": [
+      "Fraude"
+    ],
+    "Parte Policial (Hallazgo)": [
+      "Fraude"
+    ]
+  },
+  "platformDependencies": {
+    "Web Liquidacion": "Denuncios",
+    "Liquidación Perdida Total": "Denuncios",
+    "DJS(Declaracion Jurada Simple)": "Web Liquidacion",
+    "Fraude": "DJS(Declaracion Jurada Simple)",
+    "Egresos": "DJS(Declaracion Jurada Simple)"
+  },
+  "platformIconStatus": {
+    "Fraude": "SI",
+    "Liquidación Perdida Total": "SI",
+    "Gestor Documental": "OTHER",
+    "Recupero": "OTHER",
+    "Egresos": "SI",
+    "Web Liquidacion": "OTHER",
+    "Denuncios": "OTHER",
+    "DJS(Declaracion Jurada Simple)": "SI",
+    "Web oficiales": "SI",
+    "Web Proveedores": "OTHER",
+    "CGS": "OTHER",
+    "MDR": "NO",
+    "Control de gastos(CDG)": "SI",
+    "Web Oficiales": "SI"
+  }
+}

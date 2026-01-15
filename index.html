@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Types Dependency Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .document-type-section {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        
+        .document-type-label {
+            color: red;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .document-type-box {
+            border: 2px solid black;
+            padding: 10px 15px;
+            margin: 10px 0;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .document-type-box:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .document-type-box.highlighted {
+            background-color: #ffe0e0;
+        }
+        
+        .systems-section {
+            position: absolute;
+            right: 50px;
+            top: 50px;
+        }
+        
+        .system-node {
+            position: absolute;
+            border: 2px solid red;
+            padding: 10px 15px;
+            background-color: white;
+            color: red;
+            font-size: 14px;
+            cursor: pointer;
+            min-width: 150px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        
+        .system-node:hover {
+            background-color: #ffe0e0;
+            transform: scale(1.05);
+        }
+        
+        .system-node.highlighted {
+            background-color: #ffcccc;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        
+        .asterisk {
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: red;
+            font-weight: bold;
+        }
+        
+        .arrow {
+            stroke: red;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#arrowhead-red);
+        }
+        
+        .arrow.highlighted {
+            stroke-width: 3;
+            stroke: #cc0000;
+        }
+        
+        .connection-line {
+            stroke: red;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#arrowhead-red);
+        }
+        
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            left: 50px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 2px solid red;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 85vh;
+            overflow: auto;
+            position: relative;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid red;
+        }
+        
+        .modal-title {
+            color: red;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .close-modal {
+            color: red;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .close-modal:hover {
+            color: #cc0000;
+        }
+        
+        .modal-diagram-container {
+            position: relative;
+            width: 100%;
+            min-height: 400px;
+            margin-top: 20px;
+        }
+        
+        .modal-systems-section {
+            position: relative;
+            width: 100%;
+            min-height: 400px;
+        }
+        
+        .modal-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        /* Icon styles */
+        .platform-icon {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+        
+        .icon-check {
+            color: green;
+        }
+        
+        .icon-cancel {
+            color: red;
+        }
+        
+        .icon-warning {
+            color: orange;
+        }
+        
+        .modal-legend {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+        }
+        
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+        
+        .legend-icon {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg id="svg-container" width="100%" height="100%" style="position: absolute; top: 0; left: 0; z-index: 0; pointer-events: none;">
+            <defs>
+                <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="red" />
+                </marker>
+            </defs>
+        </svg>
+        
+        <div class="document-type-section" id="document-types"></div>
+        <div class="tooltip" id="tooltip"></div>
+        <div class="legend">
+            Click on a document type to see its dependency diagram
+        </div>
+    </div>
+    
+    <!-- Modal Dialog -->
+    <div id="dependencyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Dependency Diagram</div>
+                <span class="close-modal" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-diagram-container">
+                <svg id="modal-svg" class="modal-svg">
+                    <defs>
+                        <marker id="modal-arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="red" />
+                        </marker>
+                    </defs>
+                </svg>
+                <div class="modal-systems-section" id="modal-systems"></div>
+            </div>
+            <div class="modal-legend" id="modal-legend">
+                <div class="legend-item">
+                    <span class="legend-icon icon-check">✓</span>
+                    <span>Obligatorio (SI)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon icon-cancel">✗</span>
+                    <span>No Obligatorio (NO)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon icon-warning">⚠</span>
+                    <span>Condicional/Otro</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Embedded data to avoid CORS issues when opening file directly
+        const embeddedData = {
+        "documentTypes": [
+                "Informe Tecnico",
+                "Acta de entrega",
+                "Atencion medica",
+                "Autorización de Entrega (Acreedor)",
+                "Boleta de Transporte",
+                "Carta de saldo insoluto y compromiso alzamiento",
+                "Cedula de Identidad(Otros)",
+                "Certificado Perdida Total",
+                "Certificado de Anotaciones Vigentes",
+                "Certificado de pago multas",
+                "Certificado de viajes",
+                "Comprobante Grúa",
+                "Comprobante de Ingreso",
+                "Comprobante de testigos",
+                "Comprobante llaves/GPS",
+                "Constancia / Parte Policial",
+                "Cuestionario Completo",
+                "Declaración Jurada Simple",
+                "Denuncia Policial",
+                "Documentos Consultas Reclamos",
+                "Documentos Genérico",
+                "Documentos Ingreso Reingreso",
+                "Documentos Inspección Taller",
+                "Documentos Seguimiento Reparación",
+                "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)",
+                "Documentos que proporcionen evidencia del recupero",
+                "Finiquito",
+                "Fotografías Adicionales del Siniestro",
+                "FotosInspeccion",
+                "Fotos Seguimiento Reparacion",
+                "Fotos y documentos de Impugnaciones",
+                "Fotos y Videos Localización",
+                "Fotos y Videos de los daños",
+                "Fotos y Videos otros",
+                "Frontal",
+                "Guía de Despacho",
+                "Guía de traslado",
+                "Informe de Liquidación",
+                "Inspección Liquidador",
+                "Interior",
+                "Kilometraje",
+                "Lateral derecho (copiloto)",
+                "Lateral izquierdo (conductor)",
+                "Liquidación Oficial",
+                "Ocurrencia del siniestro",
+                "Otros",
+                "Otros Daños",
+                "PDF Valorización",
+                "Pagaré",
+                "Parte de Hallazgo del Vehículo",
+                "Peritaje",
+                "Permiso de circulacion",
+                "Presupuesto",
+                "Presupuesto Salvataje",
+                "Recibo de Conformidad",
+                "Respaldo Factura",
+                "Respaldo Impugnación",
+                "Respaldo Propuesta Impugna",
+                "Respaldo Publicación",
+                "Respaldo Valorización Manual",
+                "Resumen Liquidador",
+                "Revision tecnica homologacion",
+                "Trasera",
+                "Valor Comercial",
+                "Voucher alcotest",
+                "Cedula de Identidad",
+                "Cedula de Identidad Reverso",
+                "Certificado deuda de alimentos",
+                "Cuestionario Cliente",
+                "Cédula de quien recibe.",
+                "Cédula de quien retira el VH",
+                "Licencia de Conducir",
+                "Licencia de Conducir Reverso",
+                "Pasaporte",
+                "Factura de compraventa",
+                "Informe Autofact",
+                "Inscripción Registro Civil.",
+                "Número Vin",
+                "Otro",
+                "Padrón del Vehículo",
+                "Patente",
+                "Permiso de circulación",
+                "Revisión técnica homologación",
+                "Genérico",
+                "Ingreso – Reingreso",
+                "ILI",
+                "Inspección Taller",
+                "Consultas y Reclamos",
+                "Recibo de conformidad",
+                "Cedula de identidad",
+                "NO TIENE",
+                "Finiquito legalizado",
+                "Inspección del lugar",
+                "Entrevista personal asegurado",
+                "Pasadas del tag",
+                "Informe Autopista",
+                "Verificar cámaras de seguridad",
+                "Solicitud de participación de accidente",
+                "Parte Policial (Denuncio)",
+                "Parte Policial (Hallazgo)"
+        ],
+        "platforms": [
+                "Web Oficiales",
+                "Egresos",
+                "CGS",
+                "Web Proveedores",
+                "Web oficiales",
+                "Recupero",
+                "Liquidación Perdida Total",
+                "Proceso genera el informe de liquidación",
+                "Denuncios",
+                "MDR",
+                "Web Liquidacion",
+                "Control de gastos(CDG)",
+                "Fraude",
+                "DJS(Declaracion Jurada Simple)"
+        ],
+        "documentTypeToPlatforms": {
+                "Informe Tecnico": [
+                        "Fraude"
+                ],
+                "Acta de entrega": [
+                        "Liquidación Perdida Total"
+                ],
+                "Atencion medica": [
+                        "Liquidación Perdida Total"
+                ],
+                "Autorización de Entrega (Acreedor)": [
+                        "Liquidación Perdida Total"
+                ],
+                "Boleta de Transporte": [
+                        "Recupero",
+                        "Liquidación Perdida Total"
+                ],
+                "Carta de saldo insoluto y compromiso alzamiento": [
+                        "Liquidación Perdida Total"
+                ],
+                "Cedula de Identidad(Otros)": [
+                        "Egresos"
+                ],
+                "Certificado Perdida Total": [
+                        "Web Liquidacion"
+                ],
+                "Certificado de Anotaciones Vigentes": [
+                        "Liquidación Perdida Total"
+                ],
+                "Certificado de pago multas": [
+                        "Liquidación Perdida Total"
+                ],
+                "Certificado de viajes": [
+                        "Liquidación Perdida Total"
+                ],
+                "Comprobante Grúa": [
+                        "Recupero",
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total"
+                ],
+                "Comprobante de Ingreso": [
+                        "Web Liquidacion"
+                ],
+                "Comprobante de testigos": [
+                        "Liquidación Perdida Total"
+                ],
+                "Comprobante llaves/GPS": [
+                        "Liquidación Perdida Total"
+                ],
+                "Constancia / Parte Policial": [
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total"
+                ],
+                "Cuestionario Completo": [
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total"
+                ],
+                "Declaración Jurada Simple": [
+                        "Denuncios",
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
+                        "DJS(Declaracion Jurada Simple)"
+                ],
+                "Denuncia Policial": [
+                        "Denuncios",
+                        "Liquidación Perdida Total",
+                        "DJS(Declaracion Jurada Simple)"
+                ],
+                "Documentos Consultas Reclamos": [
+                        "Web Proveedores"
+                ],
+                "Documentos Genérico": [
+                        "Web Proveedores",
+                        "Web oficiales"
+                ],
+                "Documentos Ingreso Reingreso": [
+                        "Web Proveedores"
+                ],
+                "Documentos Inspección Taller": [
+                        "Web Proveedores",
+                        "Web Liquidacion"
+                ],
+                "Documentos Seguimiento Reparación": [
+                        "Web Liquidacion"
+                ],
+                "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)": [
+                        "Web Liquidacion"
+                ],
+                "Documentos que proporcionen evidencia del recupero": [
+                        "Liquidación Perdida Total"
+                ],
+                "Finiquito": [
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total"
+                ],
+                "Fotografías Adicionales del Siniestro": [
+                        "Liquidación Perdida Total"
+                ],
+                "FotosInspeccion": [
+                        "Web Liquidacion"
+                ],
+                "Fotos Seguimiento Reparacion": [
+                        "Web Liquidacion"
+                ],
+                "Fotos y documentos de Impugnaciones": [
+                        "Web Liquidacion"
+                ],
+                "Fotos y Videos Localización": [
+                        "Denuncios",
+                        "Liquidación Perdida Total"
+                ],
+                "Fotos y Videos de los daños": [
+                        "Denuncios",
+                        "Liquidación Perdida Total",
+                        "DJS(Declaracion Jurada Simple)"
+                ],
+                "Fotos y Videos otros": [
+                        "Denuncios",
+                        "CGS",
+                        "Liquidación Perdida Total"
+                ],
+                "Frontal": [
+                        "Liquidación Perdida Total"
+                ],
+                "Guía de Despacho": [
+                        "MDR",
+                        "Liquidación Perdida Total"
+                ],
+                "Guía de traslado": [
+                        "Liquidación Perdida Total"
+                ],
+                "Informe de Liquidación": [
+                        "Liquidación Perdida Total"
+                ],
+                "Inspección Liquidador": [
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
+                        "Control de gastos(CDG)"
+                ],
+                "Interior": [
+                        "Liquidación Perdida Total"
+                ],
+                "Kilometraje": [
+                        "Liquidación Perdida Total"
+                ],
+                "Lateral derecho (copiloto)": [
+                        "Liquidación Perdida Total"
+                ],
+                "Lateral izquierdo (conductor)": [
+                        "Liquidación Perdida Total"
+                ],
+                "Liquidación Oficial": [
+                        "Liquidación Perdida Total"
+                ],
+                "Ocurrencia del siniestro": [
+                        "Liquidación Perdida Total"
+                ],
+                "Otros": [
+                        "Web Proveedores",
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
+                        "Fraude"
+                ],
+                "Otros Daños": [
+                        "Liquidación Perdida Total"
+                ],
+                "PDF Valorización": [
+                        "Liquidación Perdida Total"
+                ],
+                "Pagaré": [
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total"
+                ],
+                "Parte de Hallazgo del Vehículo": [
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total"
+                ],
+                "Peritaje": [
+                        "Web Liquidacion"
+                ],
+                "Permiso de circulacion": [
+                        "Liquidación Perdida Total"
+                ],
+                "Presupuesto": [
+                        "Web Proveedores",
+                        "Web Liquidacion",
+                        "Egresos"
+                ],
+                "Presupuesto Salvataje": [
+                        "Web Liquidacion"
+                ],
+                "Recibo de Conformidad": [
+                        "Web Proveedores",
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
+                        "Egresos"
+                ],
+                "Respaldo Factura": [
+                        "Liquidación Perdida Total"
+                ],
+                "Respaldo Impugnación": [
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total"
+                ],
+                "Respaldo Propuesta Impugna": [
+                        "Liquidación Perdida Total"
+                ],
+                "Respaldo Publicación": [
+                        "Liquidación Perdida Total"
+                ],
+                "Respaldo Valorización Manual": [
+                        "Liquidación Perdida Total"
+                ],
+                "Resumen Liquidador": [
+                        "Denuncios"
+                ],
+                "Revision tecnica homologacion": [
+                        "Liquidación Perdida Total"
+                ],
+                "Trasera": [
+                        "Liquidación Perdida Total"
+                ],
+                "Valor Comercial": [
+                        "Web Liquidacion"
+                ],
+                "Voucher alcotest": [
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total"
+                ],
+                "Cedula de Identidad": [
+                        "Fraude",
+                        "Liquidación Perdida Total",
+                        "Denuncios",
+                        "Web Liquidacion",
+                        "DJS(Declaracion Jurada Simple)"
+                ],
+                "Cedula de Identidad Reverso": [
+                        "Denuncios"
+                ],
+                "Certificado deuda de alimentos": [
+                        "Liquidación Perdida Total"
+                ],
+                "Cuestionario Cliente": [
+                        "Liquidación Perdida Total"
+                ],
+                "Cédula de quien recibe.": [
+                        "Liquidación Perdida Total"
+                ],
+                "Cédula de quien retira el VH": [
+                        "Liquidación Perdida Total"
+                ],
+                "Licencia de Conducir": [
+                        "Denuncios",
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
+                        "DJS(Declaracion Jurada Simple)"
+                ],
+                "Licencia de Conducir Reverso": [
+                        "Denuncios"
+                ],
+                "Pasaporte": [
+                        "Liquidación Perdida Total"
+                ],
+                "Factura de compraventa": [
+                        "Liquidación Perdida Total"
+                ],
+                "Informe Autofact": [
+                        "Liquidación Perdida Total"
+                ],
+                "Inscripción Registro Civil.": [
+                        "Liquidación Perdida Total"
+                ],
+                "Número Vin": [
+                        "Liquidación Perdida Total"
+                ],
+                "Otro": [
+                        "Liquidación Perdida Total"
+                ],
+                "Padrón del Vehículo": [
+                        "Web Liquidacion"
+                ],
+                "Patente": [
+                        "Liquidación Perdida Total"
+                ],
+                "Permiso de circulación": [
+                        "Liquidación Perdida Total"
+                ],
+                "Revisión técnica homologación": [
+                        "Liquidación Perdida Total"
+                ],
+                "Genérico": [
+                        "Web Proveedores",
+                        "Web Oficiales"
+                ],
+                "Ingreso – Reingreso": [
+                        "Web Proveedores"
+                ],
+                "ILI": [
+                        "Control de gastos(CDG)"
+                ],
+                "Inspección Taller": [
+                        "Web Proveedores"
+                ],
+                "Consultas y Reclamos": [
+                        "Web Proveedores"
+                ],
+                "Recibo de conformidad": [
+                        "Egresos"
+                ],
+                "Cedula de identidad": [
+                        "Egresos"
+                ],
+                "NO TIENE": [
+                        "Web oficiales",
+                        "Liquidación Perdida Total",
+                        "Proceso genera el informe de liquidación",
+                        "Web Liquidacion",
+                        "Control de gastos(CDG)",
+                        "CGS"
+                ],
+                "Finiquito legalizado": [
+                        "Liquidación Perdida Total"
+                ],
+                "Inspección del lugar": [
+                        "Fraude"
+                ],
+                "Entrevista personal asegurado": [
+                        "Fraude"
+                ],
+                "Pasadas del tag": [
+                        "Fraude"
+                ],
+                "Informe Autopista": [
+                        "Fraude"
+                ],
+                "Verificar cámaras de seguridad": [
+                        "Fraude"
+                ],
+                "Solicitud de participación de accidente": [
+                        "Fraude"
+                ],
+                "Parte Policial (Denuncio)": [
+                        "Fraude"
+                ],
+                "Parte Policial (Hallazgo)": [
+                        "Fraude"
+                ]
+        },
+        "platformDependencies": {
+                "Web Liquidacion": "Denuncios",
+                "Liquidación Perdida Total": "Denuncios",
+                "DJS(Declaracion Jurada Simple)": "Web Liquidacion",
+                "Fraude": "DJS(Declaracion Jurada Simple)",
+                "Egresos": "DJS(Declaracion Jurada Simple)"
+        },
+        "platformIconStatus": {
+                "Fraude": "SI",
+                "Liquidación Perdida Total": "SI",
+                "Gestor Documental": "OTHER",
+                "Recupero": "OTHER",
+                "Egresos": "SI",
+                "Web Liquidacion": "OTHER",
+                "Denuncios": "OTHER",
+                "DJS(Declaracion Jurada Simple)": "SI",
+                "Web oficiales": "SI",
+                "Web Proveedores": "OTHER",
+                "CGS": "OTHER",
+                "MDR": "NO",
+                "Control de gastos(CDG)": "SI",
+                "Web Oficiales": "SI"
+        }
+};
+
+        // Initialize with embedded data
+        const data = embeddedData;
+        
+        // Store global references for reuse
+        let globalPlatformNodes = null;
+        let globalPlatformPositions = null;
+        let globalPlatformEdges = null;
+        let globalDocToPlatforms = null;
+        
+        initializeVisualization();
+
+        function initializeVisualization() {
+            const svg = d3.select('#svg-container');
+            const documentTypesDiv = d3.select('#document-types');
+            const systemsDiv = d3.select('#systems');
+            
+            // Build platform dependency graph
+            const platformNodes = new Map();
+            const platformEdges = [];
+            
+            // Add all platforms as nodes
+            data.platforms.forEach(platform => {
+                platformNodes.set(platform, {
+                    name: platform,
+                    x: 0,
+                    y: 0,
+                    dependencies: []
+                });
+            });
+            
+            // Add dependency edges
+            Object.entries(data.platformDependencies).forEach(([platform, dependsOn]) => {
+                if (platformNodes.has(platform) && platformNodes.has(dependsOn)) {
+                    platformEdges.push({
+                        source: dependsOn,
+                        target: platform
+                    });
+                    platformNodes.get(platform).dependencies.push(dependsOn);
+                }
+            });
+            
+            // Layout platforms using a hierarchical layout
+            const platformPositions = layoutPlatforms(platformNodes, platformEdges);
+            
+            // Render document types on the left
+            renderDocumentTypes(documentTypesDiv, data.documentTypes, data.documentTypeToPlatforms);
+            
+            // Store edges globally
+            globalPlatformEdges = platformEdges;
+            
+            // Systems will be rendered in modal when a document type is clicked
+        }
+        
+        function layoutPlatforms(nodes, edges) {
+            // Simple hierarchical layout
+            const positions = new Map();
+            const levels = new Map();
+            const visited = new Set();
+            
+            // Find root nodes (nodes with no dependencies)
+            const rootNodes = Array.from(nodes.keys()).filter(node => {
+                return !Array.from(nodes.values()).some(n => n.dependencies.includes(node));
+            });
+            
+            // If no clear roots, use nodes with most dependencies pointing to them
+            if (rootNodes.length === 0) {
+                const inDegree = new Map();
+                Array.from(nodes.keys()).forEach(node => inDegree.set(node, 0));
+                edges.forEach(edge => {
+                    inDegree.set(edge.target, (inDegree.get(edge.target) || 0) + 1);
+                });
+                rootNodes.push(...Array.from(inDegree.entries())
+                    .sort((a, b) => a[1] - b[1])
+                    .slice(0, 1)
+                    .map(e => e[0]));
+            }
+            
+            // BFS to assign levels
+            const queue = rootNodes.map(node => ({ node, level: 0 }));
+            queue.forEach(item => levels.set(item.node, item.level));
+            
+            while (queue.length > 0) {
+                const { node, level } = queue.shift();
+                if (visited.has(node)) continue;
+                visited.add(node);
+                
+                edges.filter(e => e.source === node).forEach(edge => {
+                    if (!levels.has(edge.target)) {
+                        levels.set(edge.target, level + 1);
+                        queue.push({ node: edge.target, level: level + 1 });
+                    }
+                });
+            }
+            
+            // Position nodes by level
+            const nodesByLevel = new Map();
+            Array.from(levels.entries()).forEach(([node, level]) => {
+                if (!nodesByLevel.has(level)) {
+                    nodesByLevel.set(level, []);
+                }
+                nodesByLevel.get(level).push(node);
+            });
+            
+            const containerWidth = window.innerWidth - 200;
+            const containerHeight = window.innerHeight - 100;
+            const startX = containerWidth - 300;
+            const startY = 100;
+            const levelSpacing = 250;
+            const nodeSpacing = 80;
+            
+            Array.from(nodesByLevel.entries())
+                .sort((a, b) => a[0] - b[0])
+                .forEach(([level, levelNodes]) => {
+                    const yOffset = (levelNodes.length - 1) * nodeSpacing / 2;
+                    levelNodes.forEach((node, idx) => {
+                        positions.set(node, {
+                            x: startX - (level * levelSpacing),
+                            y: startY + (idx * nodeSpacing) - yOffset
+                        });
+                    });
+                });
+            
+            // Position any unassigned nodes
+            Array.from(nodes.keys()).forEach(node => {
+                if (!positions.has(node)) {
+                    positions.set(node, {
+                        x: startX,
+                        y: startY + Array.from(positions.values()).length * nodeSpacing
+                    });
+                }
+            });
+            
+            return positions;
+        }
+        
+        function renderDocumentTypes(container, documentTypes, docToPlatforms) {
+            const tooltip = d3.select('#tooltip');
+            
+            // Add "Document type" label
+            container.append('div')
+                .attr('class', 'document-type-label')
+                .text('Document type');
+            
+            container.selectAll('.document-type-item')
+                .data(documentTypes)
+                .enter()
+                .append('div')
+                .attr('class', 'document-type-item')
+                .append('div')
+                .attr('class', 'document-type-box')
+                .text(d => d)
+                .on('mouseenter', function(event, d) {
+                    d3.select(this).classed('highlighted', true);
+                    const platforms = docToPlatforms[d] || [];
+                    tooltip
+                        .style('display', 'block')
+                        .style('left', (event.pageX + 10) + 'px')
+                        .style('top', (event.pageY - 10) + 'px')
+                        .html(`<strong>${d}</strong><br/>Used by: ${platforms.join(', ')}`);
+                    
+                    // Highlight connected platforms
+                    highlightPlatforms(platforms, true);
+                })
+                .on('mouseleave', function() {
+                    d3.select(this).classed('highlighted', false);
+                    tooltip.style('display', 'none');
+                    highlightPlatforms([], false);
+                })
+                .on('click', function(event, d) {
+                    const platforms = docToPlatforms[d] || [];
+                    // Hide tooltip
+                    tooltip.style('display', 'none');
+                    // Highlight the selected document type
+                    d3.selectAll('.document-type-box').classed('highlighted', false);
+                    d3.select(this).classed('highlighted', true);
+                    // Show the dependency diagram in modal
+                    showDependencyDiagramInModal(d, platforms);
+                });
+        }
+        
+        function renderSystems(container, nodes, positions, docToPlatforms) {
+            const tooltip = d3.select('#tooltip');
+            
+            // Store for later use
+            globalPlatformNodes = nodes;
+            globalPlatformPositions = positions;
+            globalDocToPlatforms = docToPlatforms;
+            
+            // Clear existing systems
+            container.selectAll('.system-item').remove();
+            
+            // Initially hide all systems - they will be shown when a document type is clicked
+            // We'll create them but hide them
+            container.selectAll('.system-item')
+                .data(Array.from(nodes.entries()))
+                .enter()
+                .append('div')
+                .attr('class', 'system-item')
+                .style('display', 'none')
+                .each(function([name, nodeData]) {
+                    const pos = positions.get(name);
+                    if (!pos) return;
+                    
+                    const systemDiv = d3.select(this)
+                        .append('div')
+                        .attr('class', 'system-node')
+                        .style('left', pos.x + 'px')
+                        .style('top', pos.y + 'px')
+                        .attr('data-platform', name);
+                    
+                    // Add asterisk if this platform has dependencies
+                    if (nodeData.dependencies.length > 0) {
+                        systemDiv.append('span')
+                            .attr('class', 'asterisk')
+                            .text('*'.repeat(nodeData.dependencies.length));
+                    }
+                    
+                    systemDiv.append('span')
+                        .text(name);
+                });
+        }
+        
+        function showDependencyDiagramInModal(documentType, selectedPlatforms) {
+            // Open the modal
+            const modal = document.getElementById('dependencyModal');
+            const modalTitle = document.getElementById('modalTitle');
+            modalTitle.textContent = `Dependency Diagram: ${documentType}`;
+            modal.style.display = 'block';
+            
+            // Clear previous content
+            const modalSystems = d3.select('#modal-systems');
+            const modalSvg = d3.select('#modal-svg');
+            modalSystems.selectAll('*').remove();
+            modalSvg.selectAll('path').remove();
+            
+            if (!selectedPlatforms || selectedPlatforms.length === 0) {
+                modalSystems.append('div')
+                    .style('text-align', 'center')
+                    .style('padding', '50px')
+                    .style('color', '#666')
+                    .text('No platforms found for this document type');
+                return;
+            }
+            
+            // Build the dependency chain
+            const platformsToShow = new Set(selectedPlatforms);
+            const edgesToShow = [];
+            
+            const visited = new Set();
+            const toProcess = [...selectedPlatforms];
+            
+            while (toProcess.length > 0) {
+                const platform = toProcess.shift();
+                if (visited.has(platform)) continue;
+                visited.add(platform);
+                platformsToShow.add(platform);
+                
+                // Find platforms this one depends on
+                if (data.platformDependencies && data.platformDependencies[platform]) {
+                    const dep = data.platformDependencies[platform];
+                    if (!visited.has(dep)) {
+                        toProcess.push(dep);
+                        platformsToShow.add(dep);
+                        edgesToShow.push({ source: dep, target: platform });
+                    }
+                }
+                
+                // Find platforms that depend on this one
+                Object.entries(data.platformDependencies || {}).forEach(([p, dep]) => {
+                    if (dep === platform && !visited.has(p)) {
+                        toProcess.push(p);
+                        platformsToShow.add(p);
+                        edgesToShow.push({ source: platform, target: p });
+                    }
+                });
+            }
+            
+            // Wait for modal to be visible, then calculate positions
+            setTimeout(() => {
+                // Get container dimensions after modal is visible
+                const containerRect = modalSystems.node().getBoundingClientRect();
+                const containerWidth = containerRect.width || 1000;
+                
+                // Calculate positions with container width
+                const visiblePositions = layoutVisiblePlatforms(Array.from(platformsToShow), edgesToShow, containerWidth);
+                
+                const containerHeight = Math.max(500, Array.from(platformsToShow).length * 100);
+                modalSystems.style('height', containerHeight + 'px');
+                modalSvg.attr('height', containerHeight);
+                
+                // Render systems in modal
+                const systemItems = modalSystems.selectAll('.modal-system-item')
+                    .data(Array.from(platformsToShow))
+                    .enter()
+                    .append('div')
+                    .attr('class', 'modal-system-item')
+                    .style('position', 'absolute');
+                
+                systemItems.each(function(platform) {
+                    const pos = visiblePositions.get(platform);
+                    if (!pos) return;
+                    
+                    const systemDiv = d3.select(this)
+                        .append('div')
+                        .attr('class', 'system-node')
+                        .style('left', (pos.x) + 'px')
+                        .style('top', (pos.y) + 'px')
+                        .attr('data-platform', platform);
+                    
+                    // Check if this platform has dependencies
+                    const hasDependency = edgesToShow.some(e => e.target === platform);
+                    if (hasDependency) {
+                        systemDiv.append('span')
+                            .attr('class', 'asterisk')
+                            .text('*');
+                    }
+                    
+                    systemDiv.append('span')
+                        .text(platform);
+                    
+                    // Add icon based on obligation status
+                    const iconStatus = data.platformIconStatus && data.platformIconStatus[platform];
+                    if (iconStatus) {
+                        const iconSpan = systemDiv.append('span')
+                            .attr('class', 'platform-icon');
+                        
+                        if (iconStatus === 'SI') {
+                            iconSpan.attr('class', 'platform-icon icon-check')
+                                .text('✓');
+                        } else if (iconStatus === 'NO') {
+                            iconSpan.attr('class', 'platform-icon icon-cancel')
+                                .text('✗');
+                        } else if (iconStatus === 'OTHER') {
+                            iconSpan.attr('class', 'platform-icon icon-warning')
+                                .text('⚠');
+                        }
+                    }
+                });
+                
+                // Draw arrows
+                setTimeout(() => {
+                    drawDependencyArrowsInModal(edgesToShow, visiblePositions, modalSystems, modalSvg);
+                }, 50);
+            }, 10);
+        }
+        
+        function showDependencyDiagram(selectedPlatforms) {
+            // Hide all systems first
+            d3.selectAll('.system-item').style('display', 'none');
+            d3.selectAll('.arrow').remove();
+            
+            if (!selectedPlatforms || selectedPlatforms.length === 0) {
+                return;
+            }
+            
+            // Build the dependency chain starting from selected platforms
+            const platformsToShow = new Set(selectedPlatforms);
+            const edgesToShow = [];
+            
+            // Add all platforms in the dependency chain
+            const visited = new Set();
+            const toProcess = [...selectedPlatforms];
+            
+            while (toProcess.length > 0) {
+                const platform = toProcess.shift();
+                if (visited.has(platform)) continue;
+                visited.add(platform);
+                
+                // Add this platform to show
+                platformsToShow.add(platform);
+                
+                // Find platforms this one depends on (trace backwards - what must come before)
+                if (data.platformDependencies && data.platformDependencies[platform]) {
+                    const dep = data.platformDependencies[platform];
+                    if (!visited.has(dep)) {
+                        toProcess.push(dep);
+                        platformsToShow.add(dep);
+                        edgesToShow.push({ source: dep, target: platform });
+                    }
+                }
+                
+                // Find platforms that depend on this one (trace forwards - what comes after)
+                // Show full chain if any selected platform is in the chain
+                Object.entries(data.platformDependencies || {}).forEach(([p, dep]) => {
+                    if (dep === platform && !visited.has(p)) {
+                        toProcess.push(p);
+                        platformsToShow.add(p);
+                        edgesToShow.push({ source: platform, target: p });
+                    }
+                });
+            }
+            
+            // Show only relevant systems
+            d3.selectAll('.system-item')
+                .filter(function() {
+                    const platform = d3.select(this).select('.system-node').attr('data-platform');
+                    return platformsToShow.has(platform);
+                })
+                .style('display', 'block');
+            
+            // Calculate new positions for visible systems only
+            const visiblePositions = layoutVisiblePlatforms(Array.from(platformsToShow), edgesToShow, undefined);
+            
+            // Update positions
+            d3.selectAll('.system-item')
+                .filter(function() {
+                    const platform = d3.select(this).select('.system-node').attr('data-platform');
+                    return platformsToShow.has(platform);
+                })
+                .each(function() {
+                    const platform = d3.select(this).select('.system-node').attr('data-platform');
+                    const pos = visiblePositions.get(platform);
+                    if (pos) {
+                        d3.select(this)
+                            .select('.system-node')
+                            .style('left', pos.x + 'px')
+                            .style('top', pos.y + 'px');
+                    }
+                });
+            
+            // Draw arrows for the dependency flow
+            setTimeout(() => {
+                drawDependencyArrowsForVisible(edgesToShow, visiblePositions);
+            }, 50);
+        }
+        
+        function layoutVisiblePlatforms(platforms, edges, containerWidth) {
+            const positions = new Map();
+            const levels = new Map();
+            const visited = new Set();
+            
+            // Find root nodes (nodes with no incoming edges in the visible set)
+            const rootNodes = platforms.filter(platform => {
+                return !edges.some(e => e.target === platform);
+            });
+            
+            // If no clear roots, use the first platform
+            if (rootNodes.length === 0 && platforms.length > 0) {
+                rootNodes.push(platforms[0]);
+            }
+            
+            // BFS to assign levels
+            const queue = rootNodes.map(node => ({ node, level: 0 }));
+            queue.forEach(item => levels.set(item.node, item.level));
+            
+            while (queue.length > 0) {
+                const { node, level } = queue.shift();
+                if (visited.has(node)) continue;
+                visited.add(node);
+                
+                edges.filter(e => e.source === node).forEach(edge => {
+                    if (!levels.has(edge.target)) {
+                        levels.set(edge.target, level + 1);
+                        queue.push({ node: edge.target, level: level + 1 });
+                    }
+                });
+            }
+            
+            // Position nodes by level
+            const nodesByLevel = new Map();
+            Array.from(levels.entries()).forEach(([node, level]) => {
+                if (!nodesByLevel.has(level)) {
+                    nodesByLevel.set(level, []);
+                }
+                nodesByLevel.get(level).push(node);
+            });
+            
+            // Add unassigned nodes to level 0
+            platforms.forEach(platform => {
+                if (!levels.has(platform)) {
+                    if (!nodesByLevel.has(0)) {
+                        nodesByLevel.set(0, []);
+                    }
+                    nodesByLevel.get(0).push(platform);
+                }
+            });
+            
+            // Use provided container width or default to window width
+            const width = containerWidth || window.innerWidth;
+            const maxLevel = Math.max(...Array.from(nodesByLevel.keys()));
+            const levelSpacing = Math.min(250, (width - 200) / Math.max(1, maxLevel + 1));
+            const startX = 50; // Start from left in modal
+            const startY = 50;
+            const nodeSpacing = 80;
+            
+            Array.from(nodesByLevel.entries())
+                .sort((a, b) => a[0] - b[0])
+                .forEach(([level, levelNodes]) => {
+                    const yOffset = (levelNodes.length - 1) * nodeSpacing / 2;
+                    levelNodes.forEach((node, idx) => {
+                        positions.set(node, {
+                            x: startX + (level * levelSpacing),
+                            y: startY + (idx * nodeSpacing) - yOffset
+                        });
+                    });
+                });
+            
+            return positions;
+        }
+        
+        function drawDependencyArrowsForVisible(edges, positions) {
+            const svg = d3.select('#svg-container');
+            const containerRect = document.querySelector('.container').getBoundingClientRect();
+            
+            edges.forEach(edge => {
+                const sourceNode = document.querySelector(`.system-node[data-platform="${edge.source}"]`);
+                const targetNode = document.querySelector(`.system-node[data-platform="${edge.target}"]`);
+                
+                if (!sourceNode || !targetNode) return;
+                
+                const sourceRect = sourceNode.getBoundingClientRect();
+                const targetRect = targetNode.getBoundingClientRect();
+                
+                // Calculate arrow path relative to SVG
+                const sourceX = sourceRect.right - containerRect.left;
+                const sourceY = sourceRect.top + sourceRect.height / 2 - containerRect.top;
+                const targetX = targetRect.left - containerRect.left;
+                const targetY = targetRect.top + targetRect.height / 2 - containerRect.top;
+                
+                // Create curved path
+                const midX = (sourceX + targetX) / 2;
+                const path = d3.path();
+                path.moveTo(sourceX, sourceY);
+                path.quadraticCurveTo(midX, sourceY, targetX, targetY);
+                
+                svg.append('path')
+                    .attr('d', path.toString())
+                    .attr('class', 'arrow')
+                    .attr('data-source', edge.source)
+                    .attr('data-target', edge.target);
+            });
+        }
+        
+        function drawDependencyArrowsInModal(edges, positions, modalSystems, modalSvg) {
+            const modalSystemsRect = modalSystems.node().getBoundingClientRect();
+            
+            edges.forEach(edge => {
+                const sourceNode = modalSystems.node().querySelector(`.system-node[data-platform="${edge.source}"]`);
+                const targetNode = modalSystems.node().querySelector(`.system-node[data-platform="${edge.target}"]`);
+                
+                if (!sourceNode || !targetNode) return;
+                
+                const sourceRect = sourceNode.getBoundingClientRect();
+                const targetRect = targetNode.getBoundingClientRect();
+                
+                // Calculate arrow path relative to modal SVG
+                const sourceX = sourceRect.right - modalSystemsRect.left;
+                const sourceY = sourceRect.top + sourceRect.height / 2 - modalSystemsRect.top;
+                const targetX = targetRect.left - modalSystemsRect.left;
+                const targetY = targetRect.top + targetRect.height / 2 - modalSystemsRect.top;
+                
+                // Create curved path
+                const midX = (sourceX + targetX) / 2;
+                const path = d3.path();
+                path.moveTo(sourceX, sourceY);
+                path.quadraticCurveTo(midX, sourceY, targetX, targetY);
+                
+                modalSvg.append('path')
+                    .attr('d', path.toString())
+                    .attr('class', 'arrow')
+                    .attr('stroke', 'red')
+                    .attr('stroke-width', '2')
+                    .attr('fill', 'none')
+                    .attr('marker-end', 'url(#modal-arrowhead-red)')
+                    .attr('data-source', edge.source)
+                    .attr('data-target', edge.target);
+            });
+        }
+        
+        // Modal close functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('dependencyModal');
+            const closeBtn = document.getElementById('closeModal');
+            
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+            };
+            
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        });
+        
+        function drawDependencyArrows(svg, nodes, positions, edges) {
+            const systemsSection = document.querySelector('#systems');
+            const systemsRect = systemsSection.getBoundingClientRect();
+            const containerRect = document.querySelector('.container').getBoundingClientRect();
+            
+            edges.forEach(edge => {
+                const sourcePos = positions.get(edge.source);
+                const targetPos = positions.get(edge.target);
+                
+                if (!sourcePos || !targetPos) return;
+                
+                // Get actual positions of system nodes
+                const sourceNode = document.querySelector(`.system-node[data-platform="${edge.source}"]`);
+                const targetNode = document.querySelector(`.system-node[data-platform="${edge.target}"]`);
+                
+                if (!sourceNode || !targetNode) return;
+                
+                const sourceRect = sourceNode.getBoundingClientRect();
+                const targetRect = targetNode.getBoundingClientRect();
+                
+                // Calculate arrow path relative to SVG
+                const sourceX = sourceRect.right - containerRect.left;
+                const sourceY = sourceRect.top + sourceRect.height / 2 - containerRect.top;
+                const targetX = targetRect.left - containerRect.left;
+                const targetY = targetRect.top + targetRect.height / 2 - containerRect.top;
+                
+                // Create curved path
+                const midX = (sourceX + targetX) / 2;
+                const path = d3.path();
+                path.moveTo(sourceX, sourceY);
+                path.quadraticCurveTo(midX, sourceY, targetX, targetY);
+                
+                svg.append('path')
+                    .attr('d', path.toString())
+                    .attr('class', 'arrow')
+                    .attr('data-source', edge.source)
+                    .attr('data-target', edge.target);
+            });
+        }
+        
+        function drawDocumentTypeConnections(svg, docToPlatforms, platformPositions) {
+            // This can be used to draw lines from document types to platforms if needed
+            // For now, we'll use hover highlighting instead
+        }
+        
+        function highlightPlatforms(platformNames, highlight) {
+            d3.selectAll('.system-node')
+                .classed('highlighted', function() {
+                    return highlight && platformNames.includes(d3.select(this).attr('data-platform'));
+                });
+        }
+        
+        function highlightDocumentType(docType, platforms) {
+            // Reset all highlights
+            d3.selectAll('.document-type-box').classed('highlighted', false);
+            d3.selectAll('.system-node').classed('highlighted', false);
+            d3.selectAll('.arrow').classed('highlighted', false);
+            
+            // Highlight selected document type
+            d3.selectAll('.document-type-box')
+                .filter(d => d === docType)
+                .classed('highlighted', true);
+            
+            // Highlight connected platforms
+            highlightPlatforms(platforms, true);
+        }
+        
+        function highlightSystemPath(platformName, nodes) {
+            // Reset all highlights
+            d3.selectAll('.document-type-box').classed('highlighted', false);
+            d3.selectAll('.system-node').classed('highlighted', false);
+            d3.selectAll('.arrow').classed('highlighted', false);
+            
+            // Highlight the platform and its dependency chain
+            const visited = new Set();
+            const toVisit = [platformName];
+            
+            while (toVisit.length > 0) {
+                const current = toVisit.shift();
+                if (visited.has(current)) continue;
+                visited.add(current);
+                
+                // Highlight this node
+                d3.selectAll('.system-node')
+                    .filter(function() {
+                        return d3.select(this).attr('data-platform') === current;
+                    })
+                    .classed('highlighted', true);
+                
+                // Highlight arrows pointing to this node
+                d3.selectAll('.arrow')
+                    .filter(function() {
+                        return d3.select(this).attr('data-target') === current;
+                    })
+                    .classed('highlighted', true);
+                
+                // Add dependencies to visit
+                const node = Array.from(nodes.entries()).find(([name]) => name === current);
+                if (node && node[1].dependencies) {
+                    node[1].dependencies.forEach(dep => {
+                        if (!visited.has(dep)) {
+                            toVisit.push(dep);
+                        }
+                    });
+                }
+            }
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Could re-layout on resize if needed
+        });
+    </script>
+</body>
+</html>
+

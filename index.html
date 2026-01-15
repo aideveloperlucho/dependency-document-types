@@ -95,22 +95,8 @@
         }
         
         .asterisk {
-            position: absolute;
-            left: -24px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #dc3545;
-            font-weight: bold;
-            font-size: 16px;
-            background: white;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 2px solid #dc3545;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Ocultar los asteriscos de los nodos - ya tenemos círculos rojos en el SVG */
+            display: none;
         }
         
         .arrow {
@@ -202,7 +188,7 @@
             width: 90%;
             max-width: 1400px;
             max-height: 90vh;
-            overflow: visible;
+            overflow: hidden;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -269,6 +255,7 @@
             background: #f8f9fa;
             flex: 1;
             overflow: auto;
+            box-sizing: border-box;
         }
         
         .modal-systems-section {
@@ -289,6 +276,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 1;
+            overflow: hidden;
         }
         
         .modal-system-item {
@@ -543,8 +531,8 @@
             <div class="modal-diagram-container">
                 <svg id="modal-svg" class="modal-svg">
                     <defs>
-                        <marker id="modal-arrowhead-red" markerWidth="12" markerHeight="12" refX="12" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
-                            <polygon points="0 0, 12 3.5, 0 7" fill="#dc3545" stroke="#c82333" stroke-width="1" />
+                        <marker id="modal-arrowhead-red" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+                            <polygon points="0 6, 12 0, 12 12" fill="#dc3545" stroke="#c82333" stroke-width="1" />
                         </marker>
                     </defs>
                 </svg>
@@ -2393,7 +2381,10 @@
             const modalSystems = d3.select('#modal-systems');
             const modalSvg = d3.select('#modal-svg');
             modalSystems.selectAll('*').remove();
-            modalSvg.selectAll('*').remove(); // Clear all SVG elements, not just paths
+            // Limpiar solo paths, círculos y textos, NO los defs (que contienen el marker de flecha)
+            modalSvg.selectAll('path').remove();
+            modalSvg.selectAll('circle').remove();
+            modalSvg.selectAll('text').remove();
             
             // Remove any existing tooltips
             d3.selectAll('.obligation-tooltip').remove();
@@ -2883,9 +2874,9 @@
         }
         
         /**
-         * Crea un path curvo horizontal y suave usando cubic bezier
-         * REGLA: Siempre horizontal (derecha → izquierda)
-         * Usa d3.linkHorizontal() equivalente con curva Bézier
+         * Crea un path curvo horizontal usando cubic bezier (estilo d3.linkHorizontal)
+         * REGLA: Las flechas SALEN horizontalmente y ENTRAN horizontalmente
+         * La curva ocurre solo en el medio del path
          * @param {number} sourceX - Coordenada X del punto origen (borde derecho)
          * @param {number} sourceY - Coordenada Y del punto origen (centro vertical + offset)
          * @param {number} targetX - Coordenada X del punto destino (borde izquierdo - margin)
@@ -2893,24 +2884,21 @@
          * @returns {string} String del path SVG
          */
         function createHorizontalCurvePath(sourceX, sourceY, targetX, targetY) {
-            const distanceX = targetX - sourceX;
-            const distanceY = targetY - sourceY;
+            // d3.linkHorizontal() equivalente:
+            // - Sale HORIZONTALMENTE desde el punto de origen
+            // - Entra HORIZONTALMENTE al punto de destino
+            // - La curva ocurre en el medio
             
-            // Curva horizontal suave: usar d3.linkHorizontal() equivalente
-            // Control points para curva Bézier horizontal
-            // Curvatura proporcional a la distancia vertical (para evitar curvas exageradas)
-            const curveFactor = 0.3; // 30% de la distancia horizontal para la curva
-            const curveDistance = Math.abs(distanceX) * curveFactor;
+            // Punto medio horizontal entre source y target
+            const midX = (sourceX + targetX) / 2;
             
-            // Control points: curva horizontal suave
-            // Si hay diferencia vertical, crear una curva S suave
-            const verticalOffset = Math.abs(distanceY) * 0.2; // 20% de la diferencia vertical
+            // Control points: exactamente en el punto medio X, pero con Y del origen/destino
+            // Esto garantiza que la flecha salga y entre horizontalmente
+            const control1X = midX;
+            const control1Y = sourceY;  // Mismo Y que origen = sale horizontal
             
-            const control1X = sourceX + curveDistance;
-            const control1Y = sourceY + (distanceY > 0 ? verticalOffset : -verticalOffset);
-            
-            const control2X = targetX - curveDistance;
-            const control2Y = targetY - (distanceY > 0 ? verticalOffset : -verticalOffset);
+            const control2X = midX;
+            const control2Y = targetY;  // Mismo Y que destino = entra horizontal
             
             const path = d3.path();
             path.moveTo(sourceX, sourceY);
@@ -3109,23 +3097,101 @@
          * @param {d3.Selection} modalSvg - Selección D3 del SVG
          */
         function drawDependencyArrowsInModal(edges, positions, modalSystems, modalSvg) {
-            // Usar la función reutilizable con opciones optimizadas
-            drawConnectionArrows(
-                edges,
-                modalSystems,
-                modalSvg,
-                '.system-node',           // Selector de nodos
-                'data-platform',          // Atributo identificador
-                'modal-arrowhead-red',    // ID del marker
-                {
-                    gap: 0,                    // Sin gap inicial (anclaje exacto al borde)
-                    arrowheadMargin: 10,       // Margen de 10px para evitar que arrowhead se monte
-                    strokeColor: '#dc3545',
-                    strokeWidth: '3.5',
-                    showSourceMarker: true,
-                    sourceMarkerRadius: 8
+            // Limpiar flechas existentes
+            modalSvg.selectAll('path.connection-arrow').remove();
+            modalSvg.selectAll('circle.connection-source-marker').remove();
+            modalSvg.selectAll('text.connection-source-asterisk').remove();
+            
+            // IMPORTANTE: El SVG está posicionado absolute dentro de modal-diagram-container
+            // Usamos ese contenedor como referencia para las coordenadas
+            const svgNode = modalSvg.node();
+            const svgRect = svgNode.getBoundingClientRect();
+            
+            // Asegurar que el marker existe
+            let defs = modalSvg.select('defs');
+            if (defs.empty()) {
+                defs = modalSvg.append('defs');
+            }
+            
+            // Agrupar edges por nodo origen para calcular offsets
+            const edgesBySource = {};
+            edges.forEach(edge => {
+                if (!edgesBySource[edge.source]) {
+                    edgesBySource[edge.source] = [];
                 }
-            );
+                edgesBySource[edge.source].push(edge);
+            });
+            
+            // Dibujar cada conexión
+            edges.forEach(edge => {
+                // Buscar los nodos
+                const sourceNode = modalSystems.node().querySelector(`.system-node[data-platform="${edge.source}"]`);
+                const targetNode = modalSystems.node().querySelector(`.system-node[data-platform="${edge.target}"]`);
+                
+                if (!sourceNode || !targetNode) {
+                    console.warn(`Nodes not found: ${edge.source} -> ${edge.target}`);
+                    return;
+                }
+                
+                const sourceRect = sourceNode.getBoundingClientRect();
+                const targetRect = targetNode.getBoundingClientRect();
+                
+                // Calcular offset para múltiples flechas del mismo origen
+                const sourceEdges = edgesBySource[edge.source];
+                const offsetIndex = sourceEdges.findIndex(e => e.target === edge.target);
+                const totalFromSource = sourceEdges.length;
+                const offsetY = calculateOffsetForMultipleArrows(offsetIndex, totalFromSource);
+                
+                // CALCULAR COORDENADAS RELATIVAS AL SVG (no al contenedor de nodos)
+                // Source: borde DERECHO del nodo origen
+                const sourceX = sourceRect.right - svgRect.left;
+                const sourceY = sourceRect.top + sourceRect.height / 2 - svgRect.top + offsetY;
+                
+                // Target: borde IZQUIERDO del nodo destino
+                // El margen es solo para que la PUNTA del arrowhead toque el borde (no el path)
+                // El marker tiene refX=12, así que el path debe terminar 12px antes del borde
+                const arrowheadSize = 12;
+                const targetX = targetRect.left - svgRect.left - arrowheadSize;
+                const targetY = targetRect.top + targetRect.height / 2 - svgRect.top + offsetY;
+                
+                // Crear path horizontal suave (estilo d3.linkHorizontal)
+                const midX = (sourceX + targetX) / 2;
+                const pathString = `M ${sourceX} ${sourceY} C ${midX} ${sourceY}, ${midX} ${targetY}, ${targetX} ${targetY}`;
+                
+                // Dibujar la flecha
+                modalSvg.append('path')
+                    .attr('class', 'connection-arrow')
+                    .attr('d', pathString)
+                    .attr('stroke', '#dc3545')
+                    .attr('stroke-width', '3.5')
+                    .attr('fill', 'none')
+                    .attr('stroke-linecap', 'round')
+                    .attr('stroke-linejoin', 'round')
+                    .attr('marker-end', 'url(#modal-arrowhead-red)')
+                    .attr('filter', 'drop-shadow(0 2px 4px rgba(220, 53, 69, 0.4))');
+                
+                // Dibujar círculo con asterisco en el punto de origen
+                modalSvg.append('circle')
+                    .attr('class', 'connection-source-marker')
+                    .attr('cx', sourceX)
+                    .attr('cy', sourceY)
+                    .attr('r', 8)
+                    .attr('fill', '#dc3545')
+                    .attr('stroke', '#ffffff')
+                    .attr('stroke-width', '2');
+                
+                modalSvg.append('text')
+                    .attr('class', 'connection-source-asterisk')
+                    .attr('x', sourceX)
+                    .attr('y', sourceY)
+                    .attr('text-anchor', 'middle')
+                    .attr('dominant-baseline', 'central')
+                    .attr('fill', '#ffffff')
+                    .attr('font-size', '10px')
+                    .attr('font-weight', 'bold')
+                    .attr('pointer-events', 'none')
+                    .text('*');
+            });
         }
         
         // Modal close functionality

@@ -17,8 +17,10 @@
     "Comprobante llaves/GPS",
     "Constancia / Parte Policial",
     "Cuestionario Completo",
+    "Daños específicos del vehículo",
     "Declaración Jurada Simple",
     "Denuncia Policial",
+    "Documento Adicional",
     "Documentos Consultas Reclamos",
     "Documentos Genérico",
     "Documentos Ingreso Reingreso",
@@ -26,6 +28,7 @@
     "Documentos Seguimiento Reparación",
     "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)",
     "Documentos que proporcionen evidencia del recupero",
+    "Facturas de más de 365 días",
     "Finiquito",
     "Fotografías Adicionales del Siniestro",
     "FotosInspeccion",
@@ -37,14 +40,19 @@
     "Frontal",
     "Guía de Despacho",
     "Guía de traslado",
+    "Guia de traslado",
     "Informe de Liquidación",
+    "Inspección",
     "Inspección Liquidador",
     "Interior",
     "Kilometraje",
     "Lateral derecho (copiloto)",
     "Lateral izquierdo (conductor)",
     "Liquidación Oficial",
+    "Lugar del Accidente",
     "Ocurrencia del siniestro",
+    "Orden de Compra",
+    "Orden de Compra PT",
     "Otros",
     "Otros Daños",
     "PDF Valorización",
@@ -63,6 +71,7 @@
     "Resumen Liquidador",
     "Revision tecnica homologacion",
     "Trasera",
+    "SIN DOCUMENT TYPES",
     "Valor Comercial",
     "Voucher alcotest",
     "Cedula de Identidad",
@@ -88,8 +97,26 @@
     "ILI",
     "Inspección Taller",
     "Consultas y Reclamos",
+    "PPC",
+    "DJC",
+    "DJS",
+    "RCP",
+    "CPPolicial",
     "Recibo de conformidad",
+    "Cedula de identidad",
     "NO TIENE",
+    "FA",
+    "BH",
+    "PD",
+    "1",
+    "2",
+    "4",
+    "5",
+    "82",
+    "AC",
+    "C8",
+    "Poliza",
+    "Antecedentes",
     "Finiquito legalizado",
     "Inspección del lugar",
     "Entrevista personal asegurado",
@@ -101,20 +128,21 @@
     "Parte Policial (Hallazgo)"
   ],
   "platforms": [
-    "Liquidación Perdida Total",
-    "Egresos",
-    "MDR",
-    "Web Oficiales",
-    "Web Proveedores",
-    "Denuncios",
-    "Web Liquidacion",
-    "Web oficiales",
     "DJS(Declaracion Jurada Simple)",
-    "Recupero",
-    "Proceso genera el informe de liquidación",
     "Fraude",
+    "Gestor Documental",
+    "MDR",
+    "Liquidación Perdida Total",
+    "Web Liquidacion",
+    "Denuncios",
+    "CGS",
+    "Web Oficiales",
+    "Proceso genera el informe de liquidación",
     "Control de gastos(CDG)",
-    "CGS"
+    "Web Proveedores",
+    "Web oficiales",
+    "Recupero",
+    "Egresos"
   ],
   "documentTypeToPlatforms": {
     "Informe Tecnico": [
@@ -124,6 +152,7 @@
       "Liquidación Perdida Total"
     ],
     "Atencion medica": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Autorización de Entrega (Acreedor)": [
@@ -134,6 +163,7 @@
       "Liquidación Perdida Total"
     ],
     "Carta de saldo insoluto y compromiso alzamiento": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Cedula de Identidad(Otros)": [
@@ -143,60 +173,78 @@
       "Web Liquidacion"
     ],
     "Certificado de Anotaciones Vigentes": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Certificado de pago multas": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Certificado de viajes": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Comprobante Grúa": [
+      "Gestor Documental",
       "Recupero",
-      "Web Liquidacion",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Web Liquidacion"
     ],
     "Comprobante de Ingreso": [
       "Web Liquidacion"
     ],
     "Comprobante de testigos": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Comprobante llaves/GPS": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Constancia / Parte Policial": [
-      "Web Liquidacion",
-      "Liquidación Perdida Total"
+      "Gestor Documental",
+      "Recupero",
+      "Liquidación Perdida Total",
+      "Web Liquidacion"
     ],
     "Cuestionario Completo": [
-      "Web Liquidacion",
-      "Liquidación Perdida Total"
+      "Recupero",
+      "Liquidación Perdida Total",
+      "Web Liquidacion"
+    ],
+    "Daños específicos del vehículo": [
+      "Gestor Documental"
     ],
     "Declaración Jurada Simple": [
-      "Denuncios",
-      "Web Liquidacion",
+      "DJS(Declaracion Jurada Simple)",
       "Liquidación Perdida Total",
-      "DJS(Declaracion Jurada Simple)"
+      "Web Liquidacion",
+      "Denuncios",
+      "Recupero",
+      "Gestor Documental"
     ],
     "Denuncia Policial": [
-      "Denuncios",
+      "DJS(Declaracion Jurada Simple)",
       "Liquidación Perdida Total",
-      "DJS(Declaracion Jurada Simple)"
+      "Denuncios"
+    ],
+    "Documento Adicional": [
+      "Gestor Documental"
     ],
     "Documentos Consultas Reclamos": [
       "Web Proveedores"
     ],
     "Documentos Genérico": [
-      "Web oficiales",
-      "Web Proveedores"
+      "Web Proveedores",
+      "Web oficiales"
     ],
     "Documentos Ingreso Reingreso": [
       "Web Proveedores"
     ],
     "Documentos Inspección Taller": [
-      "Web Liquidacion",
-      "Web Proveedores"
+      "Web Proveedores",
+      "Recupero",
+      "Web Liquidacion"
     ],
     "Documentos Seguimiento Reparación": [
       "Web Liquidacion"
@@ -207,11 +255,15 @@
     "Documentos que proporcionen evidencia del recupero": [
       "Liquidación Perdida Total"
     ],
+    "Facturas de más de 365 días": [
+      "Recupero"
+    ],
     "Finiquito": [
-      "Web Liquidacion",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Web Liquidacion"
     ],
     "Fotografías Adicionales del Siniestro": [
+      "Recupero",
       "Liquidación Perdida Total"
     ],
     "FotosInspeccion": [
@@ -224,20 +276,25 @@
       "Web Liquidacion"
     ],
     "Fotos y Videos Localización": [
-      "Denuncios",
-      "Liquidación Perdida Total"
+      "Recupero",
+      "Liquidación Perdida Total",
+      "Denuncios"
     ],
     "Fotos y Videos de los daños": [
-      "Denuncios",
+      "DJS(Declaracion Jurada Simple)",
+      "Recupero",
       "Liquidación Perdida Total",
-      "DJS(Declaracion Jurada Simple)"
+      "Denuncios"
     ],
     "Fotos y Videos otros": [
+      "Recupero",
       "Denuncios",
       "Liquidación Perdida Total",
       "CGS"
     ],
     "Frontal": [
+      "Gestor Documental",
+      "Recupero",
       "Liquidación Perdida Total"
     ],
     "Guía de Despacho": [
@@ -247,37 +304,64 @@
     "Guía de traslado": [
       "Liquidación Perdida Total"
     ],
+    "Guia de traslado": [
+      "Gestor Documental"
+    ],
     "Informe de Liquidación": [
       "Liquidación Perdida Total"
     ],
+    "Inspección": [
+      "Recupero"
+    ],
     "Inspección Liquidador": [
-      "Web Liquidacion",
+      "Control de gastos(CDG)",
+      "Recupero",
       "Liquidación Perdida Total",
-      "Control de gastos(CDG)"
+      "Web Liquidacion"
     ],
     "Interior": [
+      "Gestor Documental",
+      "Recupero",
       "Liquidación Perdida Total"
     ],
     "Kilometraje": [
+      "Gestor Documental",
+      "Recupero",
       "Liquidación Perdida Total"
     ],
     "Lateral derecho (copiloto)": [
+      "Gestor Documental",
+      "Recupero",
       "Liquidación Perdida Total"
     ],
     "Lateral izquierdo (conductor)": [
+      "Gestor Documental",
+      "Recupero",
       "Liquidación Perdida Total"
     ],
     "Liquidación Oficial": [
+      "Recupero",
       "Liquidación Perdida Total"
+    ],
+    "Lugar del Accidente": [
+      "Gestor Documental"
     ],
     "Ocurrencia del siniestro": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
+    "Orden de Compra": [
+      "Recupero"
+    ],
+    "Orden de Compra PT": [
+      "Recupero"
+    ],
     "Otros": [
-      "Web Liquidacion",
-      "Liquidación Perdida Total",
       "Fraude",
-      "Web Proveedores"
+      "Liquidación Perdida Total",
+      "Web Liquidacion",
+      "Web Proveedores",
+      "Gestor Documental"
     ],
     "Otros Daños": [
       "Liquidación Perdida Total"
@@ -286,39 +370,45 @@
       "Liquidación Perdida Total"
     ],
     "Pagaré": [
-      "Web Liquidacion",
-      "Liquidación Perdida Total"
+      "Recupero",
+      "Liquidación Perdida Total",
+      "Web Liquidacion"
     ],
     "Parte de Hallazgo del Vehículo": [
-      "Web Liquidacion",
-      "Liquidación Perdida Total"
+      "Gestor Documental",
+      "Liquidación Perdida Total",
+      "Web Liquidacion"
     ],
     "Peritaje": [
+      "Recupero",
       "Web Liquidacion"
     ],
     "Permiso de circulacion": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Presupuesto": [
-      "Web Liquidacion",
+      "Web Proveedores",
+      "Gestor Documental",
       "Egresos",
-      "Web Proveedores"
+      "Web Liquidacion"
     ],
     "Presupuesto Salvataje": [
       "Web Liquidacion"
     ],
     "Recibo de Conformidad": [
-      "Web Liquidacion",
       "Liquidación Perdida Total",
-      "Egresos",
-      "Web Proveedores"
+      "Web Liquidacion",
+      "Web Proveedores",
+      "Recupero",
+      "Egresos"
     ],
     "Respaldo Factura": [
       "Liquidación Perdida Total"
     ],
     "Respaldo Impugnación": [
-      "Web Liquidacion",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Web Liquidacion"
     ],
     "Respaldo Propuesta Impugna": [
       "Liquidación Perdida Total"
@@ -333,30 +423,36 @@
       "Denuncios"
     ],
     "Revision tecnica homologacion": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Trasera": [
+      "Gestor Documental",
+      "Recupero",
       "Liquidación Perdida Total"
+    ],
+    "SIN DOCUMENT TYPES": [
+      "Fraude"
     ],
     "Valor Comercial": [
       "Web Liquidacion"
     ],
     "Voucher alcotest": [
-      "Web Liquidacion",
-      "Liquidación Perdida Total"
+      "Gestor Documental",
+      "Liquidación Perdida Total",
+      "Web Liquidacion"
     ],
     "Cedula de Identidad": [
-      "Liquidación Perdida Total",
-      "Egresos",
-      "Denuncios",
-      "Web Liquidacion",
       "DJS(Declaracion Jurada Simple)",
-      "Fraude"
+      "Liquidación Perdida Total",
+      "Web Liquidacion",
+      "Denuncios"
     ],
     "Cedula de Identidad Reverso": [
       "Denuncios"
     ],
     "Certificado deuda de alimentos": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Cuestionario Cliente": [
@@ -369,10 +465,11 @@
       "Liquidación Perdida Total"
     ],
     "Licencia de Conducir": [
-      "Denuncios",
-      "Web Liquidacion",
+      "DJS(Declaracion Jurada Simple)",
       "Liquidación Perdida Total",
-      "DJS(Declaracion Jurada Simple)"
+      "Web Liquidacion",
+      "Denuncios",
+      "Gestor Documental"
     ],
     "Licencia de Conducir Reverso": [
       "Denuncios"
@@ -381,6 +478,7 @@
       "Liquidación Perdida Total"
     ],
     "Factura de compraventa": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Informe Autofact": [
@@ -390,6 +488,7 @@
       "Liquidación Perdida Total"
     ],
     "Número Vin": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Otro": [
@@ -399,6 +498,7 @@
       "Web Liquidacion"
     ],
     "Patente": [
+      "Gestor Documental",
       "Liquidación Perdida Total"
     ],
     "Permiso de circulación": [
@@ -408,14 +508,16 @@
       "Liquidación Perdida Total"
     ],
     "Genérico": [
-      "Web Oficiales",
-      "Web Proveedores"
+      "Web Proveedores",
+      "Web Oficiales"
     ],
     "Ingreso – Reingreso": [
       "Web Proveedores"
     ],
     "ILI": [
-      "Control de gastos(CDG)"
+      "Control de gastos(CDG)",
+      "Recupero",
+      "Liquidación Perdida Total"
     ],
     "Inspección Taller": [
       "Web Proveedores"
@@ -423,16 +525,70 @@
     "Consultas y Reclamos": [
       "Web Proveedores"
     ],
+    "PPC": [
+      "Recupero"
+    ],
+    "DJC": [
+      "Recupero"
+    ],
+    "DJS": [
+      "Recupero"
+    ],
+    "RCP": [
+      "Recupero"
+    ],
+    "CPPolicial": [
+      "Recupero"
+    ],
     "Recibo de conformidad": [
+      "Egresos"
+    ],
+    "Cedula de identidad": [
       "Egresos"
     ],
     "NO TIENE": [
       "Liquidación Perdida Total",
+      "CGS",
       "Web Liquidacion",
-      "Web oficiales",
-      "Proceso genera el informe de liquidación",
       "Control de gastos(CDG)",
-      "CGS"
+      "Web oficiales",
+      "Proceso genera el informe de liquidación"
+    ],
+    "FA": [
+      "Recupero"
+    ],
+    "BH": [
+      "Recupero"
+    ],
+    "PD": [
+      "Recupero"
+    ],
+    "1": [
+      "Recupero"
+    ],
+    "2": [
+      "Recupero"
+    ],
+    "4": [
+      "Recupero"
+    ],
+    "5": [
+      "Recupero"
+    ],
+    "82": [
+      "Recupero"
+    ],
+    "AC": [
+      "Recupero"
+    ],
+    "C8": [
+      "Recupero"
+    ],
+    "Poliza": [
+      "Recupero"
+    ],
+    "Antecedentes": [
+      "Recupero"
     ],
     "Finiquito legalizado": [
       "Liquidación Perdida Total"
@@ -463,12 +619,16 @@
     ]
   },
   "documentTypePlatformDependencies": {
+    "Carta de saldo insoluto y compromiso alzamiento": {
+      "Gestor Documental": "Liquidación Perdida Total"
+    },
     "Cedula de Identidad": {
       "Web Liquidacion": "Denuncios",
-      "Liquidación Perdida Total": "Denuncios",
-      "DJS(Declaracion Jurada Simple)": "Web Liquidacion",
-      "Fraude": "DJS(Declaracion Jurada Simple)",
-      "Egresos": "DJS(Declaracion Jurada Simple)"
+      "Liquidación Perdida Total": "Web Liquidacion",
+      "DJS(Declaracion Jurada Simple)": "Web Liquidacion"
+    },
+    "Cedula de identidad": {
+      "Egresos": "Web Liquidacion"
     }
   },
   "documentPlatformObligationText": {
@@ -479,7 +639,8 @@
       "Liquidación Perdida Total": "SI"
     },
     "Atencion medica": {
-      "Liquidación Perdida Total": "SI"
+      "Liquidación Perdida Total": "SI",
+      "Gestor Documental": "NO"
     },
     "Autorización de Entrega (Acreedor)": {
       "Liquidación Perdida Total": "Si"
@@ -489,7 +650,8 @@
       "Recupero": "NO"
     },
     "Carta de saldo insoluto y compromiso alzamiento": {
-      "Liquidación Perdida Total": "SI"
+      "Liquidación Perdida Total": "SI",
+      "Gestor Documental": "SI"
     },
     "Cedula de Identidad(Otros)": {
       "Egresos": "Si"
@@ -497,27 +659,54 @@
     "Certificado Perdida Total": {
       "Web Liquidacion": "?"
     },
+    "Certificado de Anotaciones Vigentes": {
+      "Gestor Documental": "SI"
+    },
+    "Certificado de pago multas": {
+      "Gestor Documental": "NO"
+    },
+    "Certificado de viajes": {
+      "Gestor Documental": "SI"
+    },
     "Comprobante Grúa": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
-      "Recupero": "NO"
+      "Recupero": "NO",
+      "Gestor Documental": "NO"
     },
     "Comprobante de Ingreso": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
     },
+    "Comprobante de testigos": {
+      "Gestor Documental": "NO"
+    },
+    "Comprobante llaves/GPS": {
+      "Gestor Documental": "SI"
+    },
     "Constancia / Parte Policial": {
-      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Recupero": "NO",
+      "Gestor Documental": "SI / NO"
     },
     "Cuestionario Completo": {
-      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Recupero": "NO"
+    },
+    "Daños específicos del vehículo": {
+      "Gestor Documental": "NO"
     },
     "Declaración Jurada Simple": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
       "Denuncios": "NO",
-      "DJS(Declaracion Jurada Simple)": "Si"
+      "DJS(Declaracion Jurada Simple)": "Si",
+      "Recupero": "NO",
+      "Gestor Documental": "SI"
     },
     "Denuncia Policial": {
       "Denuncios": "NO",
       "DJS(Declaracion Jurada Simple)": "Si"
+    },
+    "Documento Adicional": {
+      "Gestor Documental": "NO"
     },
     "Documentos Genérico": {
       "Web oficiales": "SI"
@@ -527,7 +716,8 @@
     },
     "Documentos Inspección Taller": {
       "Web Proveedores": "NO",
-      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Recupero": "NO"
     },
     "Documentos Seguimiento Reparación": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
@@ -535,8 +725,14 @@
     "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
     },
+    "Facturas de más de 365 días": {
+      "Recupero": "NO"
+    },
     "Finiquito": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Fotografías Adicionales del Siniestro": {
+      "Recupero": "NO"
     },
     "FotosInspeccion": {
       "Web Liquidacion": "SI"
@@ -548,41 +744,94 @@
       "Web Liquidacion": "SI"
     },
     "Fotos y Videos Localización": {
-      "Denuncios": "NO"
+      "Denuncios": "NO",
+      "Recupero": "NO"
     },
     "Fotos y Videos de los daños": {
       "DJS(Declaracion Jurada Simple)": "Si",
-      "Denuncios": "NO"
+      "Denuncios": "NO",
+      "Recupero": "NO"
     },
     "Fotos y Videos otros": {
       "CGS": "NO",
-      "Denuncios": "NO"
+      "Denuncios": "NO",
+      "Recupero": "NO"
+    },
+    "Frontal": {
+      "Recupero": "NO",
+      "Gestor Documental": "SI"
     },
     "Guía de Despacho": {
       "MDR": "NO"
     },
+    "Guia de traslado": {
+      "Gestor Documental": "NO"
+    },
+    "Inspección": {
+      "Recupero": "NO"
+    },
     "Inspección Liquidador": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
-      "Control de gastos(CDG)": "SI"
+      "Control de gastos(CDG)": "SI",
+      "Recupero": "SI"
+    },
+    "Interior": {
+      "Recupero": "NO",
+      "Gestor Documental": "SI"
+    },
+    "Kilometraje": {
+      "Recupero": "NO",
+      "Gestor Documental": "SI"
+    },
+    "Lateral derecho (copiloto)": {
+      "Recupero": "NO",
+      "Gestor Documental": "SI"
+    },
+    "Lateral izquierdo (conductor)": {
+      "Recupero": "NO",
+      "Gestor Documental": "SI"
+    },
+    "Liquidación Oficial": {
+      "Recupero": "NO"
+    },
+    "Lugar del Accidente": {
+      "Gestor Documental": "SI"
+    },
+    "Ocurrencia del siniestro": {
+      "Gestor Documental": "NO"
+    },
+    "Orden de Compra": {
+      "Recupero": "NO"
+    },
+    "Orden de Compra PT": {
+      "Recupero": "NO"
     },
     "Otros": {
       "Web Proveedores": "NO SE USA",
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Gestor Documental": "SI",
       "Fraude": "SI"
     },
     "Pagaré": {
-      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Recupero": "NO"
     },
     "Parte de Hallazgo del Vehículo": {
-      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Gestor Documental": "SI"
     },
     "Peritaje": {
-      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Recupero": "NO"
+    },
+    "Permiso de circulacion": {
+      "Gestor Documental": "SI / NO"
     },
     "Presupuesto": {
       "Web Proveedores": "Si",
       "Egresos": "Si",
-      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Gestor Documental": "NO"
     },
     "Presupuesto Salvataje": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
@@ -590,7 +839,8 @@
     "Recibo de Conformidad": {
       "Web Proveedores": "Si",
       "Egresos": "Si",
-      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Recupero": "SI"
     },
     "Respaldo Impugnación": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
@@ -601,32 +851,55 @@
     "Resumen Liquidador": {
       "Denuncios": "NO"
     },
+    "Revision tecnica homologacion": {
+      "Gestor Documental": "SI / NO"
+    },
+    "SIN DOCUMENT TYPES": {
+      "Fraude": "SI"
+    },
+    "Trasera": {
+      "Recupero": "NO",
+      "Gestor Documental": "SI"
+    },
     "Valor Comercial": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
     },
     "Voucher alcotest": {
-      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo LAGL."
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Gestor Documental": "SI"
     },
     "Cedula de Identidad": {
-      "Web Liquidacion": "NO, a menos que el liquidador los \nsolicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
       "Denuncios": "SI",
-      "DJS(Declaracion Jurada Simple)": "SI",
-      "Egresos": "Si"
+      "DJS(Declaracion Jurada Simple)": "SI"
     },
     "Cedula de Identidad Reverso": {
       "Denuncios": "SI"
+    },
+    "Certificado deuda de alimentos": {
+      "Gestor Documental": "SI"
     },
     "Licencia de Conducir": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
       "DJS(Declaracion Jurada Simple)": "SI",
       "Liquidación Perdida Total": "SI",
-      "Denuncios": "SI"
+      "Denuncios": "SI",
+      "Gestor Documental": "SI"
     },
     "Licencia de Conducir Reverso": {
       "Denuncios": "SI"
     },
+    "Factura de compraventa": {
+      "Gestor Documental": "Si / NO"
+    },
+    "Número Vin": {
+      "Gestor Documental": "SI"
+    },
     "Padrón del Vehículo": {
       "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Patente": {
+      "Gestor Documental": "SI"
     },
     "Genérico": {
       "Web Proveedores": "SI",
@@ -636,12 +909,31 @@
       "Web Proveedores": "SI"
     },
     "ILI": {
+      "Recupero": "SI",
       "Control de gastos(CDG)": "SI"
     },
     "Inspección Taller": {
       "Web Proveedores": "NO"
     },
+    "PPC": {
+      "Recupero": "NO"
+    },
+    "DJC": {
+      "Recupero": "NO"
+    },
+    "DJS": {
+      "Recupero": "NO"
+    },
+    "RCP": {
+      "Recupero": "SI"
+    },
+    "CPPolicial": {
+      "Recupero": "NO"
+    },
     "Recibo de conformidad": {
+      "Egresos": "Si"
+    },
+    "Cedula de identidad": {
       "Egresos": "Si"
     },
     "NO TIENE": {
@@ -649,6 +941,42 @@
       "Control de gastos(CDG)": "SI",
       "CGS": "SI",
       "Web oficiales": "SI"
+    },
+    "FA": {
+      "Recupero": "SI"
+    },
+    "BH": {
+      "Recupero": "NO"
+    },
+    "PD": {
+      "Recupero": "NO"
+    },
+    "1": {
+      "Recupero": "NO"
+    },
+    "2": {
+      "Recupero": "NO"
+    },
+    "4": {
+      "Recupero": "NO"
+    },
+    "5": {
+      "Recupero": "NO"
+    },
+    "82": {
+      "Recupero": "NO"
+    },
+    "AC": {
+      "Recupero": "NO"
+    },
+    "C8": {
+      "Recupero": "NO"
+    },
+    "Poliza": {
+      "Recupero": "SI"
+    },
+    "Antecedentes": {
+      "Recupero": "NO"
     },
     "Finiquito legalizado": {
       "Liquidación Perdida Total": "Si"
@@ -698,793 +1026,4233 @@
   "gridData": [
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Informe Tecnico",
       "documentType": "Informe Tecnico",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Acta de entrega",
       "documentType": "Acta de entrega",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Siniestro",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Atencion medica",
       "documentType": "Atencion medica",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Siniestro",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Atencion medica",
+      "documentTypeCMv2": "",
+      "documentType": "Atencion medica",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con Hallazgo, Denuncio Robo, \nPT Daño, PT Robo con hallazgo, PT Robo, Tercero, Robo con hallazgo cliente, Indemnizacion",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "NO",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Autorización de Entrega (Acreedor)",
       "documentType": "Autorización de Entrega (Acreedor)",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Acreedor",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Boleta de Transporte",
       "documentType": "Boleta de Transporte",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO SE DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Boleta de Transporte",
       "documentType": "Boleta de Transporte",
-      "platform": "Recupero"
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Carta de saldo insoluto y compromiso alzamiento",
       "documentType": "Carta de saldo insoluto y compromiso alzamiento",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO SE DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Carta de saldo insoluto y compromiso alzamiento",
+      "documentTypeCMv2": "",
+      "documentType": "Carta de saldo insoluto y compromiso alzamiento",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "PT Robo con hallazgo, PT Daño, Denuncio Robo, PT Robo",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "Perdida Total(Probablemente)",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cedula de Identidad(Otros)",
       "documentType": "Cedula de Identidad(Otros)",
-      "platform": "Egresos"
+      "platform": "Egresos",
+      "usoEnPlataforma": "El proveedor asocia esos documentos para poder luego emitir la factura.",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "x",
+      "sistemasInteractua": "NINGUNO",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Certificado Perdida Total",
       "documentType": "Certificado Perdida Total",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "?",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "no se esta seguro",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Certificado de Anotaciones Vigentes",
       "documentType": "Certificado de Anotaciones Vigentes",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Certificado de Anotaciones Vigentes",
+      "documentTypeCMv2": "",
+      "documentType": "Certificado de Anotaciones Vigentes",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Robo con hallazgo, PT Robo, PT Robo con \nhallazgo, PT Daño, Denuncio robo",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "Perdida Total(Probablemente)",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Certificado de pago multas",
       "documentType": "Certificado de pago multas",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Certificado de pago multas",
+      "documentTypeCMv2": "",
+      "documentType": "Certificado de pago multas",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con hallazgo",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Certificado de viajes",
       "documentType": "Certificado de viajes",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Certificado de viajes",
+      "documentTypeCMv2": "",
+      "documentType": "Certificado de viajes",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Todos",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Comprobante Grúa",
       "documentType": "Comprobante Grúa",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Comprobante Grúa",
       "documentType": "Comprobante Grúa",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Comprobante Grúa",
       "documentType": "Comprobante Grúa",
-      "platform": "Recupero"
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Comprobante Grúa",
+      "documentTypeCMv2": "",
+      "documentType": "Comprobante Grúa",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con Hallazgo, Denuncio Robo, \nPT Daño, PT Robo con hallazgo, PT Robo, Tercero, Robo con hallazgo cliente, Indemnizacion",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Comprobante de Ingreso",
       "documentType": "Comprobante de Ingreso",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiuclo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Comprobante de testigos",
       "documentType": "Comprobante de testigos",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Comprobante de testigos",
+      "documentTypeCMv2": "",
+      "documentType": "Comprobante de testigos",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con Hallazgo, Denuncio Robo, \nPT Daño, PT Robo con hallazgo, PT Robo, Tercero, Robo con hallazgo cliente, Indemnizacion",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Comprobante llaves/GPS",
       "documentType": "Comprobante llaves/GPS",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Comprobante llaves/GPS",
+      "documentTypeCMv2": "",
+      "documentType": "Comprobante llaves/GPS",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Robo con hallazgo, PT Robo, PT Robo con hallazgo, Denuncio robo, Robo con hallazgo cliente",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Constancia / Parte Policial",
       "documentType": "Constancia / Parte Policial",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Constancia / Parte Policial",
       "documentType": "Constancia / Parte Policial",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Constancia / Parte Policial",
+      "documentTypeCMv2": "",
+      "documentType": "Constancia / Parte Policial",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Constancia / Parte Policial",
+      "documentTypeCMv2": "",
+      "documentType": "Constancia / Parte Policial",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI / NO",
+      "ordenSubida": "",
+      "flujo": "SI = Robo con hallazgo, PT Robo con hallazgo, Denuncio Robo, Robo con hallazgo cliente, Tercero.\n\nNO = Daño, PT Daño, Indemnizacion",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cuestionario Completo",
       "documentType": "Cuestionario Completo",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cuestionario Completo",
       "documentType": "Cuestionario Completo",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Cuestionario Completo",
+      "documentTypeCMv2": "",
+      "documentType": "Cuestionario Completo",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Daños específicos del vehículo",
+      "documentTypeCMv2": "",
+      "documentType": "Daños específicos del vehículo",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "Daño, PT Daño, Indemnizacion, Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Declaración Jurada Simple",
       "documentType": "Declaración Jurada Simple",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Declaración Jurada Simple",
       "documentType": "Declaración Jurada Simple",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Declaración Jurada Simple",
       "documentType": "Declaración Jurada Simple",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Declaración Jurada Simple",
       "documentType": "Declaración Jurada Simple",
-      "platform": "DJS(Declaracion Jurada Simple)"
+      "platform": "DJS(Declaracion Jurada Simple)",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "Los solicita a pesar que ya fueron \npedidos en el portal de Denuncios",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Declaración Jurada Simple",
+      "documentTypeCMv2": "",
+      "documentType": "Declaración Jurada Simple",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Declaración Jurada Simple",
+      "documentTypeCMv2": "",
+      "documentType": "Declaración Jurada Simple",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Todos",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Denuncia Policial",
       "documentType": "Denuncia Policial",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Denuncia Policial",
       "documentType": "Denuncia Policial",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Denuncia Policial",
       "documentType": "Denuncia Policial",
-      "platform": "DJS(Declaracion Jurada Simple)"
+      "platform": "DJS(Declaracion Jurada Simple)",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "Los solicita a pesar que ya fueron \npedidos en el portal de Denuncios",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Documento Adicional",
+      "documentTypeCMv2": "",
+      "documentType": "Documento Adicional",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Tercero",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Documentos Consultas Reclamos",
       "documentType": "Documentos Consultas Reclamos",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "NO SE USA",
+      "tipoEjecucion": "NO SE USA",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Documentos Genérico",
       "documentType": "Documentos Genérico",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "ahora se usa el item type taller, \npero es lo relacionado al taller",
+      "tipoEjecucion": "NO SE USA",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Documentos Genérico",
       "documentType": "Documentos Genérico",
-      "platform": "Web oficiales"
+      "platform": "Web oficiales",
+      "usoEnPlataforma": "Son cargados por el liquidador para su revisión en la web por un \nanalista(Fotos, Preliminares, Prefactura, Recupero legal, Recupero material, Preliminar Final)",
+      "tipoEjecucion": "Insercion / Consulta / Eliminacion",
+      "documentoDeQuienEs": "Liquidador",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Documentos Ingreso Reingreso",
       "documentType": "Documentos Ingreso Reingreso",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "Comprobante generado por WP \ne imágenes adjuntas al realizar ingreso",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Documentos Inspección Taller",
       "documentType": "Documentos Inspección Taller",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "Fotos adicionales, circulación \ny vehículos espera en taller",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Documentos Inspección Taller",
       "documentType": "Documentos Inspección Taller",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Documentos Inspección Taller",
+      "documentTypeCMv2": "",
+      "documentType": "Documentos Inspección Taller",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Documentos Seguimiento Reparación",
       "documentType": "Documentos Seguimiento Reparación",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los documentos al siniestro en el taller asignado.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)",
       "documentType": "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Documentos que proporcionen evidencia del recupero",
       "documentType": "Documentos que proporcionen evidencia del recupero",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Facturas de más de 365 días",
+      "documentTypeCMv2": "",
+      "documentType": "Facturas de más de 365 días",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Finiquito",
       "documentType": "Finiquito",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "MIX de varios documentos.",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Finiquito",
       "documentType": "Finiquito",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotografías Adicionales del Siniestro",
       "documentType": "Fotografías Adicionales del Siniestro",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Fotografías Adicionales del Siniestro",
+      "documentTypeCMv2": "",
+      "documentType": "Fotografías Adicionales del Siniestro",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "FotosInspeccion",
       "documentType": "FotosInspeccion",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos Seguimiento Reparacion",
       "documentType": "Fotos Seguimiento Reparacion",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos y documentos de Impugnaciones",
       "documentType": "Fotos y documentos de Impugnaciones",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos y Videos Localización",
       "documentType": "Fotos y Videos Localización",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos y Videos Localización",
       "documentType": "Fotos y Videos Localización",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Fotos y Videos Localización",
+      "documentTypeCMv2": "",
+      "documentType": "Fotos y Videos Localización",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos y Videos de los daños",
       "documentType": "Fotos y Videos de los daños",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos y Videos de los daños",
       "documentType": "Fotos y Videos de los daños",
-      "platform": "DJS(Declaracion Jurada Simple)"
+      "platform": "DJS(Declaracion Jurada Simple)",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "Los solicita a pesar que ya fueron \npedidos en el portal de Denuncios",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos y Videos de los daños",
       "documentType": "Fotos y Videos de los daños",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Fotos y Videos de los daños",
+      "documentTypeCMv2": "",
+      "documentType": "Fotos y Videos de los daños",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos y Videos otros",
       "documentType": "Fotos y Videos otros",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos y Videos otros",
       "documentType": "Fotos y Videos otros",
-      "platform": "CGS"
+      "platform": "CGS",
+      "usoEnPlataforma": "Son cargados por los liquidadores",
+      "tipoEjecucion": "Consulta e insercion",
+      "documentoDeQuienEs": "Asegurado / Conductor",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Fotos y Videos otros",
       "documentType": "Fotos y Videos otros",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Fotos y Videos otros",
+      "documentTypeCMv2": "",
+      "documentType": "Fotos y Videos otros",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Frontal",
       "documentType": "Frontal",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Frontal",
+      "documentTypeCMv2": "",
+      "documentType": "Frontal",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Frontal",
+      "documentTypeCMv2": "",
+      "documentType": "Frontal",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con hallazgo, Robo con hallazgo cliente, Indemnizacion y Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Guía de Despacho",
       "documentType": "Guía de Despacho",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Guía de Despacho",
       "documentType": "Guía de Despacho",
-      "platform": "MDR"
+      "platform": "MDR",
+      "usoEnPlataforma": "Subida y consulta de repuestos",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Guía de traslado",
       "documentType": "Guía de traslado",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Guia de traslado",
+      "documentTypeCMv2": "",
+      "documentType": "Guia de traslado",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "Daño, PT Daño, Indemnizacion, Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Informe de Liquidación",
       "documentType": "Informe de Liquidación",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Inspección",
+      "documentTypeCMv2": "",
+      "documentType": "Inspección",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Inspección Liquidador",
       "documentType": "Inspección Liquidador",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Inspección Liquidador",
       "documentType": "Inspección Liquidador",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Inspección Liquidador",
       "documentType": "Inspección Liquidador",
-      "platform": "Control de gastos(CDG)"
+      "platform": "Control de gastos(CDG)",
+      "usoEnPlataforma": "Solo consume sin documenttype(solo envia itemtype)",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "Ninguna",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Inspección Liquidador",
+      "documentTypeCMv2": "",
+      "documentType": "Inspección Liquidador",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Interior",
       "documentType": "Interior",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Interior",
+      "documentTypeCMv2": "",
+      "documentType": "Interior",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Interior",
+      "documentTypeCMv2": "",
+      "documentType": "Interior",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con hallazgo, Robo con hallazgo cliente, Indemnizacion y Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Kilometraje",
       "documentType": "Kilometraje",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Kilometraje",
+      "documentTypeCMv2": "",
+      "documentType": "Kilometraje",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Kilometraje",
+      "documentTypeCMv2": "",
+      "documentType": "Kilometraje",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con hallazgo, Robo con hallazgo cliente, Indemnizacion y Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Lateral derecho (copiloto)",
       "documentType": "Lateral derecho (copiloto)",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Lateral derecho (copiloto)",
+      "documentTypeCMv2": "",
+      "documentType": "Lateral derecho (copiloto)",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Lateral derecho (copiloto)",
+      "documentTypeCMv2": "",
+      "documentType": "Lateral derecho (copiloto)",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con hallazgo, Robo con hallazgo cliente, Indemnizacion y Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Lateral izquierdo (conductor)",
       "documentType": "Lateral izquierdo (conductor)",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Lateral izquierdo (conductor)",
+      "documentTypeCMv2": "",
+      "documentType": "Lateral izquierdo (conductor)",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Lateral izquierdo (conductor)",
+      "documentTypeCMv2": "",
+      "documentType": "Lateral izquierdo (conductor)",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con hallazgo, Robo con hallazgo cliente, Indemnizacion y Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Liquidación Oficial",
       "documentType": "Liquidación Oficial",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Liquidación Oficial",
+      "documentTypeCMv2": "",
+      "documentType": "Liquidación Oficial",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Lugar del Accidente",
+      "documentTypeCMv2": "",
+      "documentType": "Lugar del Accidente",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Ocurrencia del siniestro",
       "documentType": "Ocurrencia del siniestro",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Ocurrencia del siniestro",
+      "documentTypeCMv2": "",
+      "documentType": "Ocurrencia del siniestro",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "Daño, PT Daño, Indemnizacion, Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Orden de Compra",
+      "documentTypeCMv2": "",
+      "documentType": "Orden de Compra",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Orden de Compra PT",
+      "documentTypeCMv2": "",
+      "documentType": "Orden de Compra PT",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Otros",
       "documentType": "Otros",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "No se usa",
+      "tipoEjecucion": "No se usa",
+      "documentoDeQuienEs": "No se usa",
+      "esObligatorio": "No se usa",
+      "ordenSubida": "",
+      "flujo": "No se usa",
+      "sistemaSubio": "No se usa",
+      "ojo": "No se usa",
+      "sistemasInteractua": "No se usa",
+      "dependeOtroSistema": "No se usa",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Otros",
       "documentType": "Otros",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Comodin(cuando no aparece el tipo doc a solicitar)",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Otros",
       "documentType": "Otros",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Otros",
+      "documentTypeCMv2": "",
+      "documentType": "Otros",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Todos",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Otros Daños",
       "documentType": "Otros Daños",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "PDF Valorización",
       "documentType": "PDF Valorización",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Pagaré",
       "documentType": "Pagaré",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "MIX de varios docuemntos",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Pagaré",
       "documentType": "Pagaré",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Pagaré",
+      "documentTypeCMv2": "",
+      "documentType": "Pagaré",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Parte de Hallazgo del Vehículo",
       "documentType": "Parte de Hallazgo del Vehículo",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Parte de Hallazgo del Vehículo",
       "documentType": "Parte de Hallazgo del Vehículo",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Parte de Hallazgo del Vehículo",
+      "documentTypeCMv2": "",
+      "documentType": "Parte de Hallazgo del Vehículo",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Robo con hallazgo, PT robo con hallazgo, Robo con hallazgo cliente",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Peritaje",
       "documentType": "Peritaje",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "MIX de varios docuemntos",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Peritaje",
+      "documentTypeCMv2": "",
+      "documentType": "Peritaje",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Permiso de circulacion",
       "documentType": "Permiso de circulacion",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Permiso de circulacion",
+      "documentTypeCMv2": "",
+      "documentType": "Permiso de circulacion",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "SI / NO",
+      "ordenSubida": "",
+      "flujo": "SI = Robo con hallazgo, PT Robo con hallazgo, PT Daño, Denuncio Robo.\nNo = Daño",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Presupuesto",
       "documentType": "Presupuesto",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "Presupuesto adjunto o desde la \nWP",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Siniestro",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "Lo usaba Portal de egresos, a partir de Enero 2026, lo usara el portal Web Liquidacion.",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Presupuesto",
       "documentType": "Presupuesto",
-      "platform": "Egresos"
+      "platform": "Egresos",
+      "usoEnPlataforma": "El proveedor asocia esos documentos para poder luego emitir la factura.",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "NINGUNO",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Presupuesto",
       "documentType": "Presupuesto",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Presupuesto",
+      "documentTypeCMv2": "",
+      "documentType": "Presupuesto",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Tercero",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Presupuesto Salvataje",
       "documentType": "Presupuesto Salvataje",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los documentos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Recibo de Conformidad",
       "documentType": "Recibo de Conformidad",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "Comprobante generado por WP, \nimágenes adjuntas en vehículo disponible y entrega de vehículo",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "Portal de egresos(Manera manual)",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Recibo de Conformidad",
       "documentType": "Recibo de Conformidad",
-      "platform": "Egresos"
+      "platform": "Egresos",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "NINGUNO",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Recibo de Conformidad",
       "documentType": "Recibo de Conformidad",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "MIX de varios docuemntos",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Recibo de Conformidad",
       "documentType": "Recibo de Conformidad",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Recibo de Conformidad",
+      "documentTypeCMv2": "",
+      "documentType": "Recibo de Conformidad",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Respaldo Factura",
       "documentType": "Respaldo Factura",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Respaldo Impugnación",
       "documentType": "Respaldo Impugnación",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los documentos al siniestro, lo sube la persona asegurada para impugnar.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "MIX de varios docuemntos",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Respaldo Impugnación",
       "documentType": "Respaldo Impugnación",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Respaldo Propuesta Impugna",
       "documentType": "Respaldo Propuesta Impugna",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Respaldo Publicación",
       "documentType": "Respaldo Publicación",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Siniestro",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Respaldo Valorización Manual",
       "documentType": "Respaldo Valorización Manual",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Resumen Liquidador",
       "documentType": "Resumen Liquidador",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Revision tecnica homologacion",
       "documentType": "Revision tecnica homologacion",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "Revision tecnica homologacion",
+      "documentTypeCMv2": "",
+      "documentType": "Revision tecnica homologacion",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "SI / NO",
+      "ordenSubida": "",
+      "flujo": "SI = Robo con hallazgo, PT Robo con hallazgo, PT Daño, Denuncio Robo.\nNo = Daño",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Trasera",
       "documentType": "Trasera",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "SIN DOCUMENT TYPES",
+      "documentTypeCMv2": "",
+      "documentType": "SIN DOCUMENT TYPES",
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Trasera",
+      "documentTypeCMv2": "",
+      "documentType": "Trasera",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Trasera",
+      "documentTypeCMv2": "",
+      "documentType": "Trasera",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con hallazgo, Robo con hallazgo cliente, Indemnizacion y Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Valor Comercial",
       "documentType": "Valor Comercial",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los documentos al siniestro",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Voucher alcotest",
       "documentType": "Voucher alcotest",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Voucher alcotest",
       "documentType": "Voucher alcotest",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar el documento al siniestro",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Conductor(validar esto con liquidador)",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Siniestro",
+      "documentTypeCMv1": "Voucher alcotest",
+      "documentTypeCMv2": "",
+      "documentType": "Voucher alcotest",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Todos",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cedula de Identidad",
       "documentType": "Cedula de Identidad",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Conductor(validar esto con liquidador)",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": "Denuncio"
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cedula de Identidad",
       "documentType": "Cedula de Identidad",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": "Web Liquidacion"
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cedula de Identidad",
       "documentType": "Cedula de Identidad",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cedula de Identidad",
       "documentType": "Cedula de Identidad",
-      "platform": "DJS(Declaracion Jurada Simple)"
+      "platform": "DJS(Declaracion Jurada Simple)",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "Los solicita a pesar que ya fueron \npedidos en el portal de Denuncios",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": "Web Liquidacion"
     },
     {
       "itemType": "Personas",
-      "documentType": "Cedula de Identidad",
-      "platform": "Fraude"
-    },
-    {
-      "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cedula de Identidad Reverso",
       "documentType": "Cedula de Identidad Reverso",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Certificado deuda de alimentos",
       "documentType": "Certificado deuda de alimentos",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "Certificado deuda de alimentos",
+      "documentTypeCMv2": "",
+      "documentType": "Certificado deuda de alimentos",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Todos",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cuestionario Cliente",
       "documentType": "Cuestionario Cliente",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cédula de quien recibe.",
       "documentType": "Cédula de quien recibe.",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cédula de quien retira el VH",
       "documentType": "Cédula de quien retira el VH",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Licencia de Conducir",
       "documentType": "Licencia de Conducir",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Conductor(validar esto con liquidador)",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Licencia de Conducir",
       "documentType": "Licencia de Conducir",
-      "platform": "DJS(Declaracion Jurada Simple)"
+      "platform": "DJS(Declaracion Jurada Simple)",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "Los solicita a pesar que ya fueron \npedidos en el portal de Denuncios",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Licencia de Conducir",
       "documentType": "Licencia de Conducir",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Licencia de Conducir",
       "documentType": "Licencia de Conducir",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Licencia de Conducir Reverso",
       "documentType": "Licencia de Conducir Reverso",
-      "platform": "Denuncios"
+      "platform": "Denuncios",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Conductor",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",
+      "documentTypeCMv1": "Licencia de Conducir",
+      "documentTypeCMv2": "",
+      "documentType": "Licencia de Conducir",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con hallazgo, PT Daño, PT Robo con hallazgo, PT Robo, Denuncio Robo, Robo con hallazgo cliente, indemnizacion",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Personas",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Pasaporte",
       "documentType": "Pasaporte",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Certificado de Anotaciones Vigentes",
       "documentType": "Certificado de Anotaciones Vigentes",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Factura de compraventa",
       "documentType": "Factura de compraventa",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "Factura de compraventa",
+      "documentTypeCMv2": "",
+      "documentType": "Factura de compraventa",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "Si / NO",
+      "ordenSubida": "",
+      "flujo": "SI = Robo con hallazgo\nNO = Daño",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Frontal",
       "documentType": "Frontal",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Informe Autofact",
       "documentType": "Informe Autofact",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Inscripción Registro Civil.",
       "documentType": "Inscripción Registro Civil.",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Interior",
       "documentType": "Interior",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Kilometraje",
       "documentType": "Kilometraje",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Lateral derecho (copiloto)",
       "documentType": "Lateral derecho (copiloto)",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Lateral izquierdo (conductor)",
       "documentType": "Lateral izquierdo (conductor)",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Número Vin",
       "documentType": "Número Vin",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "Número Vin",
+      "documentTypeCMv2": "",
+      "documentType": "Número Vin",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "SI = Daño, Robo con hallazgo, Robo con hallazgo cliente, indemnizacion, Tercero.",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Otro",
       "documentType": "Otro",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Padrón del Vehículo",
       "documentType": "Padrón del Vehículo",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "Asociar los docuemntos al siniestro.",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Patente",
       "documentType": "Patente",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "Patente",
+      "documentTypeCMv2": "",
+      "documentType": "Patente",
+      "platform": "Gestor Documental",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Asegurado y tercero",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "Daño, Robo con hallazgo, Robo con hallazgo cliente, Indemnizacion y Tercero",
+      "sistemaSubio": "SI( Identificador del sistema)",
+      "ojo": "",
+      "sistemasInteractua": "No se sabe",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Permiso de circulación",
       "documentType": "Permiso de circulación",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Revisión técnica homologación",
       "documentType": "Revisión técnica homologación",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Vehiculo",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Trasera",
       "documentType": "Trasera",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentTypeCMv1": "SIN DOCUMENT TYPES",
+      "documentTypeCMv2": "",
+      "documentType": "SIN DOCUMENT TYPES",
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Taller",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Genérico",
       "documentType": "Genérico",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "Guardar documentos del taller",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Taller / Local",
+      "esObligatorio": "No",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "Ningun sistema lo usa",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Ingreso – Reingreso",
       "documentType": "Ingreso – Reingreso",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "ILI",
+      "documentTypeCMv2": "",
       "documentType": "ILI",
-      "platform": "Control de gastos(CDG)"
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "ILI",
+      "documentTypeCMv2": "",
+      "documentType": "ILI",
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "ILI",
+      "documentType": "ILI",
+      "platform": "Control de gastos(CDG)",
+      "usoEnPlataforma": "Solo consume sin documenttype(solo envia itemtype)",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "Ninguna",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Inspección Taller",
       "documentType": "Inspección Taller",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Genérico",
       "documentType": "Genérico",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Taller / Local",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Genérico",
       "documentType": "Genérico",
-      "platform": "Web Oficiales"
+      "platform": "Web Oficiales",
+      "usoEnPlataforma": "Son cargados por el liquidador \npara su revisión en la web por un analista",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Liquidador",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Recibo de Conformidad",
       "documentType": "Recibo de Conformidad",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "Portal de egresos(Manera manual)",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Presupuesto",
       "documentType": "Presupuesto",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Siniestro",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "Lo usaba Portal de egresos, a partir de Enero 2026, lo usara el portal Web Liquidacion.",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Consultas y Reclamos",
       "documentType": "Consultas y Reclamos",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "NO SE USA",
+      "documentoDeQuienEs": "NO SE USA",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Otros",
       "documentType": "Otros",
-      "platform": "Web Proveedores"
+      "platform": "Web Proveedores",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "NO SE USA",
+      "esObligatorio": "NO SE USA",
+      "ordenSubida": "",
+      "flujo": "NO SE USA",
+      "sistemaSubio": "NO SE USA",
+      "ojo": "NO SE USA",
+      "sistemasInteractua": "NO SE USA",
+      "dependeOtroSistema": "NO SE USA",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "PPC",
+      "documentTypeCMv2": "",
+      "documentType": "PPC",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "DJC",
+      "documentTypeCMv2": "",
+      "documentType": "DJC",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "DJS",
+      "documentTypeCMv2": "",
+      "documentType": "DJS",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "RCP",
+      "documentTypeCMv2": "",
+      "documentType": "RCP",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "CPPolicial",
+      "documentTypeCMv2": "",
+      "documentType": "CPPolicial",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentTypeCMv1": "SIN DOCUMENT TYPES",
+      "documentTypeCMv2": "",
+      "documentType": "SIN DOCUMENT TYPES",
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Antecedentes",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Presupuesto",
       "documentType": "Presupuesto",
-      "platform": "Egresos"
+      "platform": "Egresos",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NINGUNO",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Antecedentes",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Recibo de conformidad",
       "documentType": "Recibo de conformidad",
-      "platform": "Egresos"
+      "platform": "Egresos",
+      "usoEnPlataforma": "Solo consume sin documenttype(solo envia itemtype)",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "NINGUNO",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Antecedentes",
-      "documentType": "Cedula de Identidad",
-      "platform": "Egresos"
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Cedula de identidad",
+      "documentType": "Cedula de identidad",
+      "platform": "Egresos",
+      "usoEnPlataforma": "Solo consume sin documenttype(solo envia itemtype)",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Vehiculo siniestrado",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "NINGUNO",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": "Web Liquidacion"
     },
     {
       "itemType": "Poliza",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "NO TIENE",
       "documentType": "NO TIENE",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Carga de documentos por \nparte del liquidador oficial",
+      "tipoEjecucion": "",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "Solicitar un JsonEjemploICMPoliza para poder ver los nombres de los parametros que se le envian",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Poliza",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "NO TIENE",
       "documentType": "NO TIENE",
-      "platform": "Web Liquidacion"
+      "platform": "Web Liquidacion",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Poliza",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "NO TIENE",
       "documentType": "NO TIENE",
-      "platform": "Control de gastos(CDG)"
+      "platform": "Control de gastos(CDG)",
+      "usoEnPlataforma": "Solo consume sin documenttype(solo envia itemtype)",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "Asegurado",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "Ninguna",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Poliza",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "NO TIENE",
       "documentType": "NO TIENE",
-      "platform": "CGS"
+      "platform": "CGS",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "ASEGURADO",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Poliza",
+      "documentTypeCMv1": "SIN DOCUMENT TYPES",
+      "documentTypeCMv2": "",
+      "documentType": "SIN DOCUMENT TYPES",
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "DocPago",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "NO TIENE",
       "documentType": "NO TIENE",
-      "platform": "Web oficiales"
+      "platform": "Web oficiales",
+      "usoEnPlataforma": "Son cargados por el liquidador\n para su revisión en la web por un analista",
+      "tipoEjecucion": "Insercion / Consulta / Eliminacion",
+      "documentoDeQuienEs": "Liquidador",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "DocPago",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "NO TIENE",
       "documentType": "NO TIENE",
-      "platform": "Proceso genera el informe de liquidación"
+      "platform": "Proceso genera el informe de liquidación",
+      "usoEnPlataforma": "Proceso genera el informe de liquidación",
+      "tipoEjecucion": "Insercion",
+      "documentoDeQuienEs": "",
+      "esObligatorio": "",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "",
+      "ojo": "",
+      "sistemasInteractua": "",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "FA",
+      "documentTypeCMv2": "",
+      "documentType": "FA",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "BH",
+      "documentTypeCMv2": "",
+      "documentType": "BH",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "PD",
+      "documentTypeCMv2": "",
+      "documentType": "PD",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "1",
+      "documentTypeCMv2": "",
+      "documentType": "1",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "2",
+      "documentTypeCMv2": "",
+      "documentType": "2",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "4",
+      "documentTypeCMv2": "",
+      "documentType": "4",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "5",
+      "documentTypeCMv2": "",
+      "documentType": "5",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "82",
+      "documentTypeCMv2": "",
+      "documentType": "82",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "AC",
+      "documentTypeCMv2": "",
+      "documentType": "AC",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "DocPago",
+      "documentTypeCMv1": "C8",
+      "documentTypeCMv2": "",
+      "documentType": "C8",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Poliza",
+      "documentTypeCMv1": "Poliza",
+      "documentTypeCMv2": "",
+      "documentType": "Poliza",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
+    },
+    {
+      "itemType": "Antecedentes",
+      "documentTypeCMv1": "Antecedentes",
+      "documentTypeCMv2": "",
+      "documentType": "Antecedentes",
+      "platform": "Recupero",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Consulta",
+      "documentoDeQuienEs": "No discrimina",
+      "esObligatorio": "NO",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Siniestro",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Finiquito legalizado",
       "documentType": "Finiquito legalizado",
-      "platform": "Liquidación Perdida Total"
+      "platform": "Liquidación Perdida Total",
+      "usoEnPlataforma": "Autofac informa que se puede cargar al CM.",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "Siniestro",
+      "esObligatorio": "Si",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "Si",
+      "ojo": "",
+      "sistemasInteractua": "Solo PT",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Inspección del lugar",
       "documentType": "Inspección del lugar",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Entrevista personal asegurado",
       "documentType": "Entrevista personal asegurado",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Pasadas del tag",
       "documentType": "Pasadas del tag",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Informe Autopista",
       "documentType": "Informe Autopista",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Verificar cámaras de seguridad",
       "documentType": "Verificar cámaras de seguridad",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Solicitud de participación de accidente",
       "documentType": "Solicitud de participación de accidente",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Parte Policial (Denuncio)",
       "documentType": "Parte Policial (Denuncio)",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Parte Policial (Hallazgo)",
       "documentType": "Parte Policial (Hallazgo)",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Fraude",
+      "documentTypeCMv1": "",
+      "documentTypeCMv2": "Otros",
       "documentType": "Otros",
-      "platform": "Fraude"
+      "platform": "Fraude",
+      "usoEnPlataforma": "",
+      "tipoEjecucion": "Insercion / Consulta",
+      "documentoDeQuienEs": "NO DISCRIMINA",
+      "esObligatorio": "SI",
+      "ordenSubida": "",
+      "flujo": "",
+      "sistemaSubio": "SI",
+      "ojo": "",
+      "sistemasInteractua": "NO SE SABE",
+      "dependeOtroSistema": "",
+      "cualSistemaSubio": ""
     }
   ]
 }

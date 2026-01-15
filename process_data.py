@@ -59,7 +59,19 @@ def process_excel_data(excel_path='resources/portals.xlsx'):
     # Process all rows that have document type and platform
     for _, row in df.iterrows():
         item_type = str(row['ItemType(AS IS)']).strip() if pd.notna(row['ItemType(AS IS)']) else ''
-        doc_type = str(row['TipoDocumentos(AS IS) CM v2']).strip() if pd.notna(row['TipoDocumentos(AS IS) CM v2']) else ''
+        
+        # Try CM v2 first, if empty fall back to CM v1
+        doc_type_v2 = str(row['TipoDocumentos(AS IS) CM v2']).strip() if pd.notna(row['TipoDocumentos(AS IS) CM v2']) else ''
+        doc_type_v1 = str(row['TipoDocumentos(AS IS) CM v1']).strip() if pd.notna(row['TipoDocumentos(AS IS) CM v1']) else ''
+        
+        # Use v2 if it exists, otherwise use v1
+        if doc_type_v2 and doc_type_v2 != 'nan':
+            doc_type = doc_type_v2
+        elif doc_type_v1 and doc_type_v1 != 'nan':
+            doc_type = doc_type_v1
+        else:
+            doc_type = ''
+        
         platform = normalize_platform_name(row['Plataforma que lo usa']) if pd.notna(row['Plataforma que lo usa']) else None
         dependency = normalize_platform_name(row['Cual sistema/portal lo debio haber subido']) if pd.notna(row['Cual sistema/portal lo debio haber subido']) else None
         obligation_text = str(row['Es obligatorio subirlo?']).strip() if pd.notna(row['Es obligatorio subirlo?']) else ''
@@ -78,11 +90,24 @@ def process_excel_data(excel_path='resources/portals.xlsx'):
             if obligation_text and obligation_text.lower() != 'nan':
                 document_platform_obligation_text[doc_type][platform] = obligation_text
             
-            # Add row to grid data
+            # Add row to grid data with all columns
             grid_data.append({
                 'itemType': item_type if item_type and item_type != 'nan' else '',
+                'documentTypeCMv1': doc_type_v1 if doc_type_v1 and doc_type_v1 != 'nan' else '',
+                'documentTypeCMv2': doc_type_v2 if doc_type_v2 and doc_type_v2 != 'nan' else '',
                 'documentType': doc_type,
-                'platform': platform
+                'platform': platform,
+                'usoEnPlataforma': str(row['Uso en la plataforma']).strip() if pd.notna(row['Uso en la plataforma']) else '',
+                'tipoEjecucion': str(row['Tipo ejecucion']).strip() if pd.notna(row['Tipo ejecucion']) else '',
+                'documentoDeQuienEs': str(row['Documento de quien es?(Asegurado, conductor, liquidador, etc)']).strip() if pd.notna(row['Documento de quien es?(Asegurado, conductor, liquidador, etc)']) else '',
+                'esObligatorio': obligation_text,
+                'ordenSubida': str(row['Orden de subida del documento']).strip() if pd.notna(row['Orden de subida del documento']) else '',
+                'flujo': str(row['Flujo(Para Gestor Documental)']).strip() if pd.notna(row['Flujo(Para Gestor Documental)']) else '',
+                'sistemaSubio': str(row['Si existe, que sistema subio este documento?(Gestor Documental)']).strip() if pd.notna(row['Si existe, que sistema subio este documento?(Gestor Documental)']) else '',
+                'ojo': str(row['Ojo']).strip() if pd.notna(row['Ojo']) else '',
+                'sistemasInteractua': str(row['Sistemas con los que interectua']).strip() if pd.notna(row['Sistemas con los que interectua']) else '',
+                'dependeOtroSistema': str(row['Depende que otro sistema lo haya subido']).strip() if pd.notna(row['Depende que otro sistema lo haya subido']) else '',
+                'cualSistemaSubio': str(row['Cual sistema/portal lo debio haber subido']).strip() if pd.notna(row['Cual sistema/portal lo debio haber subido']) else ''
             })
     
     # Build legacy platform dependency mapping (for backward compatibility, but won't be used)

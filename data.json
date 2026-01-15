@@ -101,20 +101,20 @@
     "Parte Policial (Hallazgo)"
   ],
   "platforms": [
-    "CGS",
+    "Liquidación Perdida Total",
+    "Egresos",
+    "MDR",
     "Web Oficiales",
+    "Web Proveedores",
+    "Denuncios",
+    "Web Liquidacion",
+    "Web oficiales",
+    "DJS(Declaracion Jurada Simple)",
+    "Recupero",
     "Proceso genera el informe de liquidación",
     "Fraude",
-    "Web Proveedores",
-    "Recupero",
-    "Egresos",
-    "Web Liquidacion",
-    "Denuncios",
     "Control de gastos(CDG)",
-    "MDR",
-    "Web oficiales",
-    "Liquidación Perdida Total",
-    "DJS(Declaracion Jurada Simple)"
+    "CGS"
   ],
   "documentTypeToPlatforms": {
     "Informe Tecnico": [
@@ -130,8 +130,8 @@
       "Liquidación Perdida Total"
     ],
     "Boleta de Transporte": [
-      "Liquidación Perdida Total",
-      "Recupero"
+      "Recupero",
+      "Liquidación Perdida Total"
     ],
     "Carta de saldo insoluto y compromiso alzamiento": [
       "Liquidación Perdida Total"
@@ -152,9 +152,9 @@
       "Liquidación Perdida Total"
     ],
     "Comprobante Grúa": [
+      "Recupero",
       "Web Liquidacion",
-      "Liquidación Perdida Total",
-      "Recupero"
+      "Liquidación Perdida Total"
     ],
     "Comprobante de Ingreso": [
       "Web Liquidacion"
@@ -174,14 +174,14 @@
       "Liquidación Perdida Total"
     ],
     "Declaración Jurada Simple": [
+      "Denuncios",
       "Web Liquidacion",
       "Liquidación Perdida Total",
-      "Denuncios",
       "DJS(Declaracion Jurada Simple)"
     ],
     "Denuncia Policial": [
-      "Liquidación Perdida Total",
       "Denuncios",
+      "Liquidación Perdida Total",
       "DJS(Declaracion Jurada Simple)"
     ],
     "Documentos Consultas Reclamos": [
@@ -224,25 +224,25 @@
       "Web Liquidacion"
     ],
     "Fotos y Videos Localización": [
-      "Liquidación Perdida Total",
-      "Denuncios"
+      "Denuncios",
+      "Liquidación Perdida Total"
     ],
     "Fotos y Videos de los daños": [
+      "Denuncios",
       "Liquidación Perdida Total",
-      "DJS(Declaracion Jurada Simple)",
-      "Denuncios"
+      "DJS(Declaracion Jurada Simple)"
     ],
     "Fotos y Videos otros": [
-      "CGS",
+      "Denuncios",
       "Liquidación Perdida Total",
-      "Denuncios"
+      "CGS"
     ],
     "Frontal": [
       "Liquidación Perdida Total"
     ],
     "Guía de Despacho": [
-      "Liquidación Perdida Total",
-      "MDR"
+      "MDR",
+      "Liquidación Perdida Total"
     ],
     "Guía de traslado": [
       "Liquidación Perdida Total"
@@ -300,17 +300,17 @@
       "Liquidación Perdida Total"
     ],
     "Presupuesto": [
-      "Egresos",
       "Web Liquidacion",
+      "Egresos",
       "Web Proveedores"
     ],
     "Presupuesto Salvataje": [
       "Web Liquidacion"
     ],
     "Recibo de Conformidad": [
-      "Egresos",
       "Web Liquidacion",
       "Liquidación Perdida Total",
+      "Egresos",
       "Web Proveedores"
     ],
     "Respaldo Factura": [
@@ -346,12 +346,12 @@
       "Liquidación Perdida Total"
     ],
     "Cedula de Identidad": [
-      "Fraude",
-      "Egresos",
-      "Web Liquidacion",
-      "Denuncios",
       "Liquidación Perdida Total",
-      "DJS(Declaracion Jurada Simple)"
+      "Egresos",
+      "Denuncios",
+      "Web Liquidacion",
+      "DJS(Declaracion Jurada Simple)",
+      "Fraude"
     ],
     "Cedula de Identidad Reverso": [
       "Denuncios"
@@ -369,10 +369,10 @@
       "Liquidación Perdida Total"
     ],
     "Licencia de Conducir": [
+      "Denuncios",
       "Web Liquidacion",
       "Liquidación Perdida Total",
-      "DJS(Declaracion Jurada Simple)",
-      "Denuncios"
+      "DJS(Declaracion Jurada Simple)"
     ],
     "Licencia de Conducir Reverso": [
       "Denuncios"
@@ -408,8 +408,8 @@
       "Liquidación Perdida Total"
     ],
     "Genérico": [
-      "Web Proveedores",
-      "Web Oficiales"
+      "Web Oficiales",
+      "Web Proveedores"
     ],
     "Ingreso – Reingreso": [
       "Web Proveedores"
@@ -427,12 +427,12 @@
       "Egresos"
     ],
     "NO TIENE": [
-      "CGS",
-      "Proceso genera el informe de liquidación",
+      "Liquidación Perdida Total",
       "Web Liquidacion",
-      "Control de gastos(CDG)",
       "Web oficiales",
-      "Liquidación Perdida Total"
+      "Proceso genera el informe de liquidación",
+      "Control de gastos(CDG)",
+      "CGS"
     ],
     "Finiquito legalizado": [
       "Liquidación Perdida Total"

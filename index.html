@@ -59,52 +59,91 @@
         
         .system-node {
             position: absolute;
-            border: 2px solid red;
-            padding: 10px 15px;
-            background-color: white;
-            color: red;
+            border: 2px solid #dc3545;
+            padding: 12px 18px;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+            color: #dc3545;
             font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
-            min-width: 150px;
+            min-width: 160px;
             text-align: center;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(220, 53, 69, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
         .system-node:hover {
-            background-color: #ffe0e0;
-            transform: scale(1.05);
+            background: linear-gradient(to bottom, #fff5f5 0%, #ffe0e0 100%);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.25), 0 2px 6px rgba(0, 0, 0, 0.15);
+            border-color: #c82333;
         }
         
         .system-node.highlighted {
-            background-color: #ffcccc;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            background: linear-gradient(to bottom, #ffcccc 0%, #ffaaaa 100%);
+            box-shadow: 0 4px 16px rgba(255, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+            border-color: #c82333;
         }
         
         .system-node.highlighted-platform {
-            background-color: #ffffcc;
-            box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
-            border: 2px solid #ffcc00;
+            background: linear-gradient(to bottom, #fff9cc 0%, #ffeb3b 100%);
+            box-shadow: 0 4px 16px rgba(255, 204, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.2);
+            border: 3px solid #ffc107;
+            transform: translateY(-2px);
+            z-index: 10;
         }
         
         .asterisk {
             position: absolute;
-            left: -20px;
+            left: -24px;
             top: 50%;
             transform: translateY(-50%);
-            color: red;
+            color: #dc3545;
             font-weight: bold;
+            font-size: 16px;
+            background: white;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid #dc3545;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         .arrow {
-            stroke: red;
-            stroke-width: 2;
+            stroke: #dc3545;
+            stroke-width: 3;
             fill: none;
             marker-end: url(#arrowhead-red);
+            filter: drop-shadow(0 2px 4px rgba(220, 53, 69, 0.4));
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+        
+        .arrow:hover {
+            stroke-width: 4;
+            opacity: 1;
+            filter: drop-shadow(0 3px 6px rgba(220, 53, 69, 0.5));
         }
         
         .arrow.highlighted {
-            stroke-width: 3;
-            stroke: #cc0000;
+            stroke-width: 4;
+            stroke: #c82333;
+            opacity: 1;
+            filter: drop-shadow(0 3px 6px rgba(200, 35, 51, 0.6));
+        }
+        
+        .dependency-connection {
+            filter: drop-shadow(0 2px 4px rgba(220, 53, 69, 0.3));
+            transition: all 0.2s ease;
+        }
+        
+        .dependency-connection:hover {
+            stroke-width: 5;
+            filter: drop-shadow(0 3px 6px rgba(220, 53, 69, 0.5));
         }
         
         .connection-line {
@@ -143,60 +182,103 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
             overflow: auto;
+            animation: fadeIn 0.2s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 20px;
-            border: 2px solid red;
+            background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+            margin: 3% auto;
+            padding: 0;
+            border: none;
+            border-radius: 12px;
             width: 90%;
-            max-width: 1200px;
-            max-height: 85vh;
-            overflow: auto;
+            max-width: 1400px;
+            max-height: 90vh;
+            overflow: visible;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
         
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid red;
+            padding: 24px 30px;
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.2);
         }
         
         .modal-title {
-            color: red;
-            font-weight: bold;
-            font-size: 18px;
+            color: white;
+            font-weight: 600;
+            font-size: 20px;
+            letter-spacing: 0.3px;
+            margin: 0;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         .close-modal {
-            color: red;
-            font-size: 28px;
-            font-weight: bold;
+            color: white;
+            font-size: 32px;
+            font-weight: 300;
             cursor: pointer;
             line-height: 1;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.1);
         }
         
         .close-modal:hover {
-            color: #cc0000;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
         }
         
         .modal-diagram-container {
             position: relative;
             width: 100%;
             min-height: 400px;
-            margin-top: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+            flex: 1;
+            overflow: auto;
         }
         
         .modal-systems-section {
             position: relative;
             width: 100%;
             min-height: 400px;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         
         .modal-svg {
@@ -206,43 +288,84 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            z-index: 1;
+        }
+        
+        .modal-system-item {
+            z-index: 2;
+            position: relative;
         }
         
         /* Icon styles */
         .platform-icon {
-            display: inline-block;
-            margin-left: 8px;
-            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            font-size: 18px;
             vertical-align: middle;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-weight: bold;
         }
         
         .icon-check {
-            color: green;
+            color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
         }
         
         .icon-cancel {
-            color: red;
+            color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
         }
         
         .icon-warning {
-            color: orange;
+            color: #ffc107;
+            background: rgba(255, 193, 7, 0.15);
         }
         
         .modal-legend {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
-            font-size: 12px;
+            margin: 0;
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-top: 2px solid #e9ecef;
+            font-size: 13px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: center;
+            flex-shrink: 0;
+            z-index: 10;
+            position: relative;
         }
         
         .legend-item {
-            display: inline-block;
-            margin-right: 20px;
-            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .legend-item:hover {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
         }
         
         .legend-icon {
-            margin-right: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .legend-item span:not(.legend-icon) {
+            color: #333;
+            font-size: 13px;
         }
         /* Filter section styles */
         .filter-section {
@@ -420,8 +543,8 @@
             <div class="modal-diagram-container">
                 <svg id="modal-svg" class="modal-svg">
                     <defs>
-                        <marker id="modal-arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                            <polygon points="0 0, 10 3, 0 6" fill="red" />
+                        <marker id="modal-arrowhead-red" markerWidth="12" markerHeight="12" refX="12" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+                            <polygon points="0 0, 12 3.5, 0 7" fill="#dc3545" stroke="#c82333" stroke-width="1" />
                         </marker>
                     </defs>
                 </svg>
@@ -549,20 +672,20 @@
                 "Parte Policial (Hallazgo)"
         ],
         "platforms": [
-                "CGS",
+                "Liquidación Perdida Total",
+                "Egresos",
+                "MDR",
                 "Web Oficiales",
+                "Web Proveedores",
+                "Denuncios",
+                "Web Liquidacion",
+                "Web oficiales",
+                "DJS(Declaracion Jurada Simple)",
+                "Recupero",
                 "Proceso genera el informe de liquidación",
                 "Fraude",
-                "Web Proveedores",
-                "Recupero",
-                "Egresos",
-                "Web Liquidacion",
-                "Denuncios",
                 "Control de gastos(CDG)",
-                "MDR",
-                "Web oficiales",
-                "Liquidación Perdida Total",
-                "DJS(Declaracion Jurada Simple)"
+                "CGS"
         ],
         "documentTypeToPlatforms": {
                 "Informe Tecnico": [
@@ -578,8 +701,8 @@
                         "Liquidación Perdida Total"
                 ],
                 "Boleta de Transporte": [
-                        "Liquidación Perdida Total",
-                        "Recupero"
+                        "Recupero",
+                        "Liquidación Perdida Total"
                 ],
                 "Carta de saldo insoluto y compromiso alzamiento": [
                         "Liquidación Perdida Total"
@@ -600,9 +723,9 @@
                         "Liquidación Perdida Total"
                 ],
                 "Comprobante Grúa": [
+                        "Recupero",
                         "Web Liquidacion",
-                        "Liquidación Perdida Total",
-                        "Recupero"
+                        "Liquidación Perdida Total"
                 ],
                 "Comprobante de Ingreso": [
                         "Web Liquidacion"
@@ -622,14 +745,14 @@
                         "Liquidación Perdida Total"
                 ],
                 "Declaración Jurada Simple": [
+                        "Denuncios",
                         "Web Liquidacion",
                         "Liquidación Perdida Total",
-                        "Denuncios",
                         "DJS(Declaracion Jurada Simple)"
                 ],
                 "Denuncia Policial": [
-                        "Liquidación Perdida Total",
                         "Denuncios",
+                        "Liquidación Perdida Total",
                         "DJS(Declaracion Jurada Simple)"
                 ],
                 "Documentos Consultas Reclamos": [
@@ -672,25 +795,25 @@
                         "Web Liquidacion"
                 ],
                 "Fotos y Videos Localización": [
-                        "Liquidación Perdida Total",
-                        "Denuncios"
+                        "Denuncios",
+                        "Liquidación Perdida Total"
                 ],
                 "Fotos y Videos de los daños": [
+                        "Denuncios",
                         "Liquidación Perdida Total",
-                        "DJS(Declaracion Jurada Simple)",
-                        "Denuncios"
+                        "DJS(Declaracion Jurada Simple)"
                 ],
                 "Fotos y Videos otros": [
-                        "CGS",
+                        "Denuncios",
                         "Liquidación Perdida Total",
-                        "Denuncios"
+                        "CGS"
                 ],
                 "Frontal": [
                         "Liquidación Perdida Total"
                 ],
                 "Guía de Despacho": [
-                        "Liquidación Perdida Total",
-                        "MDR"
+                        "MDR",
+                        "Liquidación Perdida Total"
                 ],
                 "Guía de traslado": [
                         "Liquidación Perdida Total"
@@ -748,17 +871,17 @@
                         "Liquidación Perdida Total"
                 ],
                 "Presupuesto": [
-                        "Egresos",
                         "Web Liquidacion",
+                        "Egresos",
                         "Web Proveedores"
                 ],
                 "Presupuesto Salvataje": [
                         "Web Liquidacion"
                 ],
                 "Recibo de Conformidad": [
-                        "Egresos",
                         "Web Liquidacion",
                         "Liquidación Perdida Total",
+                        "Egresos",
                         "Web Proveedores"
                 ],
                 "Respaldo Factura": [
@@ -794,12 +917,12 @@
                         "Liquidación Perdida Total"
                 ],
                 "Cedula de Identidad": [
-                        "Fraude",
-                        "Egresos",
-                        "Web Liquidacion",
-                        "Denuncios",
                         "Liquidación Perdida Total",
-                        "DJS(Declaracion Jurada Simple)"
+                        "Egresos",
+                        "Denuncios",
+                        "Web Liquidacion",
+                        "DJS(Declaracion Jurada Simple)",
+                        "Fraude"
                 ],
                 "Cedula de Identidad Reverso": [
                         "Denuncios"
@@ -817,10 +940,10 @@
                         "Liquidación Perdida Total"
                 ],
                 "Licencia de Conducir": [
+                        "Denuncios",
                         "Web Liquidacion",
                         "Liquidación Perdida Total",
-                        "DJS(Declaracion Jurada Simple)",
-                        "Denuncios"
+                        "DJS(Declaracion Jurada Simple)"
                 ],
                 "Licencia de Conducir Reverso": [
                         "Denuncios"
@@ -856,8 +979,8 @@
                         "Liquidación Perdida Total"
                 ],
                 "Genérico": [
-                        "Web Proveedores",
-                        "Web Oficiales"
+                        "Web Oficiales",
+                        "Web Proveedores"
                 ],
                 "Ingreso – Reingreso": [
                         "Web Proveedores"
@@ -875,12 +998,12 @@
                         "Egresos"
                 ],
                 "NO TIENE": [
-                        "CGS",
-                        "Proceso genera el informe de liquidación",
+                        "Liquidación Perdida Total",
                         "Web Liquidacion",
-                        "Control de gastos(CDG)",
                         "Web oficiales",
-                        "Liquidación Perdida Total"
+                        "Proceso genera el informe de liquidación",
+                        "Control de gastos(CDG)",
+                        "CGS"
                 ],
                 "Finiquito legalizado": [
                         "Liquidación Perdida Total"
@@ -2270,7 +2393,7 @@
             const modalSystems = d3.select('#modal-systems');
             const modalSvg = d3.select('#modal-svg');
             modalSystems.selectAll('*').remove();
-            modalSvg.selectAll('path').remove();
+            modalSvg.selectAll('*').remove(); // Clear all SVG elements, not just paths
             
             // Remove any existing tooltips
             d3.selectAll('.obligation-tooltip').remove();
@@ -2351,7 +2474,9 @@
                 
                 const containerHeight = Math.max(500, Array.from(platformsToShow).length * 100);
                 modalSystems.style('height', containerHeight + 'px');
-                modalSvg.attr('height', containerHeight);
+                modalSvg
+                    .attr('width', containerWidth)
+                    .attr('height', containerHeight);
                 
                 // Create a shared tooltip element once (outside the loop to avoid duplicates)
                 let sharedTooltip = d3.select('.obligation-tooltip');
@@ -2451,10 +2576,16 @@
                     }
                 });
                 
-                // Draw arrows
+                // Draw arrows - wait longer to ensure nodes are fully rendered and positioned
                 setTimeout(() => {
+                    // Ensure SVG is properly sized
+                    const containerRect = modalSystems.node().getBoundingClientRect();
+                    modalSvg
+                        .attr('width', containerRect.width)
+                        .attr('height', containerRect.height);
+                    
                     drawDependencyArrowsInModal(edgesToShow, visiblePositions, modalSystems, modalSvg);
-                }, 50);
+                }, 150);
             }, 10);
         }
         
@@ -2645,40 +2776,356 @@
             });
         }
         
-        function drawDependencyArrowsInModal(edges, positions, modalSystems, modalSvg) {
-            const modalSystemsRect = modalSystems.node().getBoundingClientRect();
+        /**
+         * Define los markers de flecha en el SVG usando D3.js
+         * @param {d3.Selection} svg - Selección D3 del elemento SVG donde se definirán los markers
+         * @param {string} markerId - ID único para el marker (ej: 'modal-arrowhead-red')
+         * @param {Object} options - Opciones de configuración del marker
+         * @param {string} options.color - Color de la flecha (default: '#dc3545')
+         * @param {number} options.size - Tamaño del marker (default: 12)
+         */
+        function defineArrowMarker(svg, markerId, options = {}) {
+            const color = options.color || '#dc3545';
+            const size = options.size || 12;
             
+            // Buscar o crear el elemento <defs> en el SVG
+            let defs = svg.select('defs');
+            if (defs.empty()) {
+                defs = svg.append('defs');
+            }
+            
+            // Remover marker existente si existe
+            defs.select(`#${markerId}`).remove();
+            
+            // Crear el marker de flecha
+            const marker = defs.append('marker')
+                .attr('id', markerId)
+                .attr('markerWidth', size)
+                .attr('markerHeight', size)
+                .attr('refX', size) // Posición donde se une la flecha al path
+                .attr('refY', size / 2)
+                .attr('orient', 'auto')
+                .attr('markerUnits', 'userSpaceOnUse');
+            
+            // Crear el polígono de la flecha
+            marker.append('polygon')
+                .attr('points', `0 0, ${size} ${size/2}, 0 ${size}`)
+                .attr('fill', color)
+                .attr('stroke', options.strokeColor || '#c82333')
+                .attr('stroke-width', options.strokeWidth || '1');
+            
+            return marker;
+        }
+        
+        /**
+         * Calcula el punto exacto en el borde de una caja
+         * REGLA FIJA: Source siempre borde derecho, Target siempre borde izquierdo
+         * Cálculo matemático preciso usando x, y, width, height
+         * @param {DOMRect} nodeRect - Bounding rect del nodo
+         * @param {DOMRect} containerRect - Bounding rect del contenedor (para coordenadas relativas)
+         * @param {string} type - 'source' (borde derecho) o 'target' (borde izquierdo)
+         * @param {number} offsetY - Offset vertical para separar múltiples flechas (default: 0)
+         * @param {Object} options - Opciones de configuración
+         * @param {number} options.gap - Espacio entre el nodo y el punto de conexión (default: 0)
+         * @param {number} options.arrowheadMargin - Margen para evitar que arrowhead se monte (default: 10)
+         * @returns {Object} Objeto con {x, y}
+         */
+        function getEdgePoint(nodeRect, containerRect, type = 'source', offsetY = 0, options = {}) {
+            const gap = options.gap || 0;
+            const arrowheadMargin = options.arrowheadMargin || 10;
+            
+            // Calcular coordenadas relativas al contenedor usando x, y, width, height
+            const nodeX = nodeRect.left - containerRect.left;
+            const nodeY = nodeRect.top - containerRect.top;
+            const nodeWidth = nodeRect.width;
+            const nodeHeight = nodeRect.height;
+            const nodeCenterY = nodeY + nodeHeight / 2;
+            
+            let x, y;
+            
+            if (type === 'source') {
+                // REGLA FIJA: Source siempre sale del borde derecho
+                // x = source.x + source.width
+                // y = source.y + source.height / 2 (+ offset)
+                x = nodeX + nodeWidth + gap;
+                y = nodeCenterY + offsetY;
+            } else {
+                // REGLA FIJA: Target siempre entra por el borde izquierdo
+                // x = target.x - margin (para evitar que arrowhead se monte)
+                // y = target.y + target.height / 2 (+ offset)
+                x = nodeX - gap - arrowheadMargin;
+                y = nodeCenterY + offsetY;
+            }
+            
+            return { x, y };
+        }
+        
+        /**
+         * Calcula los puntos de conexión entre dos nodos
+         * REGLA FIJA: Source borde derecho, Target borde izquierdo
+         * @param {DOMRect} sourceRect - Bounding rect del nodo origen
+         * @param {DOMRect} targetRect - Bounding rect del nodo destino
+         * @param {DOMRect} containerRect - Bounding rect del contenedor (para coordenadas relativas)
+         * @param {number} offsetY - Offset vertical para separar múltiples flechas (default: 0)
+         * @param {Object} options - Opciones de configuración
+         * @returns {Object} Objeto con sourceX, sourceY, targetX, targetY
+         */
+        function calculateConnectionPoints(sourceRect, targetRect, containerRect, offsetY = 0, options = {}) {
+            const sourcePoint = getEdgePoint(sourceRect, containerRect, 'source', offsetY, options);
+            const targetPoint = getEdgePoint(targetRect, containerRect, 'target', offsetY, options);
+            
+            return {
+                sourceX: sourcePoint.x,
+                sourceY: sourcePoint.y,
+                targetX: targetPoint.x,
+                targetY: targetPoint.y
+            };
+        }
+        
+        /**
+         * Crea un path curvo horizontal y suave usando cubic bezier
+         * REGLA: Siempre horizontal (derecha → izquierda)
+         * Usa d3.linkHorizontal() equivalente con curva Bézier
+         * @param {number} sourceX - Coordenada X del punto origen (borde derecho)
+         * @param {number} sourceY - Coordenada Y del punto origen (centro vertical + offset)
+         * @param {number} targetX - Coordenada X del punto destino (borde izquierdo - margin)
+         * @param {number} targetY - Coordenada Y del punto destino (centro vertical + offset)
+         * @returns {string} String del path SVG
+         */
+        function createHorizontalCurvePath(sourceX, sourceY, targetX, targetY) {
+            const distanceX = targetX - sourceX;
+            const distanceY = targetY - sourceY;
+            
+            // Curva horizontal suave: usar d3.linkHorizontal() equivalente
+            // Control points para curva Bézier horizontal
+            // Curvatura proporcional a la distancia vertical (para evitar curvas exageradas)
+            const curveFactor = 0.3; // 30% de la distancia horizontal para la curva
+            const curveDistance = Math.abs(distanceX) * curveFactor;
+            
+            // Control points: curva horizontal suave
+            // Si hay diferencia vertical, crear una curva S suave
+            const verticalOffset = Math.abs(distanceY) * 0.2; // 20% de la diferencia vertical
+            
+            const control1X = sourceX + curveDistance;
+            const control1Y = sourceY + (distanceY > 0 ? verticalOffset : -verticalOffset);
+            
+            const control2X = targetX - curveDistance;
+            const control2Y = targetY - (distanceY > 0 ? verticalOffset : -verticalOffset);
+            
+            const path = d3.path();
+            path.moveTo(sourceX, sourceY);
+            path.bezierCurveTo(control1X, control1Y, control2X, control2Y, targetX, targetY);
+            
+            return path.toString();
+        }
+        
+        /**
+         * Calcula offsets consistentes para múltiples flechas que salen del mismo nodo
+         * Usa offsets simétricos de +12px y -12px
+         * @param {number} index - Índice de la conexión actual (0, 1, 2, ...)
+         * @param {number} total - Total de conexiones desde este nodo
+         * @returns {number} Offset a aplicar (+12px, -12px, 0, etc.)
+         */
+        function calculateOffsetForMultipleArrows(index, total) {
+            if (total <= 1) return 0;
+            
+            // Offsets consistentes: +12px, -12px, +24px, -24px, etc.
+            const baseOffset = 12;
+            
+            if (total === 2) {
+                // Dos flechas: +12px y -12px
+                return index === 0 ? -baseOffset : baseOffset;
+            } else {
+                // Múltiples flechas: distribuir simétricamente
+                const centerIndex = Math.floor(total / 2);
+                const offsetFromCenter = index - centerIndex;
+                return offsetFromCenter * baseOffset;
+            }
+        }
+        
+        /**
+         * Función reutilizable para calcular el path de una flecha horizontal entre dos nodos
+         * REGLA FIJA: Source borde derecho → Target borde izquierdo
+         * @param {DOMRect} sourceRect - Bounding rect del nodo origen
+         * @param {DOMRect} targetRect - Bounding rect del nodo destino
+         * @param {DOMRect} containerRect - Bounding rect del contenedor
+         * @param {number} offsetIndex - Índice para calcular offset (default: 0)
+         * @param {number} totalFromSource - Total de flechas desde el nodo origen (default: 1)
+         * @param {Object} options - Opciones de configuración
+         * @returns {Object} Objeto con {path: string, sourceX, sourceY, targetX, targetY, offsetY}
+         */
+        function computeHorizontalEdgePath(sourceRect, targetRect, containerRect, offsetIndex = 0, totalFromSource = 1, options = {}) {
+            // Calcular offset para separar múltiples flechas (+12px, -12px)
+            const offsetY = calculateOffsetForMultipleArrows(offsetIndex, totalFromSource);
+            
+            // Calcular puntos de conexión exactos en los bordes
+            // REGLA: Source siempre borde derecho, Target siempre borde izquierdo
+            const points = calculateConnectionPoints(sourceRect, targetRect, containerRect, offsetY, {
+                gap: options.gap || 0,
+                arrowheadMargin: options.arrowheadMargin || 10
+            });
+            
+            // Crear path curvo horizontal y suave
+            const pathString = createHorizontalCurvePath(
+                points.sourceX,
+                points.sourceY,
+                points.targetX,
+                points.targetY
+            );
+            
+            return {
+                path: pathString,
+                sourceX: points.sourceX,
+                sourceY: points.sourceY,
+                targetX: points.targetX,
+                targetY: points.targetY,
+                offsetY: offsetY
+            };
+        }
+        
+        /**
+         * Dibuja las flechas (líneas) que conectan los nodos existentes en el SVG
+         * NO modifica ni crea nodos, solo dibuja las conexiones
+         * Mejora: Calcula automáticamente el lado correcto de cada nodo y aplica offsets para evitar superposiciones
+         * @param {Array} edges - Array de objetos {source: string, target: string} con las conexiones
+         * @param {d3.Selection} containerSelection - Selección D3 del contenedor que contiene los nodos
+         * @param {d3.Selection} svgSelection - Selección D3 del SVG donde se dibujarán las líneas
+         * @param {string} nodeSelector - Selector CSS para encontrar los nodos (default: '.system-node')
+         * @param {string} nodeIdAttribute - Atributo que identifica el nodo (default: 'data-platform')
+         * @param {string} markerId - ID del marker de flecha a usar (default: 'modal-arrowhead-red')
+         * @param {Object} options - Opciones adicionales de estilo
+         */
+        function drawConnectionArrows(edges, containerSelection, svgSelection, nodeSelector = '.system-node', nodeIdAttribute = 'data-platform', markerId = 'modal-arrowhead-red', options = {}) {
+            // Limpiar flechas existentes
+            svgSelection.selectAll('path.connection-arrow').remove();
+            svgSelection.selectAll('circle.connection-source-marker').remove();
+            svgSelection.selectAll('text.connection-source-asterisk').remove();
+            
+            // Obtener el rectángulo del contenedor para calcular coordenadas relativas
+            const containerNode = containerSelection.node();
+            if (!containerNode) {
+                console.warn('Container node not found');
+                return;
+            }
+            const containerRect = containerNode.getBoundingClientRect();
+            
+            // Asegurar que el marker existe
+            defineArrowMarker(svgSelection, markerId, {
+                color: options.arrowColor || '#dc3545',
+                strokeColor: options.arrowStrokeColor || '#c82333',
+                size: options.arrowSize || 12
+            });
+            
+            // Agrupar edges por nodo origen para calcular offsets
+            const edgesBySource = {};
             edges.forEach(edge => {
-                const sourceNode = modalSystems.node().querySelector(`.system-node[data-platform="${edge.source}"]`);
-                const targetNode = modalSystems.node().querySelector(`.system-node[data-platform="${edge.target}"]`);
+                if (!edgesBySource[edge.source]) {
+                    edgesBySource[edge.source] = [];
+                }
+                edgesBySource[edge.source].push(edge);
+            });
+            
+            // Dibujar cada conexión usando computeEdgePath
+            edges.forEach((edge, globalIndex) => {
+                // Buscar los nodos existentes por su atributo identificador
+                const sourceNode = containerNode.querySelector(`${nodeSelector}[${nodeIdAttribute}="${edge.source}"]`);
+                const targetNode = containerNode.querySelector(`${nodeSelector}[${nodeIdAttribute}="${edge.target}"]`);
                 
-                if (!sourceNode || !targetNode) return;
+                if (!sourceNode || !targetNode) {
+                    console.warn(`Nodes not found for connection: ${edge.source} -> ${edge.target}`);
+                    return;
+                }
                 
+                // Obtener las posiciones de los nodos
                 const sourceRect = sourceNode.getBoundingClientRect();
                 const targetRect = targetNode.getBoundingClientRect();
                 
-                // Calculate arrow path relative to modal SVG
-                const sourceX = sourceRect.right - modalSystemsRect.left;
-                const sourceY = sourceRect.top + sourceRect.height / 2 - modalSystemsRect.top;
-                const targetX = targetRect.left - modalSystemsRect.left;
-                const targetY = targetRect.top + targetRect.height / 2 - modalSystemsRect.top;
+                // Calcular índice dentro del grupo de flechas del mismo origen
+                const sourceEdges = edgesBySource[edge.source];
+                const offsetIndex = sourceEdges.findIndex(e => e.target === edge.target);
+                const totalFromSource = sourceEdges.length;
                 
-                // Create curved path
-                const midX = (sourceX + targetX) / 2;
-                const path = d3.path();
-                path.moveTo(sourceX, sourceY);
-                path.quadraticCurveTo(midX, sourceY, targetX, targetY);
+                // Calcular el path usando la función reutilizable horizontal
+                // REGLA FIJA: Source borde derecho → Target borde izquierdo
+                const edgePath = computeHorizontalEdgePath(
+                    sourceRect,
+                    targetRect,
+                    containerRect,
+                    offsetIndex,
+                    totalFromSource,
+                    {
+                        gap: options.gap || 0,
+                        arrowheadMargin: options.arrowheadMargin || 10
+                    }
+                );
                 
-                modalSvg.append('path')
-                    .attr('d', path.toString())
-                    .attr('class', 'arrow')
-                    .attr('stroke', 'red')
-                    .attr('stroke-width', '2')
+                // Dibujar la línea con flecha
+                svgSelection.append('path')
+                    .attr('class', 'connection-arrow')
+                    .attr('d', edgePath.path)
+                    .attr('stroke', options.strokeColor || '#dc3545')
+                    .attr('stroke-width', options.strokeWidth || '3.5')
                     .attr('fill', 'none')
-                    .attr('marker-end', 'url(#modal-arrowhead-red)')
+                    .attr('stroke-linecap', 'round')
+                    .attr('stroke-linejoin', 'round')
+                    .attr('marker-end', `url(#${markerId})`)
+                    .attr('opacity', options.opacity || '1')
+                    .attr('filter', options.filter || 'drop-shadow(0 2px 4px rgba(220, 53, 69, 0.4))')
                     .attr('data-source', edge.source)
                     .attr('data-target', edge.target);
+                
+                // Dibujar círculo con asterisco en el punto de origen (opcional)
+                if (options.showSourceMarker !== false) {
+                    svgSelection.append('circle')
+                        .attr('class', 'connection-source-marker')
+                        .attr('cx', edgePath.sourceX)
+                        .attr('cy', edgePath.sourceY)
+                        .attr('r', options.sourceMarkerRadius || 8)
+                        .attr('fill', options.sourceMarkerColor || '#dc3545')
+                        .attr('stroke', options.sourceMarkerStroke || '#ffffff')
+                        .attr('stroke-width', options.sourceMarkerStrokeWidth || '2')
+                        .attr('opacity', '1');
+                    
+                    svgSelection.append('text')
+                        .attr('class', 'connection-source-asterisk')
+                        .attr('x', edgePath.sourceX)
+                        .attr('y', edgePath.sourceY)
+                        .attr('text-anchor', 'middle')
+                        .attr('dominant-baseline', 'central')
+                        .attr('fill', '#ffffff')
+                        .attr('font-size', options.sourceMarkerFontSize || '10px')
+                        .attr('font-weight', 'bold')
+                        .attr('pointer-events', 'none')
+                        .text('*');
+                }
             });
+        }
+        
+        /**
+         * Función principal para dibujar flechas en el modal (wrapper para mantener compatibilidad)
+         * @param {Array} edges - Array de conexiones {source, target}
+         * @param {Object} positions - Map de posiciones (no usado, mantenido para compatibilidad)
+         * @param {d3.Selection} modalSystems - Selección D3 del contenedor de nodos
+         * @param {d3.Selection} modalSvg - Selección D3 del SVG
+         */
+        function drawDependencyArrowsInModal(edges, positions, modalSystems, modalSvg) {
+            // Usar la función reutilizable con opciones optimizadas
+            drawConnectionArrows(
+                edges,
+                modalSystems,
+                modalSvg,
+                '.system-node',           // Selector de nodos
+                'data-platform',          // Atributo identificador
+                'modal-arrowhead-red',    // ID del marker
+                {
+                    gap: 0,                    // Sin gap inicial (anclaje exacto al borde)
+                    arrowheadMargin: 10,       // Margen de 10px para evitar que arrowhead se monte
+                    strokeColor: '#dc3545',
+                    strokeWidth: '3.5',
+                    showSourceMarker: true,
+                    sourceMarkerRadius: 8
+                }
+            );
         }
         
         // Modal close functionality

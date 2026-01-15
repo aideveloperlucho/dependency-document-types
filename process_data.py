@@ -45,24 +45,49 @@ def process_excel_data(excel_path='resources/portals.xlsx'):
     # Extract document types to platforms relationships
     dt_platform = df[['TipoDocumentos(AS IS) CM v2', 'Plataforma que lo usa']].dropna()
     
-    # Extract platform dependencies
-    platform_deps = df[['Plataforma que lo usa', 'Cual sistema/portal lo debio haber subido']].dropna()
-    
-    # Build document type to platforms mapping
+    # Build document type to platforms mapping AND document-type-specific dependencies
     doc_to_platforms = defaultdict(set)
-    for _, row in dt_platform.iterrows():
-        doc_type = str(row['TipoDocumentos(AS IS) CM v2']).strip()
-        platform = normalize_platform_name(row['Plataforma que lo usa'])
-        if doc_type and platform and doc_type != 'nan':
-            doc_to_platforms[doc_type].add(platform)
+    # This will store: documentType -> { platform -> dependency }
+    document_type_platform_dependencies = defaultdict(dict)
+    # This will store: documentType -> { platform -> obligation text }
+    document_platform_obligation_text = defaultdict(dict)
     
-    # Build platform dependency mapping
+    # Build grid data structure for filtering
+    # Each row contains: ItemType, DocumentType, Platform
+    grid_data = []
+    
+    # Process all rows that have document type and platform
+    for _, row in df.iterrows():
+        item_type = str(row['ItemType(AS IS)']).strip() if pd.notna(row['ItemType(AS IS)']) else ''
+        doc_type = str(row['TipoDocumentos(AS IS) CM v2']).strip() if pd.notna(row['TipoDocumentos(AS IS) CM v2']) else ''
+        platform = normalize_platform_name(row['Plataforma que lo usa']) if pd.notna(row['Plataforma que lo usa']) else None
+        dependency = normalize_platform_name(row['Cual sistema/portal lo debio haber subido']) if pd.notna(row['Cual sistema/portal lo debio haber subido']) else None
+        obligation_text = str(row['Es obligatorio subirlo?']).strip() if pd.notna(row['Es obligatorio subirlo?']) else ''
+        
+        if doc_type and doc_type != 'nan' and platform:
+            # Add platform to document type
+            doc_to_platforms[doc_type].add(platform)
+            
+            # Store dependency for this specific document type + platform combination
+            # Only store if dependency exists (column G has a value)
+            if dependency:
+                document_type_platform_dependencies[doc_type][platform] = dependency
+            # If no dependency, we don't store it (or store as null - but we'll skip nulls)
+            
+            # Store obligation text for this document type + platform combination
+            if obligation_text and obligation_text.lower() != 'nan':
+                document_platform_obligation_text[doc_type][platform] = obligation_text
+            
+            # Add row to grid data
+            grid_data.append({
+                'itemType': item_type if item_type and item_type != 'nan' else '',
+                'documentType': doc_type,
+                'platform': platform
+            })
+    
+    # Build legacy platform dependency mapping (for backward compatibility, but won't be used)
+    # This is kept for reference but the new structure is document-type-specific
     platform_dependencies = {}
-    for _, row in platform_deps.iterrows():
-        platform = normalize_platform_name(row['Plataforma que lo usa'])
-        depends_on = normalize_platform_name(row['Cual sistema/portal lo debio haber subido'])
-        if platform and depends_on:
-            platform_dependencies[platform] = depends_on
     
     # Build platform obligation status mapping
     # Collect all "Es obligatorio subirlo?" values for each platform
@@ -106,8 +131,11 @@ def process_excel_data(excel_path='resources/portals.xlsx'):
         'documentTypes': list(doc_to_platforms_dict.keys()),
         'platforms': list(set([p for platforms in doc_to_platforms_dict.values() for p in platforms])),
         'documentTypeToPlatforms': doc_to_platforms_dict,
-        'platformDependencies': platform_dependencies,
-        'platformIconStatus': platform_icon_status
+        'documentTypePlatformDependencies': dict(document_type_platform_dependencies),
+        'documentPlatformObligationText': dict(document_platform_obligation_text),  # For tooltips on warning icons
+        'platformDependencies': platform_dependencies,  # Legacy, kept for backward compatibility
+        'platformIconStatus': platform_icon_status,
+        'gridData': grid_data  # Grid data for filtering: array of {itemType, documentType, platform}
     }
     
     return data
@@ -127,26 +155,37 @@ def embed_data_in_html(data, html_path='index.html'):
             # Split by the embeddedData line
             parts = html_content.split('const embeddedData =', 1)
             if len(parts) == 2:
-                # Find where the old data ends (look for "let globalPlatformNodes" or "// Initialize")
+                # Find where the old data ends - look for "let globalPlatformNodes" directly
+                # This is more reliable than looking for the comment, which might have junk after it
                 second_part = parts[1]
-                # Find the next "let globalPlatformNodes" or "// Initialize" comment
-                end_marker = second_part.find('\n        // Store global references')
-                if end_marker == -1:
-                    end_marker = second_part.find('\n        let globalPlatformNodes')
-                if end_marker == -1:
-                    end_marker = second_part.find('\n        // Initialize')
-                if end_marker == -1:
-                    end_marker = second_part.find('\n        const data = embeddedData')
                 
-                if end_marker != -1:
+                # Find the actual "let globalPlatformNodes" line, skipping any junk in between
+                import re
+                # Look for the pattern: newline, then whitespace, then "let globalPlatformNodes"
+                # This will skip any junk lines like "for reuse" that might appear
+                match = re.search(r'\n\s+let\s+globalPlatformNodes', second_part)
+                if match:
+                    # Extract everything from "let globalPlatformNodes" onwards (skip any junk before it)
+                    preserved_content = second_part[match.start():]
+                else:
+                    # Fallback: try other markers
+                    end_marker = second_part.find('\n        // Initialize')
+                    if end_marker == -1:
+                        end_marker = second_part.find('\n        const data = embeddedData')
+                    preserved_content = second_part[end_marker:] if end_marker != -1 else ''
+                
+                if match or end_marker != -1:
                     # Replace everything between "const embeddedData =" and the global variables
+                    # Write clean code: comment + preserved content (which starts with "let globalPlatformNodes")
+                    # Strip leading newlines from preserved_content to avoid double newlines
+                    preserved_content = preserved_content.lstrip('\n')
                     new_content = (parts[0] + 
                                  'const embeddedData = ' + json_str + ';\n\n' +
                                  '        // Initialize with embedded data\n' +
                                  '        const data = embeddedData;\n' +
                                  '        \n' +
                                  '        // Store global references for reuse\n' +
-                                 second_part[end_marker + len('\n        // Store global references'):])
+                                 preserved_content)
                     
                     # Write back
                     with open(html_path, 'w', encoding='utf-8') as f:

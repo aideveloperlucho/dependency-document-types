@@ -89,7 +89,6 @@
     "Inspección Taller",
     "Consultas y Reclamos",
     "Recibo de conformidad",
-    "Cedula de identidad",
     "NO TIENE",
     "Finiquito legalizado",
     "Inspección del lugar",
@@ -102,19 +101,19 @@
     "Parte Policial (Hallazgo)"
   ],
   "platforms": [
-    "Web Oficiales",
-    "Egresos",
     "CGS",
-    "Web Proveedores",
-    "Web oficiales",
-    "Recupero",
-    "Liquidación Perdida Total",
+    "Web Oficiales",
     "Proceso genera el informe de liquidación",
-    "Denuncios",
-    "MDR",
-    "Web Liquidacion",
-    "Control de gastos(CDG)",
     "Fraude",
+    "Web Proveedores",
+    "Recupero",
+    "Egresos",
+    "Web Liquidacion",
+    "Denuncios",
+    "Control de gastos(CDG)",
+    "MDR",
+    "Web oficiales",
+    "Liquidación Perdida Total",
     "DJS(Declaracion Jurada Simple)"
   ],
   "documentTypeToPlatforms": {
@@ -131,8 +130,8 @@
       "Liquidación Perdida Total"
     ],
     "Boleta de Transporte": [
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Recupero"
     ],
     "Carta de saldo insoluto y compromiso alzamiento": [
       "Liquidación Perdida Total"
@@ -153,9 +152,9 @@
       "Liquidación Perdida Total"
     ],
     "Comprobante Grúa": [
-      "Recupero",
       "Web Liquidacion",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Recupero"
     ],
     "Comprobante de Ingreso": [
       "Web Liquidacion"
@@ -175,29 +174,29 @@
       "Liquidación Perdida Total"
     ],
     "Declaración Jurada Simple": [
-      "Denuncios",
       "Web Liquidacion",
       "Liquidación Perdida Total",
+      "Denuncios",
       "DJS(Declaracion Jurada Simple)"
     ],
     "Denuncia Policial": [
-      "Denuncios",
       "Liquidación Perdida Total",
+      "Denuncios",
       "DJS(Declaracion Jurada Simple)"
     ],
     "Documentos Consultas Reclamos": [
       "Web Proveedores"
     ],
     "Documentos Genérico": [
-      "Web Proveedores",
-      "Web oficiales"
+      "Web oficiales",
+      "Web Proveedores"
     ],
     "Documentos Ingreso Reingreso": [
       "Web Proveedores"
     ],
     "Documentos Inspección Taller": [
-      "Web Proveedores",
-      "Web Liquidacion"
+      "Web Liquidacion",
+      "Web Proveedores"
     ],
     "Documentos Seguimiento Reparación": [
       "Web Liquidacion"
@@ -225,25 +224,25 @@
       "Web Liquidacion"
     ],
     "Fotos y Videos Localización": [
-      "Denuncios",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Denuncios"
     ],
     "Fotos y Videos de los daños": [
-      "Denuncios",
       "Liquidación Perdida Total",
-      "DJS(Declaracion Jurada Simple)"
+      "DJS(Declaracion Jurada Simple)",
+      "Denuncios"
     ],
     "Fotos y Videos otros": [
-      "Denuncios",
       "CGS",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Denuncios"
     ],
     "Frontal": [
       "Liquidación Perdida Total"
     ],
     "Guía de Despacho": [
-      "MDR",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "MDR"
     ],
     "Guía de traslado": [
       "Liquidación Perdida Total"
@@ -275,10 +274,10 @@
       "Liquidación Perdida Total"
     ],
     "Otros": [
-      "Web Proveedores",
       "Web Liquidacion",
       "Liquidación Perdida Total",
-      "Fraude"
+      "Fraude",
+      "Web Proveedores"
     ],
     "Otros Daños": [
       "Liquidación Perdida Total"
@@ -301,18 +300,18 @@
       "Liquidación Perdida Total"
     ],
     "Presupuesto": [
-      "Web Proveedores",
+      "Egresos",
       "Web Liquidacion",
-      "Egresos"
+      "Web Proveedores"
     ],
     "Presupuesto Salvataje": [
       "Web Liquidacion"
     ],
     "Recibo de Conformidad": [
-      "Web Proveedores",
+      "Egresos",
       "Web Liquidacion",
       "Liquidación Perdida Total",
-      "Egresos"
+      "Web Proveedores"
     ],
     "Respaldo Factura": [
       "Liquidación Perdida Total"
@@ -348,9 +347,10 @@
     ],
     "Cedula de Identidad": [
       "Fraude",
-      "Liquidación Perdida Total",
-      "Denuncios",
+      "Egresos",
       "Web Liquidacion",
+      "Denuncios",
+      "Liquidación Perdida Total",
       "DJS(Declaracion Jurada Simple)"
     ],
     "Cedula de Identidad Reverso": [
@@ -369,10 +369,10 @@
       "Liquidación Perdida Total"
     ],
     "Licencia de Conducir": [
-      "Denuncios",
       "Web Liquidacion",
       "Liquidación Perdida Total",
-      "DJS(Declaracion Jurada Simple)"
+      "DJS(Declaracion Jurada Simple)",
+      "Denuncios"
     ],
     "Licencia de Conducir Reverso": [
       "Denuncios"
@@ -426,16 +426,13 @@
     "Recibo de conformidad": [
       "Egresos"
     ],
-    "Cedula de identidad": [
-      "Egresos"
-    ],
     "NO TIENE": [
-      "Web oficiales",
-      "Liquidación Perdida Total",
+      "CGS",
       "Proceso genera el informe de liquidación",
       "Web Liquidacion",
       "Control de gastos(CDG)",
-      "CGS"
+      "Web oficiales",
+      "Liquidación Perdida Total"
     ],
     "Finiquito legalizado": [
       "Liquidación Perdida Total"
@@ -465,13 +462,223 @@
       "Fraude"
     ]
   },
-  "platformDependencies": {
-    "Web Liquidacion": "Denuncios",
-    "Liquidación Perdida Total": "Denuncios",
-    "DJS(Declaracion Jurada Simple)": "Web Liquidacion",
-    "Fraude": "DJS(Declaracion Jurada Simple)",
-    "Egresos": "DJS(Declaracion Jurada Simple)"
+  "documentTypePlatformDependencies": {
+    "Cedula de Identidad": {
+      "Web Liquidacion": "Denuncios",
+      "Liquidación Perdida Total": "Denuncios",
+      "DJS(Declaracion Jurada Simple)": "Web Liquidacion",
+      "Fraude": "DJS(Declaracion Jurada Simple)",
+      "Egresos": "DJS(Declaracion Jurada Simple)"
+    }
   },
+  "documentPlatformObligationText": {
+    "Informe Tecnico": {
+      "Fraude": "SI"
+    },
+    "Acta de entrega": {
+      "Liquidación Perdida Total": "SI"
+    },
+    "Atencion medica": {
+      "Liquidación Perdida Total": "SI"
+    },
+    "Autorización de Entrega (Acreedor)": {
+      "Liquidación Perdida Total": "Si"
+    },
+    "Boleta de Transporte": {
+      "Liquidación Perdida Total": "SI",
+      "Recupero": "NO"
+    },
+    "Carta de saldo insoluto y compromiso alzamiento": {
+      "Liquidación Perdida Total": "SI"
+    },
+    "Cedula de Identidad(Otros)": {
+      "Egresos": "Si"
+    },
+    "Certificado Perdida Total": {
+      "Web Liquidacion": "?"
+    },
+    "Comprobante Grúa": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Recupero": "NO"
+    },
+    "Comprobante de Ingreso": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Constancia / Parte Policial": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Cuestionario Completo": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Declaración Jurada Simple": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Denuncios": "NO",
+      "DJS(Declaracion Jurada Simple)": "Si"
+    },
+    "Denuncia Policial": {
+      "Denuncios": "NO",
+      "DJS(Declaracion Jurada Simple)": "Si"
+    },
+    "Documentos Genérico": {
+      "Web oficiales": "SI"
+    },
+    "Documentos Ingreso Reingreso": {
+      "Web Proveedores": "SI"
+    },
+    "Documentos Inspección Taller": {
+      "Web Proveedores": "NO",
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Documentos Seguimiento Reparación": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Finiquito": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "FotosInspeccion": {
+      "Web Liquidacion": "SI"
+    },
+    "Fotos Seguimiento Reparacion": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Fotos y documentos de Impugnaciones": {
+      "Web Liquidacion": "SI"
+    },
+    "Fotos y Videos Localización": {
+      "Denuncios": "NO"
+    },
+    "Fotos y Videos de los daños": {
+      "DJS(Declaracion Jurada Simple)": "Si",
+      "Denuncios": "NO"
+    },
+    "Fotos y Videos otros": {
+      "CGS": "NO",
+      "Denuncios": "NO"
+    },
+    "Guía de Despacho": {
+      "MDR": "NO"
+    },
+    "Inspección Liquidador": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Control de gastos(CDG)": "SI"
+    },
+    "Otros": {
+      "Web Proveedores": "NO SE USA",
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Fraude": "SI"
+    },
+    "Pagaré": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Parte de Hallazgo del Vehículo": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Peritaje": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Presupuesto": {
+      "Web Proveedores": "Si",
+      "Egresos": "Si",
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Presupuesto Salvataje": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Recibo de Conformidad": {
+      "Web Proveedores": "Si",
+      "Egresos": "Si",
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Respaldo Impugnación": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Respaldo Publicación": {
+      "Liquidación Perdida Total": "SI"
+    },
+    "Resumen Liquidador": {
+      "Denuncios": "NO"
+    },
+    "Valor Comercial": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Voucher alcotest": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo LAGL."
+    },
+    "Cedula de Identidad": {
+      "Web Liquidacion": "NO, a menos que el liquidador los \nsolicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "Denuncios": "SI",
+      "DJS(Declaracion Jurada Simple)": "SI",
+      "Egresos": "Si"
+    },
+    "Cedula de Identidad Reverso": {
+      "Denuncios": "SI"
+    },
+    "Licencia de Conducir": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo.",
+      "DJS(Declaracion Jurada Simple)": "SI",
+      "Liquidación Perdida Total": "SI",
+      "Denuncios": "SI"
+    },
+    "Licencia de Conducir Reverso": {
+      "Denuncios": "SI"
+    },
+    "Padrón del Vehículo": {
+      "Web Liquidacion": "NO, a menos que el liquidador los solicite, entonces el formulario enviado al cliente obligara a subirlo."
+    },
+    "Genérico": {
+      "Web Proveedores": "SI",
+      "Web Oficiales": "SI"
+    },
+    "Ingreso – Reingreso": {
+      "Web Proveedores": "SI"
+    },
+    "ILI": {
+      "Control de gastos(CDG)": "SI"
+    },
+    "Inspección Taller": {
+      "Web Proveedores": "NO"
+    },
+    "Recibo de conformidad": {
+      "Egresos": "Si"
+    },
+    "NO TIENE": {
+      "Web Liquidacion": "Si",
+      "Control de gastos(CDG)": "SI",
+      "CGS": "SI",
+      "Web oficiales": "SI"
+    },
+    "Finiquito legalizado": {
+      "Liquidación Perdida Total": "Si"
+    },
+    "Inspección del lugar": {
+      "Fraude": "SI"
+    },
+    "Entrevista personal asegurado": {
+      "Fraude": "SI"
+    },
+    "Pasadas del tag": {
+      "Fraude": "SI"
+    },
+    "Informe Autopista": {
+      "Fraude": "SI"
+    },
+    "Verificar cámaras de seguridad": {
+      "Fraude": "SI"
+    },
+    "Solicitud de participación de accidente": {
+      "Fraude": "SI"
+    },
+    "Parte Policial (Denuncio)": {
+      "Fraude": "SI"
+    },
+    "Parte Policial (Hallazgo)": {
+      "Fraude": "SI"
+    }
+  },
+  "platformDependencies": {},
   "platformIconStatus": {
     "Fraude": "SI",
     "Liquidación Perdida Total": "SI",
@@ -487,5 +694,797 @@
     "MDR": "NO",
     "Control de gastos(CDG)": "SI",
     "Web Oficiales": "SI"
-  }
+  },
+  "gridData": [
+    {
+      "itemType": "Fraude",
+      "documentType": "Informe Tecnico",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Acta de entrega",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Atencion medica",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Autorización de Entrega (Acreedor)",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Boleta de Transporte",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Boleta de Transporte",
+      "platform": "Recupero"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Carta de saldo insoluto y compromiso alzamiento",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Cedula de Identidad(Otros)",
+      "platform": "Egresos"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Certificado Perdida Total",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Certificado de Anotaciones Vigentes",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Certificado de pago multas",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Certificado de viajes",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Comprobante Grúa",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Comprobante Grúa",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Comprobante Grúa",
+      "platform": "Recupero"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Comprobante de Ingreso",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Comprobante de testigos",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Comprobante llaves/GPS",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Constancia / Parte Policial",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Constancia / Parte Policial",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Cuestionario Completo",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Cuestionario Completo",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Declaración Jurada Simple",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Declaración Jurada Simple",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Declaración Jurada Simple",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Declaración Jurada Simple",
+      "platform": "DJS(Declaracion Jurada Simple)"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Denuncia Policial",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Denuncia Policial",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Denuncia Policial",
+      "platform": "DJS(Declaracion Jurada Simple)"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Documentos Consultas Reclamos",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Documentos Genérico",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Documentos Genérico",
+      "platform": "Web oficiales"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Documentos Ingreso Reingreso",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Documentos Inspección Taller",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Documentos Inspección Taller",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Documentos Seguimiento Reparación",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Documentos solicitados a cliente (cuestionarios, recibos, \ndeclaraciones, alcotest, etc)",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Documentos que proporcionen evidencia del recupero",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Finiquito",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Finiquito",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotografías Adicionales del Siniestro",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "FotosInspeccion",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos Seguimiento Reparacion",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos y documentos de Impugnaciones",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos y Videos Localización",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos y Videos Localización",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos y Videos de los daños",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos y Videos de los daños",
+      "platform": "DJS(Declaracion Jurada Simple)"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos y Videos de los daños",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos y Videos otros",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos y Videos otros",
+      "platform": "CGS"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Fotos y Videos otros",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Frontal",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Guía de Despacho",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Guía de Despacho",
+      "platform": "MDR"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Guía de traslado",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Informe de Liquidación",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Inspección Liquidador",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Inspección Liquidador",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Inspección Liquidador",
+      "platform": "Control de gastos(CDG)"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Interior",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Kilometraje",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Lateral derecho (copiloto)",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Lateral izquierdo (conductor)",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Liquidación Oficial",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Ocurrencia del siniestro",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Otros",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Otros",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Otros",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Otros Daños",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "PDF Valorización",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Pagaré",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Pagaré",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Parte de Hallazgo del Vehículo",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Parte de Hallazgo del Vehículo",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Peritaje",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Permiso de circulacion",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Presupuesto",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Presupuesto",
+      "platform": "Egresos"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Presupuesto",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Presupuesto Salvataje",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Recibo de Conformidad",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Recibo de Conformidad",
+      "platform": "Egresos"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Recibo de Conformidad",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Recibo de Conformidad",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Respaldo Factura",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Respaldo Impugnación",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Respaldo Impugnación",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Respaldo Propuesta Impugna",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Respaldo Publicación",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Respaldo Valorización Manual",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Resumen Liquidador",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Revision tecnica homologacion",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Trasera",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Valor Comercial",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Voucher alcotest",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Voucher alcotest",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Cedula de Identidad",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Cedula de Identidad",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Cedula de Identidad",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Cedula de Identidad",
+      "platform": "DJS(Declaracion Jurada Simple)"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Cedula de Identidad",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Cedula de Identidad Reverso",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Certificado deuda de alimentos",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Cuestionario Cliente",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Cédula de quien recibe.",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Cédula de quien retira el VH",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Licencia de Conducir",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Licencia de Conducir",
+      "platform": "DJS(Declaracion Jurada Simple)"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Licencia de Conducir",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Licencia de Conducir",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Licencia de Conducir Reverso",
+      "platform": "Denuncios"
+    },
+    {
+      "itemType": "Personas",
+      "documentType": "Pasaporte",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Certificado de Anotaciones Vigentes",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Factura de compraventa",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Frontal",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Informe Autofact",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Inscripción Registro Civil.",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Interior",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Kilometraje",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Lateral derecho (copiloto)",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Lateral izquierdo (conductor)",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Número Vin",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Otro",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Padrón del Vehículo",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Patente",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Permiso de circulación",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Revisión técnica homologación",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Vehiculo",
+      "documentType": "Trasera",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Taller",
+      "documentType": "Genérico",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentType": "Ingreso – Reingreso",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentType": "ILI",
+      "platform": "Control de gastos(CDG)"
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentType": "Inspección Taller",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentType": "Genérico",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentType": "Genérico",
+      "platform": "Web Oficiales"
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentType": "Recibo de Conformidad",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentType": "Presupuesto",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentType": "Consultas y Reclamos",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "SistemasSiniestros",
+      "documentType": "Otros",
+      "platform": "Web Proveedores"
+    },
+    {
+      "itemType": "Antecedentes",
+      "documentType": "Presupuesto",
+      "platform": "Egresos"
+    },
+    {
+      "itemType": "Antecedentes",
+      "documentType": "Recibo de conformidad",
+      "platform": "Egresos"
+    },
+    {
+      "itemType": "Antecedentes",
+      "documentType": "Cedula de Identidad",
+      "platform": "Egresos"
+    },
+    {
+      "itemType": "Poliza",
+      "documentType": "NO TIENE",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Poliza",
+      "documentType": "NO TIENE",
+      "platform": "Web Liquidacion"
+    },
+    {
+      "itemType": "Poliza",
+      "documentType": "NO TIENE",
+      "platform": "Control de gastos(CDG)"
+    },
+    {
+      "itemType": "Poliza",
+      "documentType": "NO TIENE",
+      "platform": "CGS"
+    },
+    {
+      "itemType": "DocPago",
+      "documentType": "NO TIENE",
+      "platform": "Web oficiales"
+    },
+    {
+      "itemType": "DocPago",
+      "documentType": "NO TIENE",
+      "platform": "Proceso genera el informe de liquidación"
+    },
+    {
+      "itemType": "Siniestro",
+      "documentType": "Finiquito legalizado",
+      "platform": "Liquidación Perdida Total"
+    },
+    {
+      "itemType": "Fraude",
+      "documentType": "Inspección del lugar",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Fraude",
+      "documentType": "Entrevista personal asegurado",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Fraude",
+      "documentType": "Pasadas del tag",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Fraude",
+      "documentType": "Informe Autopista",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Fraude",
+      "documentType": "Verificar cámaras de seguridad",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Fraude",
+      "documentType": "Solicitud de participación de accidente",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Fraude",
+      "documentType": "Parte Policial (Denuncio)",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Fraude",
+      "documentType": "Parte Policial (Hallazgo)",
+      "platform": "Fraude"
+    },
+    {
+      "itemType": "Fraude",
+      "documentType": "Otros",
+      "platform": "Fraude"
+    }
+  ]
 }

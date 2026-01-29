@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: dependency-document-types
+    env: static
+    buildCommand: echo "No build required - static HTML site"
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

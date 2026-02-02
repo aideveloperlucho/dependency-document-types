@@ -4,8 +4,8 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
 venv/
+env/
 ENV/
 build/
 develop-eggs/
@@ -23,10 +23,15 @@ wheels/
 .installed.cfg
 *.egg
 
-# Data files (backup)
-_data.json
+# Flask
+instance/
+.webassets-cache
 
-# Editor
+# Virtual Environment
+venv/
+ENV/
+
+# IDE
 .vscode/
 .idea/
 *.swp
@@ -36,3 +41,19 @@ _data.json
 # OS
 .DS_Store
 Thumbs.db
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Data backups (optional)
+_data.json
+
+# Old resources folder (if it still exists)
+/resources/

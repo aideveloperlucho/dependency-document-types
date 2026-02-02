@@ -1,0 +1,23 @@
+@echo off
+REM Startup script for Document Types Dependency Visualization (Windows)
+
+echo Starting Document Types Dependency Visualization...
+
+REM Check if virtual environment exists
+if not exist "venv\" (
+    echo Creating virtual environment...
+    python -m venv venv
+)
+
+REM Activate virtual environment
+echo Activating virtual environment...
+call venv\Scripts\activate.bat
+
+REM Install dependencies
+echo Installing dependencies...
+pip install -r backend\requirements.txt
+
+REM Start Flask application
+echo Starting Flask server...
+cd backend
+python app.py

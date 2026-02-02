@@ -34,7 +34,7 @@ def normalize_platform_name(name):
     # Return original if no normalization needed
     return name
 
-def process_excel_data(excel_path='resources/portals.xlsx'):
+def process_excel_data(excel_path='../frontend/resources/portals.xlsx'):
     """
     Read Excel file and extract relationships between:
     1. Document types and platforms that use them
@@ -165,7 +165,7 @@ def process_excel_data(excel_path='resources/portals.xlsx'):
     
     return data
 
-def embed_data_in_html(data, html_path='index.html'):
+def embed_data_in_html(data, html_path='../frontend/index.html'):
     """Embed JSON data into HTML file to avoid CORS issues."""
     try:
         # Read the HTML file
@@ -231,7 +231,7 @@ def main():
     data = process_excel_data()
     
     # Save to JSON file
-    output_file = 'data.json'
+    output_file = '../data.json'
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     

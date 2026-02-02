@@ -128,21 +128,21 @@
     "Parte Policial (Hallazgo)"
   ],
   "platforms": [
-    "DJS(Declaracion Jurada Simple)",
-    "Fraude",
-    "Gestor Documental",
-    "MDR",
-    "Liquidación Perdida Total",
-    "Web Liquidacion",
-    "Denuncios",
-    "CGS",
-    "Web Oficiales",
     "Proceso genera el informe de liquidación",
-    "Control de gastos(CDG)",
+    "Web Oficiales",
+    "DJS(Declaracion Jurada Simple)",
     "Web Proveedores",
+    "Denuncios",
+    "MDR",
+    "Egresos",
     "Web oficiales",
+    "Control de gastos(CDG)",
+    "Fraude",
+    "Web Liquidacion",
+    "Liquidación Perdida Total",
+    "Gestor Documental",
     "Recupero",
-    "Egresos"
+    "CGS"
   ],
   "documentTypeToPlatforms": {
     "Informe Tecnico": [
@@ -152,19 +152,19 @@
       "Liquidación Perdida Total"
     ],
     "Atencion medica": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Autorización de Entrega (Acreedor)": [
       "Liquidación Perdida Total"
     ],
     "Boleta de Transporte": [
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Recupero"
     ],
     "Carta de saldo insoluto y compromiso alzamiento": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Cedula de Identidad(Otros)": [
       "Egresos"
@@ -173,43 +173,43 @@
       "Web Liquidacion"
     ],
     "Certificado de Anotaciones Vigentes": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Certificado de pago multas": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Certificado de viajes": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Comprobante Grúa": [
+      "Liquidación Perdida Total",
       "Gestor Documental",
       "Recupero",
-      "Liquidación Perdida Total",
       "Web Liquidacion"
     ],
     "Comprobante de Ingreso": [
       "Web Liquidacion"
     ],
     "Comprobante de testigos": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Comprobante llaves/GPS": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Constancia / Parte Policial": [
+      "Liquidación Perdida Total",
       "Gestor Documental",
       "Recupero",
-      "Liquidación Perdida Total",
       "Web Liquidacion"
     ],
     "Cuestionario Completo": [
-      "Recupero",
       "Liquidación Perdida Total",
+      "Recupero",
       "Web Liquidacion"
     ],
     "Daños específicos del vehículo": [
@@ -217,15 +217,15 @@
     ],
     "Declaración Jurada Simple": [
       "DJS(Declaracion Jurada Simple)",
-      "Liquidación Perdida Total",
-      "Web Liquidacion",
       "Denuncios",
-      "Recupero",
-      "Gestor Documental"
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
+      "Gestor Documental",
+      "Recupero"
     ],
     "Denuncia Policial": [
-      "DJS(Declaracion Jurada Simple)",
       "Liquidación Perdida Total",
+      "DJS(Declaracion Jurada Simple)",
       "Denuncios"
     ],
     "Documento Adicional": [
@@ -263,8 +263,8 @@
       "Web Liquidacion"
     ],
     "Fotografías Adicionales del Siniestro": [
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Recupero"
     ],
     "FotosInspeccion": [
       "Web Liquidacion"
@@ -276,30 +276,30 @@
       "Web Liquidacion"
     ],
     "Fotos y Videos Localización": [
-      "Recupero",
       "Liquidación Perdida Total",
-      "Denuncios"
+      "Denuncios",
+      "Recupero"
     ],
     "Fotos y Videos de los daños": [
-      "DJS(Declaracion Jurada Simple)",
-      "Recupero",
       "Liquidación Perdida Total",
-      "Denuncios"
+      "DJS(Declaracion Jurada Simple)",
+      "Denuncios",
+      "Recupero"
     ],
     "Fotos y Videos otros": [
-      "Recupero",
-      "Denuncios",
       "Liquidación Perdida Total",
+      "Denuncios",
+      "Recupero",
       "CGS"
     ],
     "Frontal": [
+      "Liquidación Perdida Total",
       "Gestor Documental",
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Recupero"
     ],
     "Guía de Despacho": [
-      "MDR",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "MDR"
     ],
     "Guía de traslado": [
       "Liquidación Perdida Total"
@@ -314,41 +314,41 @@
       "Recupero"
     ],
     "Inspección Liquidador": [
+      "Liquidación Perdida Total",
       "Control de gastos(CDG)",
       "Recupero",
-      "Liquidación Perdida Total",
       "Web Liquidacion"
     ],
     "Interior": [
+      "Liquidación Perdida Total",
       "Gestor Documental",
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Recupero"
     ],
     "Kilometraje": [
+      "Liquidación Perdida Total",
       "Gestor Documental",
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Recupero"
     ],
     "Lateral derecho (copiloto)": [
+      "Liquidación Perdida Total",
       "Gestor Documental",
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Recupero"
     ],
     "Lateral izquierdo (conductor)": [
+      "Liquidación Perdida Total",
       "Gestor Documental",
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Recupero"
     ],
     "Liquidación Oficial": [
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Recupero"
     ],
     "Lugar del Accidente": [
       "Gestor Documental"
     ],
     "Ocurrencia del siniestro": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Orden de Compra": [
       "Recupero"
@@ -357,10 +357,10 @@
       "Recupero"
     ],
     "Otros": [
-      "Fraude",
-      "Liquidación Perdida Total",
-      "Web Liquidacion",
       "Web Proveedores",
+      "Fraude",
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
       "Gestor Documental"
     ],
     "Otros Daños": [
@@ -370,13 +370,13 @@
       "Liquidación Perdida Total"
     ],
     "Pagaré": [
-      "Recupero",
       "Liquidación Perdida Total",
+      "Recupero",
       "Web Liquidacion"
     ],
     "Parte de Hallazgo del Vehículo": [
-      "Gestor Documental",
       "Liquidación Perdida Total",
+      "Gestor Documental",
       "Web Liquidacion"
     ],
     "Peritaje": [
@@ -384,24 +384,24 @@
       "Web Liquidacion"
     ],
     "Permiso de circulacion": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Presupuesto": [
       "Web Proveedores",
+      "Web Liquidacion",
       "Gestor Documental",
-      "Egresos",
-      "Web Liquidacion"
+      "Egresos"
     ],
     "Presupuesto Salvataje": [
       "Web Liquidacion"
     ],
     "Recibo de Conformidad": [
-      "Liquidación Perdida Total",
-      "Web Liquidacion",
       "Web Proveedores",
-      "Recupero",
-      "Egresos"
+      "Egresos",
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
+      "Recupero"
     ],
     "Respaldo Factura": [
       "Liquidación Perdida Total"
@@ -423,13 +423,13 @@
       "Denuncios"
     ],
     "Revision tecnica homologacion": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Trasera": [
+      "Liquidación Perdida Total",
       "Gestor Documental",
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Recupero"
     ],
     "SIN DOCUMENT TYPES": [
       "Fraude"
@@ -438,22 +438,22 @@
       "Web Liquidacion"
     ],
     "Voucher alcotest": [
-      "Gestor Documental",
       "Liquidación Perdida Total",
+      "Gestor Documental",
       "Web Liquidacion"
     ],
     "Cedula de Identidad": [
-      "DJS(Declaracion Jurada Simple)",
       "Liquidación Perdida Total",
-      "Web Liquidacion",
-      "Denuncios"
+      "DJS(Declaracion Jurada Simple)",
+      "Denuncios",
+      "Web Liquidacion"
     ],
     "Cedula de Identidad Reverso": [
       "Denuncios"
     ],
     "Certificado deuda de alimentos": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Cuestionario Cliente": [
       "Liquidación Perdida Total"
@@ -466,9 +466,9 @@
     ],
     "Licencia de Conducir": [
       "DJS(Declaracion Jurada Simple)",
-      "Liquidación Perdida Total",
-      "Web Liquidacion",
       "Denuncios",
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
       "Gestor Documental"
     ],
     "Licencia de Conducir Reverso": [
@@ -478,8 +478,8 @@
       "Liquidación Perdida Total"
     ],
     "Factura de compraventa": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Informe Autofact": [
       "Liquidación Perdida Total"
@@ -488,8 +488,8 @@
       "Liquidación Perdida Total"
     ],
     "Número Vin": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Otro": [
       "Liquidación Perdida Total"
@@ -498,8 +498,8 @@
       "Web Liquidacion"
     ],
     "Patente": [
-      "Gestor Documental",
-      "Liquidación Perdida Total"
+      "Liquidación Perdida Total",
+      "Gestor Documental"
     ],
     "Permiso de circulación": [
       "Liquidación Perdida Total"
@@ -508,16 +508,16 @@
       "Liquidación Perdida Total"
     ],
     "Genérico": [
-      "Web Proveedores",
-      "Web Oficiales"
+      "Web Oficiales",
+      "Web Proveedores"
     ],
     "Ingreso – Reingreso": [
       "Web Proveedores"
     ],
     "ILI": [
+      "Liquidación Perdida Total",
       "Control de gastos(CDG)",
-      "Recupero",
-      "Liquidación Perdida Total"
+      "Recupero"
     ],
     "Inspección Taller": [
       "Web Proveedores"
@@ -547,12 +547,12 @@
       "Egresos"
     ],
     "NO TIENE": [
-      "Liquidación Perdida Total",
-      "CGS",
-      "Web Liquidacion",
+      "Proceso genera el informe de liquidación",
       "Control de gastos(CDG)",
       "Web oficiales",
-      "Proceso genera el informe de liquidación"
+      "Web Liquidacion",
+      "Liquidación Perdida Total",
+      "CGS"
     ],
     "FA": [
       "Recupero"
@@ -624,8 +624,7 @@
     },
     "Cedula de Identidad": {
       "Web Liquidacion": "Denuncios",
-      "Liquidación Perdida Total": "Web Liquidacion",
-      "DJS(Declaracion Jurada Simple)": "Web Liquidacion"
+      "Liquidación Perdida Total": "Web Liquidacion"
     },
     "Cedula de identidad": {
       "Egresos": "Web Liquidacion"
@@ -3758,7 +3757,7 @@
       "ojo": "Los solicita a pesar que ya fueron \npedidos en el portal de Denuncios",
       "sistemasInteractua": "NO SE SABE",
       "dependeOtroSistema": "",
-      "cualSistemaSubio": "Web Liquidacion"
+      "cualSistemaSubio": ""
     },
     {
       "itemType": "Personas",

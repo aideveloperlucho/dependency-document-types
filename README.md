@@ -2,31 +2,104 @@
 
 This project visualizes the dependency relationships between document types and systems/portals based on data from an Excel file.
 
-## Files
+## Project Structure
 
-- `resources/portals.xlsx` - Source Excel file with document types and system relationships
-- `process_data.py` - Python script to process Excel data and generate JSON
-- `data.json` - Generated JSON file with structured data (created by process_data.py)
-- `index.html` - Interactive HTML visualization
+```
+/
+├── backend/
+│   ├── app.py                # Flask server
+│   ├── process_data.py       # Excel processing logic
+│   ├── users.json            # User credentials
+│   └── requirements.txt      # Python dependencies
+├── frontend/
+│   ├── index.html            # Visualization UI
+│   └── resources/
+│       └── portals.xlsx      # Excel files
+├── data.json                 # Generated data
+└── render.yaml              # Deployment config
+```
 
 ## Setup
 
-1. **Install Python dependencies** (if not already installed):
-   ```bash
-   pip install pandas openpyxl
-   ```
+### Quick Start (Recommended)
 
-2. **Process the Excel data and embed it in HTML**:
+**Windows:**
+```bash
+start.bat
+```
+
+**Linux/Mac:**
+```bash
+chmod +x start.sh
+./start.sh
+```
+
+The startup script will:
+- Create a virtual environment (if it doesn't exist)
+- Install all dependencies
+- Start the Flask server (default port: 8080, may use different port on Windows)
+
+### Manual Setup
+
+1. **Create a virtual environment** (recommended):
    ```bash
-   python process_data.py
-   ```
-   This will generate `data.json` with the structured data.
+   python -m venv venv
    
-   **Note**: The data is embedded directly in `index.html`, so you can open it directly in a browser without needing a web server. If you update the Excel file, run `process_data.py` again and then use the `embed_data.py` script (or manually update the embedded data in the HTML).
+   # Windows
+   venv\Scripts\activate
+   
+   # Linux/Mac
+   source venv/bin/activate
+   ```
 
-3. **Open the visualization**:
-   - Simply open `index.html` directly in any web browser (no web server needed!)
-   - The data is embedded in the HTML file to avoid CORS issues
+2. **Install Python dependencies**:
+   ```bash
+   pip install -r backend/requirements.txt
+   ```
+
+3. **Run the Flask application**:
+   ```bash
+   cd backend
+   python app.py
+   ```
+   The server will start and display its URL in the terminal (e.g., `http://127.0.0.1:8080`)
+   
+   **Note**: On Windows, if port 8080 is busy, Flask will automatically select an available port.
+
+4. **Access the visualization**:
+   - Check the terminal output for the server URL
+   - Open your browser and navigate to that URL
+   - The data is embedded in the HTML file
+
+## Features
+
+### Excel Upload with Authentication
+
+1. **Login**: Click the floating button (🔒) in the bottom-right corner
+2. **Authenticate**: Log in with your credentials
+   - Default user: `luis.gonzalez@tecnovait.com`
+   - Default password: `luis.gonzalez`
+3. **Upload**: Select and upload a new Excel file (.xlsx or .xls)
+4. **Auto-Process**: The system will automatically:
+   - Process the Excel file
+   - Generate new JSON data
+   - Embed data in the HTML
+   - Refresh the visualization
+5. **Update for All**: All users will see the updated data after page refresh
+
+### Managing Users
+
+To add more users, edit `backend/users.json`:
+```json
+{
+  "users": [
+    {
+      "email": "user@example.com",
+      "password": "password123"
+    }
+  ]
+}
+```
 
 ## Features
 

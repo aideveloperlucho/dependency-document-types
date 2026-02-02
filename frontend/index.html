@@ -279,21 +279,40 @@
             to { opacity: 1; }
         }
         
-        .modal-content {
+        /* Dependency Modal - Large size for diagrams */
+        #dependencyModal .modal-content {
             background: var(--bg-white);
-            margin: 2% auto;
+            margin: 1% auto;
             padding: 0;
             border: none;
             border-radius: var(--radius-lg);
-            width: 90%;
-            max-width: 1400px;
-            max-height: 92vh;
+            width: 98% !important;
+            max-width: 1800px !important;
+            max-height: 98vh;
             overflow: hidden;
             position: relative;
             display: flex;
             flex-direction: column;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             animation: slideDown 0.3s ease-out;
+        }
+        
+        /* Responsive modal sizing for dependency modal */
+        @media (max-width: 1400px) {
+            #dependencyModal .modal-content {
+                width: 98% !important;
+                max-height: 98vh;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #dependencyModal .modal-content {
+                width: 100% !important;
+                height: 100vh;
+                max-height: 100vh;
+                margin: 0;
+                border-radius: 0;
+            }
         }
         
         @keyframes slideDown {
@@ -311,10 +330,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 24px 30px 16px 30px;
+            padding: 24px 60px 16px 60px;
             background: var(--bg-white);
             border-bottom: none;
             position: relative;
+        }
+        
+        @media (max-width: 768px) {
+            .modal-header {
+                padding: 20px 50px 15px 20px;
+            }
         }
         
         .modal-title {
@@ -324,6 +349,14 @@
             letter-spacing: 0.3px;
             margin: 0;
             text-align: center;
+            word-break: break-word;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 768px) {
+            .modal-title {
+                font-size: 18px;
+            }
         }
         
         .close-modal {
@@ -354,7 +387,8 @@
         .modal-diagram-container {
             position: relative;
             width: 100%;
-            min-height: 400px;
+            min-height: 500px;
+            height: auto;
             padding: 20px 30px 30px 30px;
             background: var(--bg-white);
             flex: 1;
@@ -362,14 +396,31 @@
             box-sizing: border-box;
         }
         
+        @media (max-width: 768px) {
+            .modal-diagram-container {
+                padding: 15px;
+                min-height: 400px;
+            }
+        }
+        
         .modal-systems-section {
             position: relative;
             width: 100%;
-            min-height: 400px;
+            min-width: 1000px;
+            min-height: 800px;
+            height: auto;
             background: var(--bg-light);
             border-radius: var(--radius-md);
-            padding: 24px;
+            padding: 100px 80px;
             border: 1px solid var(--border-light);
+            box-sizing: border-box;
+        }
+        
+        @media (max-width: 768px) {
+            .modal-systems-section {
+                padding: 20px;
+                min-height: 400px;
+            }
         }
         
         .modal-svg {
@@ -439,6 +490,13 @@
             position: relative;
         }
         
+        @media (max-width: 768px) {
+            .modal-legend {
+                padding: 15px;
+                gap: 8px;
+            }
+        }
+        
         .legend-item {
             display: flex;
             align-items: center;
@@ -452,6 +510,15 @@
             color: var(--text-dark);
             font-weight: 500;
             font-size: 13px;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .legend-item {
+                padding: 8px 15px;
+                font-size: 12px;
+                gap: 6px;
+            }
         }
         
         .legend-item:hover {
@@ -581,6 +648,256 @@
             text-align: center;
             color: #666;
             font-style: italic;
+        }
+        
+        /* ============================================
+           Floating Button & Modals
+           ============================================ */
+        
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .floating-button:hover {
+            background: var(--primary-green-dark);
+            transform: scale(1.1);
+        }
+        
+        .floating-button.locked {
+            background: var(--text-muted);
+        }
+        
+        .floating-button.locked:hover {
+            background: var(--text-dark);
+        }
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        /* Login/Upload Modal - Small size for forms */
+        .modal-overlay .modal-content {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+        
+        .modal-overlay .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        
+        .modal-overlay .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+        }
+        
+        .modal-close:hover {
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+        
+        .form-button {
+            width: 100%;
+            padding: 12px 24px;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        
+        .form-button:hover {
+            background: var(--primary-green-dark);
+        }
+        
+        .form-button:disabled {
+            background: var(--text-muted);
+            cursor: not-allowed;
+        }
+        
+        .file-upload-area {
+            border: 2px dashed var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 32px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .file-upload-area:hover {
+            border-color: var(--primary-green);
+            background: var(--bg-light);
+        }
+        
+        .file-upload-icon {
+            font-size: 48px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        
+        .file-upload-text {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        
+        .file-upload-hint {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        
+        .selected-file {
+            margin-top: 16px;
+            padding: 12px;
+            background: var(--bg-light);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .selected-file-name {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .notification {
+            position: fixed;
+            top: 80px;
+            right: 30px;
+            min-width: 300px;
+            padding: 16px 20px;
+            background: var(--bg-white);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lg);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .notification.active {
+            display: flex;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .notification.success {
+            border-left: 4px solid var(--primary-green);
+        }
+        
+        .notification.error {
+            border-left: 4px solid var(--primary-red);
+        }
+        
+        .notification-icon {
+            font-size: 24px;
+        }
+        
+        .notification.success .notification-icon {
+            color: var(--primary-green);
+        }
+        
+        .notification.error .notification-icon {
+            color: var(--primary-red);
+        }
+        
+        .notification-message {
+            flex: 1;
+            color: var(--text-dark);
         }
     </style>
 </head>
@@ -736,6 +1053,62 @@
         </div>
     </div>
 
+    <!-- Floating Upload Button -->
+    <button id="floatingButton" class="floating-button locked" title="Upload Excel">
+        🔒
+    </button>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Iniciar Sesión</h2>
+                <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label" for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" class="form-input" required placeholder="correo@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="loginPassword">Contraseña</label>
+                    <input type="password" id="loginPassword" class="form-input" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="form-button" id="loginButton">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Subir Archivo Excel</h2>
+                <button class="modal-close" onclick="closeUploadModal()">&times;</button>
+            </div>
+            <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
+                <div class="file-upload-icon">📊</div>
+                <div class="file-upload-text">Click para seleccionar archivo</div>
+                <div class="file-upload-hint">Formatos soportados: .xlsx, .xls</div>
+            </div>
+            <input type="file" id="fileInput" accept=".xlsx,.xls" style="display: none;" onchange="handleFileSelect(event)">
+            <div id="selectedFileContainer" style="display: none;">
+                <div class="selected-file">
+                    <span class="selected-file-name" id="selectedFileName"></span>
+                    <button onclick="clearFileSelection()" style="background: none; border: none; color: var(--primary-red); cursor: pointer; font-size: 20px;">&times;</button>
+                </div>
+            </div>
+            <button id="uploadButton" class="form-button" onclick="handleUpload()" disabled style="margin-top: 20px;">Subir Archivo</button>
+            <button class="form-button" onclick="handleLogout()" style="margin-top: 10px; background: var(--text-muted);">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <span class="notification-icon" id="notificationIcon"></span>
+        <span class="notification-message" id="notificationMessage"></span>
+    </div>
+
     <script>
         // Embedded data to avoid CORS issues when opening file directly
         const embeddedData = {
@@ -868,21 +1241,21 @@
                 "Parte Policial (Hallazgo)"
         ],
         "platforms": [
-                "DJS(Declaracion Jurada Simple)",
-                "Fraude",
-                "Gestor Documental",
-                "MDR",
-                "Liquidación Perdida Total",
-                "Web Liquidacion",
-                "Denuncios",
-                "CGS",
-                "Web Oficiales",
                 "Proceso genera el informe de liquidación",
-                "Control de gastos(CDG)",
+                "Web Oficiales",
+                "DJS(Declaracion Jurada Simple)",
                 "Web Proveedores",
+                "Denuncios",
+                "MDR",
+                "Egresos",
                 "Web oficiales",
+                "Control de gastos(CDG)",
+                "Fraude",
+                "Web Liquidacion",
+                "Liquidación Perdida Total",
+                "Gestor Documental",
                 "Recupero",
-                "Egresos"
+                "CGS"
         ],
         "documentTypeToPlatforms": {
                 "Informe Tecnico": [
@@ -892,19 +1265,19 @@
                         "Liquidación Perdida Total"
                 ],
                 "Atencion medica": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Autorización de Entrega (Acreedor)": [
                         "Liquidación Perdida Total"
                 ],
                 "Boleta de Transporte": [
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Recupero"
                 ],
                 "Carta de saldo insoluto y compromiso alzamiento": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Cedula de Identidad(Otros)": [
                         "Egresos"
@@ -913,43 +1286,43 @@
                         "Web Liquidacion"
                 ],
                 "Certificado de Anotaciones Vigentes": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Certificado de pago multas": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Certificado de viajes": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Comprobante Grúa": [
+                        "Liquidación Perdida Total",
                         "Gestor Documental",
                         "Recupero",
-                        "Liquidación Perdida Total",
                         "Web Liquidacion"
                 ],
                 "Comprobante de Ingreso": [
                         "Web Liquidacion"
                 ],
                 "Comprobante de testigos": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Comprobante llaves/GPS": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Constancia / Parte Policial": [
+                        "Liquidación Perdida Total",
                         "Gestor Documental",
                         "Recupero",
-                        "Liquidación Perdida Total",
                         "Web Liquidacion"
                 ],
                 "Cuestionario Completo": [
-                        "Recupero",
                         "Liquidación Perdida Total",
+                        "Recupero",
                         "Web Liquidacion"
                 ],
                 "Daños específicos del vehículo": [
@@ -957,15 +1330,15 @@
                 ],
                 "Declaración Jurada Simple": [
                         "DJS(Declaracion Jurada Simple)",
-                        "Liquidación Perdida Total",
-                        "Web Liquidacion",
                         "Denuncios",
-                        "Recupero",
-                        "Gestor Documental"
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
+                        "Gestor Documental",
+                        "Recupero"
                 ],
                 "Denuncia Policial": [
-                        "DJS(Declaracion Jurada Simple)",
                         "Liquidación Perdida Total",
+                        "DJS(Declaracion Jurada Simple)",
                         "Denuncios"
                 ],
                 "Documento Adicional": [
@@ -1003,8 +1376,8 @@
                         "Web Liquidacion"
                 ],
                 "Fotografías Adicionales del Siniestro": [
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Recupero"
                 ],
                 "FotosInspeccion": [
                         "Web Liquidacion"
@@ -1016,30 +1389,30 @@
                         "Web Liquidacion"
                 ],
                 "Fotos y Videos Localización": [
-                        "Recupero",
                         "Liquidación Perdida Total",
-                        "Denuncios"
+                        "Denuncios",
+                        "Recupero"
                 ],
                 "Fotos y Videos de los daños": [
-                        "DJS(Declaracion Jurada Simple)",
-                        "Recupero",
                         "Liquidación Perdida Total",
-                        "Denuncios"
+                        "DJS(Declaracion Jurada Simple)",
+                        "Denuncios",
+                        "Recupero"
                 ],
                 "Fotos y Videos otros": [
-                        "Recupero",
-                        "Denuncios",
                         "Liquidación Perdida Total",
+                        "Denuncios",
+                        "Recupero",
                         "CGS"
                 ],
                 "Frontal": [
+                        "Liquidación Perdida Total",
                         "Gestor Documental",
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Recupero"
                 ],
                 "Guía de Despacho": [
-                        "MDR",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "MDR"
                 ],
                 "Guía de traslado": [
                         "Liquidación Perdida Total"
@@ -1054,41 +1427,41 @@
                         "Recupero"
                 ],
                 "Inspección Liquidador": [
+                        "Liquidación Perdida Total",
                         "Control de gastos(CDG)",
                         "Recupero",
-                        "Liquidación Perdida Total",
                         "Web Liquidacion"
                 ],
                 "Interior": [
+                        "Liquidación Perdida Total",
                         "Gestor Documental",
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Recupero"
                 ],
                 "Kilometraje": [
+                        "Liquidación Perdida Total",
                         "Gestor Documental",
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Recupero"
                 ],
                 "Lateral derecho (copiloto)": [
+                        "Liquidación Perdida Total",
                         "Gestor Documental",
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Recupero"
                 ],
                 "Lateral izquierdo (conductor)": [
+                        "Liquidación Perdida Total",
                         "Gestor Documental",
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Recupero"
                 ],
                 "Liquidación Oficial": [
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Recupero"
                 ],
                 "Lugar del Accidente": [
                         "Gestor Documental"
                 ],
                 "Ocurrencia del siniestro": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Orden de Compra": [
                         "Recupero"
@@ -1097,10 +1470,10 @@
                         "Recupero"
                 ],
                 "Otros": [
-                        "Fraude",
-                        "Liquidación Perdida Total",
-                        "Web Liquidacion",
                         "Web Proveedores",
+                        "Fraude",
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
                         "Gestor Documental"
                 ],
                 "Otros Daños": [
@@ -1110,13 +1483,13 @@
                         "Liquidación Perdida Total"
                 ],
                 "Pagaré": [
-                        "Recupero",
                         "Liquidación Perdida Total",
+                        "Recupero",
                         "Web Liquidacion"
                 ],
                 "Parte de Hallazgo del Vehículo": [
-                        "Gestor Documental",
                         "Liquidación Perdida Total",
+                        "Gestor Documental",
                         "Web Liquidacion"
                 ],
                 "Peritaje": [
@@ -1124,24 +1497,24 @@
                         "Web Liquidacion"
                 ],
                 "Permiso de circulacion": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Presupuesto": [
                         "Web Proveedores",
+                        "Web Liquidacion",
                         "Gestor Documental",
-                        "Egresos",
-                        "Web Liquidacion"
+                        "Egresos"
                 ],
                 "Presupuesto Salvataje": [
                         "Web Liquidacion"
                 ],
                 "Recibo de Conformidad": [
-                        "Liquidación Perdida Total",
-                        "Web Liquidacion",
                         "Web Proveedores",
-                        "Recupero",
-                        "Egresos"
+                        "Egresos",
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
+                        "Recupero"
                 ],
                 "Respaldo Factura": [
                         "Liquidación Perdida Total"
@@ -1163,13 +1536,13 @@
                         "Denuncios"
                 ],
                 "Revision tecnica homologacion": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Trasera": [
+                        "Liquidación Perdida Total",
                         "Gestor Documental",
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Recupero"
                 ],
                 "SIN DOCUMENT TYPES": [
                         "Fraude"
@@ -1178,22 +1551,22 @@
                         "Web Liquidacion"
                 ],
                 "Voucher alcotest": [
-                        "Gestor Documental",
                         "Liquidación Perdida Total",
+                        "Gestor Documental",
                         "Web Liquidacion"
                 ],
                 "Cedula de Identidad": [
-                        "DJS(Declaracion Jurada Simple)",
                         "Liquidación Perdida Total",
-                        "Web Liquidacion",
-                        "Denuncios"
+                        "DJS(Declaracion Jurada Simple)",
+                        "Denuncios",
+                        "Web Liquidacion"
                 ],
                 "Cedula de Identidad Reverso": [
                         "Denuncios"
                 ],
                 "Certificado deuda de alimentos": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Cuestionario Cliente": [
                         "Liquidación Perdida Total"
@@ -1206,9 +1579,9 @@
                 ],
                 "Licencia de Conducir": [
                         "DJS(Declaracion Jurada Simple)",
-                        "Liquidación Perdida Total",
-                        "Web Liquidacion",
                         "Denuncios",
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
                         "Gestor Documental"
                 ],
                 "Licencia de Conducir Reverso": [
@@ -1218,8 +1591,8 @@
                         "Liquidación Perdida Total"
                 ],
                 "Factura de compraventa": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Informe Autofact": [
                         "Liquidación Perdida Total"
@@ -1228,8 +1601,8 @@
                         "Liquidación Perdida Total"
                 ],
                 "Número Vin": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Otro": [
                         "Liquidación Perdida Total"
@@ -1238,8 +1611,8 @@
                         "Web Liquidacion"
                 ],
                 "Patente": [
-                        "Gestor Documental",
-                        "Liquidación Perdida Total"
+                        "Liquidación Perdida Total",
+                        "Gestor Documental"
                 ],
                 "Permiso de circulación": [
                         "Liquidación Perdida Total"
@@ -1248,16 +1621,16 @@
                         "Liquidación Perdida Total"
                 ],
                 "Genérico": [
-                        "Web Proveedores",
-                        "Web Oficiales"
+                        "Web Oficiales",
+                        "Web Proveedores"
                 ],
                 "Ingreso – Reingreso": [
                         "Web Proveedores"
                 ],
                 "ILI": [
+                        "Liquidación Perdida Total",
                         "Control de gastos(CDG)",
-                        "Recupero",
-                        "Liquidación Perdida Total"
+                        "Recupero"
                 ],
                 "Inspección Taller": [
                         "Web Proveedores"
@@ -1287,12 +1660,12 @@
                         "Egresos"
                 ],
                 "NO TIENE": [
-                        "Liquidación Perdida Total",
-                        "CGS",
-                        "Web Liquidacion",
+                        "Proceso genera el informe de liquidación",
                         "Control de gastos(CDG)",
                         "Web oficiales",
-                        "Proceso genera el informe de liquidación"
+                        "Web Liquidacion",
+                        "Liquidación Perdida Total",
+                        "CGS"
                 ],
                 "FA": [
                         "Recupero"
@@ -1364,8 +1737,7 @@
                 },
                 "Cedula de Identidad": {
                         "Web Liquidacion": "Denuncios",
-                        "Liquidación Perdida Total": "Web Liquidacion",
-                        "DJS(Declaracion Jurada Simple)": "Web Liquidacion"
+                        "Liquidación Perdida Total": "Web Liquidacion"
                 },
                 "Cedula de identidad": {
                         "Egresos": "Web Liquidacion"
@@ -4498,7 +4870,7 @@
                         "ojo": "Los solicita a pesar que ya fueron \npedidos en el portal de Denuncios",
                         "sistemasInteractua": "NO SE SABE",
                         "dependeOtroSistema": "",
-                        "cualSistemaSubio": "Web Liquidacion"
+                        "cualSistemaSubio": ""
                 },
                 {
                         "itemType": "Personas",
@@ -6464,10 +6836,15 @@
             setTimeout(() => {
                 // Get container dimensions after modal is visible
                 const containerRect = modalSystems.node().getBoundingClientRect();
-                const containerWidth = containerRect.width || 1000;
+                // Use MINIMUM 1200px width to ensure proper spacing
+                const containerWidth = Math.max(1200, containerRect.width || 1200);
                 
                 // Calculate container height first (estimate based on number of platforms)
-                const containerHeight = Math.max(500, Array.from(platformsToShow).length * 100);
+                // Increased multiplier to 200 for much more vertical space
+                const containerHeight = Math.max(800, Array.from(platformsToShow).length * 200);
+                
+                // Set explicit container dimensions
+                modalSystems.style('width', containerWidth + 'px');
                 modalSystems.style('height', containerHeight + 'px');
                 modalSvg
                     .attr('width', containerWidth)
@@ -6507,14 +6884,17 @@
                     const pos = visiblePositions.get(platform);
                     if (!pos) return;
                     
+                    // Apply position to the parent .modal-system-item
+                    d3.select(this)
+                        .style('left', (pos.x) + 'px')
+                        .style('top', (pos.y) + 'px');
+                    
                     // Check if this platform should be highlighted
                     const shouldHighlight = platformToHighlight && platform === platformToHighlight;
                     
                     const systemDiv = d3.select(this)
                         .append('div')
                         .attr('class', shouldHighlight ? 'system-node highlighted-platform' : 'system-node')
-                        .style('left', (pos.x) + 'px')
-                        .style('top', (pos.y) + 'px')
                         .attr('data-platform', platform);
                     
                     // Check if this platform has dependencies
@@ -6773,11 +7153,11 @@
             // Use provided container width or default to window width
             const width = containerWidth || window.innerWidth;
             const maxLevel = Math.max(...Array.from(nodesByLevel.keys()));
-            const levelSpacing = Math.min(250, (width - 200) / Math.max(1, maxLevel + 1));
-            const startX = 50; // Start from left in modal
-            // Increased spacing for better visual separation between nodes
-            // Accounts for node height (~58px) + comfortable gap (~70px) = 128px total spacing
-            const nodeSpacing = 128;
+            // FIXED large horizontal spacing between columns - NO calculation limit
+            const levelSpacing = 400;
+            const startX = 150; // More left padding
+            // FIXED large vertical spacing between nodes  
+            const nodeSpacing = 180;
             
             // Node height: padding (12px top + 12px bottom) + border (2px top + 2px bottom) + text (~20px) = ~58px
             const nodeHeight = 58;
@@ -7435,6 +7815,210 @@
         window.addEventListener('resize', () => {
             // Could re-layout on resize if needed
         });
+
+        // ============================================
+        // Authentication & Upload Functionality
+        // ============================================
+        
+        let isAuthenticated = false;
+        let selectedFile = null;
+
+        // Check authentication status on page load
+        async function checkAuthStatus() {
+            try {
+                const response = await fetch('/api/auth-status');
+                const data = await response.json();
+                isAuthenticated = data.authenticated;
+                updateFloatingButton();
+            } catch (error) {
+                console.error('Error checking auth status:', error);
+            }
+        }
+
+        // Update floating button appearance
+        function updateFloatingButton() {
+            const button = document.getElementById('floatingButton');
+            if (isAuthenticated) {
+                button.classList.remove('locked');
+                button.innerHTML = '📤';
+                button.title = 'Upload Excel';
+            } else {
+                button.classList.add('locked');
+                button.innerHTML = '🔒';
+                button.title = 'Login to Upload';
+            }
+        }
+
+        // Floating button click handler
+        document.getElementById('floatingButton').addEventListener('click', () => {
+            if (isAuthenticated) {
+                openUploadModal();
+            } else {
+                openLoginModal();
+            }
+        });
+
+        // Login Modal
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.add('active');
+            document.getElementById('loginEmail').focus();
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.remove('active');
+            document.getElementById('loginForm').reset();
+        }
+
+        async function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const button = document.getElementById('loginButton');
+
+            button.disabled = true;
+            button.textContent = 'Iniciando sesión...';
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    isAuthenticated = true;
+                    updateFloatingButton();
+                    closeLoginModal();
+                    showNotification('Inicio de sesión exitoso', 'success');
+                    openUploadModal();
+                } else {
+                    showNotification(data.message || 'Credenciales inválidas', 'error');
+                }
+            } catch (error) {
+                showNotification('Error al iniciar sesión', 'error');
+                console.error('Login error:', error);
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Iniciar Sesión';
+            }
+        }
+
+        // Upload Modal
+        function openUploadModal() {
+            document.getElementById('uploadModal').classList.add('active');
+        }
+
+        function closeUploadModal() {
+            document.getElementById('uploadModal').classList.remove('active');
+            clearFileSelection();
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedFile = file;
+                document.getElementById('selectedFileName').textContent = file.name;
+                document.getElementById('selectedFileContainer').style.display = 'block';
+                document.getElementById('uploadButton').disabled = false;
+            }
+        }
+
+        function clearFileSelection() {
+            selectedFile = null;
+            document.getElementById('fileInput').value = '';
+            document.getElementById('selectedFileContainer').style.display = 'none';
+            document.getElementById('uploadButton').disabled = true;
+        }
+
+        async function handleUpload() {
+            if (!selectedFile) {
+                showNotification('Por favor seleccione un archivo', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            const button = document.getElementById('uploadButton');
+            button.disabled = true;
+            button.textContent = 'Procesando...';
+
+            try {
+                const response = await fetch('/api/upload-excel', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showNotification(data.message, 'success');
+                    closeUploadModal();
+                    // Reload page after 2 seconds to show updated data
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    showNotification(data.message || 'Error al subir archivo', 'error');
+                }
+            } catch (error) {
+                showNotification('Error al procesar el archivo', 'error');
+                console.error('Upload error:', error);
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Subir Archivo';
+            }
+        }
+
+        async function handleLogout() {
+            try {
+                await fetch('/api/logout', { method: 'POST' });
+                isAuthenticated = false;
+                updateFloatingButton();
+                closeUploadModal();
+                showNotification('Sesión cerrada', 'success');
+            } catch (error) {
+                showNotification('Error al cerrar sesión', 'error');
+                console.error('Logout error:', error);
+            }
+        }
+
+        // Notification
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            const icon = document.getElementById('notificationIcon');
+            const messageEl = document.getElementById('notificationMessage');
+
+            notification.className = `notification ${type}`;
+            icon.textContent = type === 'success' ? '✓' : '✗';
+            messageEl.textContent = message;
+            
+            notification.classList.add('active');
+
+            setTimeout(() => {
+                notification.classList.remove('active');
+            }, 5000);
+        }
+
+        // Close modals when clicking overlay
+        document.getElementById('loginModal').addEventListener('click', (e) => {
+            if (e.target.id === 'loginModal') {
+                closeLoginModal();
+            }
+        });
+
+        document.getElementById('uploadModal').addEventListener('click', (e) => {
+            if (e.target.id === 'uploadModal') {
+                closeUploadModal();
+            }
+        });
+
+        // Check auth status on page load
+        checkAuthStatus();
     </script>
 </body>
 </html>

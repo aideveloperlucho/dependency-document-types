@@ -1,8 +1,10 @@
 services:
   - type: web
     name: dependency-document-types
-    env: python
-    runtime: python-3.11
-    buildCommand: pip install -r backend/requirements.txt
+    runtime: python
+    buildCommand: pip install -r requirements.txt
     startCommand: cd backend && gunicorn -w 4 -b 0.0.0.0:$PORT app:app
     healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0

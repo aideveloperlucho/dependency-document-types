@@ -70,7 +70,7 @@ Successfully implemented a Flask-based web application with Excel upload functio
 ### 6. Deployment Configuration ✓
 **Files Updated**:
 - `render.yaml` - Updated for Python/Flask deployment
-- `backend/requirements.txt` - All Python dependencies
+- `requirements.txt` - All Python dependencies (in root folder)
 - `README.md` - Complete setup instructions
 - `start.sh` / `start.bat` - Quick start scripts
 
@@ -211,11 +211,35 @@ start.bat
 ```
 
 ### Production (Render.com)
-The `render.yaml` is configured for deployment:
-- Python 3.11 runtime
-- Automatic dependency installation
-- Gunicorn with 4 workers
-- Health check on root path
+
+**Step-by-step deployment:**
+
+1. **Push to GitHub/GitLab** - Ensure all files are committed
+
+2. **Create Web Service on Render**:
+   - Go to [render.com](https://render.com)
+   - Click **New +** → **Web Service**
+   - Connect your repository
+   - Render auto-detects `render.yaml`
+
+3. **Configuration** (auto-detected from render.yaml):
+   ```yaml
+   services:
+     - type: web
+       name: dependency-document-types
+       env: python
+       runtime: python-3.11
+       buildCommand: pip install -r requirements.txt
+       startCommand: cd backend && gunicorn -w 4 -b 0.0.0.0:$PORT app:app
+       healthCheckPath: /
+   ```
+
+4. **Environment Variables** (recommended):
+   - `SECRET_KEY`: Set a secure random string for production
+
+5. **Deploy** - Click "Create Web Service"
+
+**Your app will be live at**: `https://your-app-name.onrender.com`
 
 ## Future Enhancements (Optional)
 
@@ -232,7 +256,7 @@ The `render.yaml` is configured for deployment:
 
 ### Flask Module Not Found
 ```bash
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Port Already in Use

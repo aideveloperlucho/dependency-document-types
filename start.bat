@@ -15,7 +15,7 @@ call venv\Scripts\activate.bat
 
 REM Install dependencies
 echo Installing dependencies...
-pip install -r backend\requirements.txt
+pip install -r requirements.txt
 
 REM Start Flask application
 echo Starting Flask server...

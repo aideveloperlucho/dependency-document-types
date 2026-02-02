@@ -15,7 +15,7 @@ source venv/bin/activate
 
 # Install dependencies
 echo "Installing dependencies..."
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 
 # Start Flask application
 echo "Starting Flask server..."

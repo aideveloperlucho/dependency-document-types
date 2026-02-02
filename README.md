@@ -9,12 +9,12 @@ This project visualizes the dependency relationships between document types and 
 ├── backend/
 │   ├── app.py                # Flask server
 │   ├── process_data.py       # Excel processing logic
-│   ├── users.json            # User credentials
-│   └── requirements.txt      # Python dependencies
+│   └── users.json            # User credentials
 ├── frontend/
 │   ├── index.html            # Visualization UI
 │   └── resources/
 │       └── portals.xlsx      # Excel files
+├── requirements.txt          # Python dependencies
 ├── data.json                 # Generated data
 └── render.yaml              # Deployment config
 ```
@@ -54,7 +54,7 @@ The startup script will:
 
 2. **Install Python dependencies**:
    ```bash
-   pip install -r backend/requirements.txt
+   pip install -r requirements.txt
    ```
 
 3. **Run the Flask application**:
@@ -116,6 +116,42 @@ To add more users, edit `backend/users.json`:
 The visualization shows:
 - **Document Types** → **Platforms**: Which platforms use each document type
 - **Platform Dependencies**: Which system should have uploaded documents to each platform (e.g., "Web Liquidacion" depends on "Denuncio")
+
+## Deployment to Render.com
+
+### Automatic Deployment
+
+1. **Push your code to GitHub/GitLab**
+
+2. **Create a new Web Service on Render**:
+   - Go to [render.com](https://render.com) and sign in
+   - Click **"New +"** → **"Web Service"**
+   - Connect your repository
+
+3. **Render will auto-detect** the `render.yaml` file and configure:
+   - **Environment**: Python 3.11
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `cd backend && gunicorn -w 4 -b 0.0.0.0:$PORT app:app`
+
+4. **Set Environment Variables** (optional but recommended):
+   - `SECRET_KEY`: A secure random string for session management
+
+5. **Deploy**: Click "Create Web Service" and wait for deployment
+
+### Manual Configuration (if render.yaml is not detected)
+
+| Setting | Value |
+|---------|-------|
+| **Environment** | Python 3 |
+| **Build Command** | `pip install -r requirements.txt` |
+| **Start Command** | `cd backend && gunicorn -w 4 -b 0.0.0.0:$PORT app:app` |
+| **Health Check Path** | `/` |
+
+### Post-Deployment
+
+- Your app will be available at `https://your-app-name.onrender.com`
+- Login with your credentials to upload Excel files
+- Data persists in the deployed files
 
 ## Notes
 

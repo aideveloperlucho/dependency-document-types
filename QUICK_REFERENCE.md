@@ -99,7 +99,7 @@ data.json                    # Generated data
 
 ### Install Dependencies
 ```bash
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Run Server
@@ -120,7 +120,7 @@ python process_data.py
 
 ### "Module not found" error
 ```bash
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Port 5000 already in use

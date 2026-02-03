@@ -101,7 +101,7 @@ To add more users, edit `backend/users.json`:
 }
 ```
 
-## Features
+### Visualization
 
 - **Document Types Panel (Left)**: Shows all document types from the Excel file
 - **Systems Panel (Right)**: Shows platforms/systems with their dependency relationships
@@ -116,6 +116,23 @@ To add more users, edit `backend/users.json`:
 The visualization shows:
 - **Document Types** → **Platforms**: Which platforms use each document type
 - **Platform Dependencies**: Which system should have uploaded documents to each platform (e.g., "Web Liquidacion" depends on "Denuncio")
+
+## API & Architecture (summary)
+
+- `backend/app.py`: Flask app, session-based auth, Excel upload, REST API:
+  - `GET /` – main page
+  - `GET /api/auth-status` – check login
+  - `POST /api/login` – login
+  - `POST /api/logout` – logout
+  - `POST /api/upload-excel` – upload + process Excel
+- `backend/process_data.py`: reads `frontend/resources/portals.xlsx`, writes `data.json` and embeds into `frontend/index.html`
+- `frontend/index.html`: visualization, floating button, login & upload modals, notifications.
+
+## Useful Commands
+
+- **Install deps**: `pip install -r requirements.txt`
+- **Run dev server**: `cd backend && python app.py`
+- **Process Excel manually**: `cd backend && python process_data.py`
 
 ## Deployment to Render.com
 
